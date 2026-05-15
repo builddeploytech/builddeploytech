@@ -1,0 +1,687 @@
+/* =========================================================
+   BUILDDEPLOY TECH - ABOUT PAGE CSS
+========================================================= */
+
+/* ================= HERO SECTION ================= */
+.about-hero {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding-top: 180px;
+  padding-bottom: 130px;
+
+}
+
+/* ================= HERO CONTAINER ================= */
+.about-hero-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+}
+
+/* ================= HERO CONTENT ================= */
+.about-hero-content {
+
+  max-width: 900px;
+
+  position: relative;
+  z-index: 2;
+
+}
+
+.about-hero-content h1 {
+
+  margin-bottom: 28px;
+
+}
+
+.about-hero-content p {
+
+  max-width: 760px;
+
+  margin: auto;
+
+  font-size: 1.12rem;
+
+  color: #cbd5e1;
+
+}
+
+/* =========================================================
+   COMPANY SECTION
+========================================================= */
+
+.company-section {
+
+  position: relative;
+
+}
+
+/* ================= COMPANY GRID ================= */
+.company-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+}
+
+/* ================= IMAGE ================= */
+.company-image {
+
+  position: relative;
+
+}
+
+.company-image img {
+
+  width: 100%;
+
+  border-radius: 32px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+}
+
+/* ================= EXPERIENCE BADGE ================= */
+.company-badge {
+
+  position: absolute;
+
+  bottom: 30px;
+  right: -20px;
+
+  padding:
+    22px 26px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(59, 130, 246, 0.3);
+
+}
+
+.company-badge h3 {
+
+  font-size: 2rem;
+
+  margin-bottom: 6px;
+
+}
+
+.company-badge p {
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.85);
+
+}
+
+/* ================= CONTENT ================= */
+.company-content h2 {
+
+  margin-bottom: 24px;
+
+}
+
+.company-content p {
+
+  margin-bottom: 22px;
+
+  color: #94a3b8;
+
+}
+
+/* ================= COMPANY FEATURES ================= */
+.company-features {
+
+  margin-top: 40px;
+
+}
+
+.company-feature {
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-bottom: 28px;
+
+}
+
+.company-feature-icon {
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(59, 130, 246, 0.12);
+
+  color: #60a5fa;
+
+  font-size: 1.6rem;
+
+}
+
+.company-feature-content h4 {
+
+  margin-bottom: 10px;
+
+  font-size: 1.15rem;
+
+}
+
+/* =========================================================
+   MISSION SECTION
+========================================================= */
+
+.mission-section {
+
+  position: relative;
+
+}
+
+/* ================= MISSION GRID ================= */
+.mission-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 30px;
+
+}
+
+/* ================= MISSION CARD ================= */
+.mission-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    40px 34px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(16px);
+
+  transition: all 0.35s ease;
+
+}
+
+.mission-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+}
+
+/* ================= ICON ================= */
+.mission-icon {
+
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.14),
+      rgba(6, 182, 212, 0.14)
+    );
+
+  font-size: 2rem;
+
+}
+
+.mission-card h3 {
+
+  margin-bottom: 16px;
+
+}
+
+.mission-card p {
+
+  color: #94a3b8;
+
+}
+
+/* =========================================================
+   WHY CHOOSE SECTION
+========================================================= */
+
+.why-about-section {
+
+  position: relative;
+
+}
+
+/* ================= WHY GRID ================= */
+.why-about-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 30px;
+
+}
+
+/* ================= WHY CARD ================= */
+.why-about-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    34px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.35s ease;
+
+}
+
+.why-about-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(59, 130, 246, 0.28);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.3);
+
+}
+
+.why-about-card h3 {
+
+  margin-bottom: 16px;
+
+}
+
+.why-about-card p {
+
+  color: #94a3b8;
+
+}
+
+/* =========================================================
+   FOUNDER SECTION
+========================================================= */
+
+.founder-section {
+
+  position: relative;
+
+}
+
+/* ================= FOUNDER GRID ================= */
+.founder-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+}
+
+/* ================= IMAGE ================= */
+.founder-image {
+
+  position: relative;
+
+}
+
+.founder-image img {
+
+  width: 100%;
+
+  border-radius: 32px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+}
+
+/* ================= CONTENT ================= */
+.founder-content h2 {
+
+  margin-bottom: 22px;
+
+}
+
+.founder-content p {
+
+  margin-bottom: 22px;
+
+  color: #94a3b8;
+
+}
+
+/* ================= SKILLS ================= */
+.founder-skills {
+
+  margin-top: 30px;
+
+}
+
+/* =========================================================
+   STATS SECTION
+========================================================= */
+
+.about-stats-section {
+
+  position: relative;
+
+}
+
+/* ================= STATS GRID ================= */
+.about-stats-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 26px;
+
+}
+
+/* ================= STAT CARD ================= */
+.about-stat-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  padding:
+    40px 28px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.35s ease;
+
+}
+
+.about-stat-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+}
+
+/* ================= STAT NUMBER ================= */
+.about-stat-card h3 {
+
+  margin-bottom: 12px;
+
+  font-size: 2.8rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      #60a5fa,
+      #22d3ee
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.about-stat-card p {
+
+  color: #94a3b8;
+
+  margin: 0;
+
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.about-cta-section {
+
+  position: relative;
+
+}
+
+/* ================= CTA BOX ================= */
+.about-cta-box {
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  padding:
+    90px 60px;
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.16),
+      rgba(6, 182, 212, 0.12)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+}
+
+.about-cta-box h2 {
+
+  margin-bottom: 24px;
+
+}
+
+.about-cta-box p {
+
+  max-width: 760px;
+
+  margin:
+    0 auto 34px;
+
+  color: #cbd5e1;
+
+}
+
+/* ================= CTA BUTTONS ================= */
+.cta-buttons {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .company-grid,
+  .founder-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .mission-grid,
+  .about-stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+  .why-about-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .about-hero {
+
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+  }
+
+  .mission-grid,
+  .about-stats-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .about-cta-box {
+
+    padding:
+      65px 28px;
+
+    border-radius: 28px;
+
+  }
+
+  .mission-card,
+  .why-about-card,
+  .about-stat-card {
+
+    padding: 28px;
+
+  }
+
+  .cta-buttons {
+
+    flex-direction: column;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .company-badge {
+
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    margin-top: 20px;
+
+    width: fit-content;
+
+  }
+
+  .mission-icon,
+  .company-feature-icon {
+
+    width: 56px;
+    height: 56px;
+
+    font-size: 1.4rem;
+
+  }
+
+}

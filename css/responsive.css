@@ -1,0 +1,643 @@
+/* =========================================================
+   BUILDDEPLOY TECH - RESPONSIVE CSS
+========================================================= */
+
+/* =========================================================
+   LARGE LAPTOPS
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .container {
+
+    max-width: 1200px;
+
+  }
+
+}
+
+/* =========================================================
+   LAPTOPS
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  /* ================= HERO ================= */
+  .hero-container,
+  .home-about-grid,
+  .company-grid,
+  .founder-grid,
+  .contact-grid,
+  .blog-layout {
+
+    grid-template-columns: 1fr !important;
+
+    gap: 60px;
+
+  }
+
+  /* ================= CENTER HERO ================= */
+  .hero-content,
+  .home-about-content,
+  .company-content,
+  .founder-content {
+
+    text-align: center;
+
+  }
+
+  .hero-content p,
+  .home-about-content p,
+  .company-content p,
+  .founder-content p {
+
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  /* ================= CENTER BUTTONS ================= */
+  .hero-buttons,
+  .cta-buttons,
+  .hero-stats {
+
+    justify-content: center;
+
+  }
+
+  /* ================= GRID ================= */
+  .services-grid,
+  .projects-grid,
+  .blogs-grid,
+  .pricing-grid,
+  .mission-grid,
+  .service-features-grid,
+  .process-grid,
+  .included-grid,
+  .project-stats-grid,
+  .about-stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr) !important;
+
+  }
+
+  /* ================= FOOTER ================= */
+  .footer-top {
+
+    flex-direction: column;
+
+  }
+
+  .footer-links-wrapper {
+
+    width: 100%;
+
+  }
+
+}
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 992px) {
+
+  /* ================= SECTION ================= */
+  section {
+
+    padding: 90px 0;
+
+  }
+
+  /* ================= HEADER ================= */
+  .header-container {
+
+    height: 80px;
+
+  }
+
+  /* ================= MOBILE NAV ================= */
+  .menu-toggle {
+
+    display: flex !important;
+
+  }
+
+  .nav-menu {
+
+    position: fixed;
+
+    top: 80px;
+    left: -100%;
+
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding:
+      30px 24px;
+
+    background:
+      rgba(4, 8, 20, 0.98);
+
+    backdrop-filter: blur(18px);
+
+    overflow-y: auto;
+
+    transition: all 0.35s ease;
+
+  }
+
+  .nav-menu.active {
+
+    left: 0;
+
+  }
+
+  .nav-menu a,
+  .nav-dropdown-btn {
+
+    width: 100%;
+
+    padding:
+      18px 0;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.06);
+
+  }
+
+  .nav-menu a::after,
+  .nav-dropdown-btn::after {
+
+    display: none;
+
+  }
+
+  /* ================= DROPDOWN ================= */
+  .nav-dropdown {
+
+    width: 100%;
+
+  }
+
+  .dropdown-menu {
+
+    position: static;
+
+    display: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+  }
+
+  .nav-dropdown.active .dropdown-menu {
+
+    display: block;
+
+  }
+
+  /* ================= GRID ================= */
+  .faq-grid,
+  .pricing-faq-grid,
+  .why-service-grid,
+  .why-about-grid {
+
+    grid-template-columns: 1fr !important;
+
+  }
+
+  /* ================= CTA ================= */
+  .home-cta-box,
+  .about-cta-box,
+  .service-cta-box,
+  .pricing-cta-box,
+  .projects-cta-box,
+  .contact-cta-box,
+  .newsletter-box {
+
+    padding:
+      70px 40px !important;
+
+  }
+
+}
+
+/* =========================================================
+   MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ================= HERO ================= */
+  .hero-section,
+  .about-hero,
+  .service-hero,
+  .blogs-hero,
+  .blog-hero,
+  .pricing-hero,
+  .projects-hero,
+  .contact-hero {
+
+    padding-top: 150px !important;
+    padding-bottom: 100px !important;
+
+  }
+
+  /* ================= HEADINGS ================= */
+  h1 {
+
+    font-size: 3rem !important;
+
+  }
+
+  h2 {
+
+    font-size: 2.2rem !important;
+
+  }
+
+  h3 {
+
+    font-size: 1.3rem !important;
+
+  }
+
+  p {
+
+    font-size: 15px;
+
+  }
+
+  /* ================= GRID ================= */
+  .services-grid,
+  .projects-grid,
+  .blogs-grid,
+  .pricing-grid,
+  .mission-grid,
+  .service-features-grid,
+  .process-grid,
+  .included-grid,
+  .project-stats-grid,
+  .about-stats-grid,
+  .faq-grid,
+  .pricing-faq-grid {
+
+    grid-template-columns: 1fr !important;
+
+  }
+
+  /* ================= CARDS ================= */
+  .main-service-card,
+  .project-card,
+  .blog-card,
+  .pricing-card,
+  .mission-card,
+  .feature-card,
+  .process-card,
+  .included-card,
+  .faq-card,
+  .pricing-faq-card,
+  .why-card,
+  .why-about-card,
+  .contact-item {
+
+    border-radius: 24px;
+
+  }
+
+  /* ================= CONTENT ================= */
+  .project-content,
+  .blog-content,
+  .pricing-card,
+  .mission-card,
+  .feature-card,
+  .process-card,
+  .included-card,
+  .faq-card,
+  .pricing-faq-card,
+  .why-card,
+  .why-about-card {
+
+    padding: 28px !important;
+
+  }
+
+  /* ================= BUTTONS ================= */
+  .hero-buttons,
+  .cta-buttons,
+  .newsletter-buttons {
+
+    flex-direction: column;
+
+    width: 100%;
+
+  }
+
+  .primary-btn,
+  .secondary-btn {
+
+    width: 100%;
+
+  }
+
+  /* ================= HERO STATS ================= */
+  .hero-stats {
+
+    flex-direction: column;
+
+    width: 100%;
+
+  }
+
+  .hero-stat {
+
+    width: 100%;
+
+  }
+
+  /* ================= FOOTER ================= */
+  .footer-links-wrapper {
+
+    flex-direction: column;
+
+  }
+
+  .footer-bottom {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+  /* ================= FORMS ================= */
+  .form-row {
+
+    grid-template-columns: 1fr !important;
+
+  }
+
+  /* ================= BLOG ================= */
+  .blog-article {
+
+    padding: 28px !important;
+
+  }
+
+  .blog-article pre {
+
+    padding: 20px;
+
+    font-size: 12px;
+
+  }
+
+  /* ================= PROJECT IMAGE ================= */
+  .project-image,
+  .blog-image {
+
+    height: 220px !important;
+
+  }
+
+  /* ================= MAP ================= */
+  .map-card iframe {
+
+    height: 380px;
+
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  /* ================= CONTAINER ================= */
+  .container {
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+  }
+
+  /* ================= HEADER ================= */
+  .header-container {
+
+    height: 74px;
+
+  }
+
+  .nav-menu {
+
+    top: 74px;
+
+    height: calc(100vh - 74px);
+
+  }
+
+  /* ================= LOGO ================= */
+  .logo img {
+
+    width: 44px;
+    height: 44px;
+
+  }
+
+  .logo-text {
+
+    font-size: 1.1rem;
+
+  }
+
+  /* ================= HEADINGS ================= */
+  h1 {
+
+    font-size: 2.5rem !important;
+
+    line-height: 1.15;
+
+  }
+
+  h2 {
+
+    font-size: 1.9rem !important;
+
+  }
+
+  /* ================= HERO CARD ================= */
+  .hero-card {
+
+    padding: 24px !important;
+
+    border-radius: 24px;
+
+  }
+
+  /* ================= FLOATING CARD ================= */
+  .floating-card {
+
+    position: relative !important;
+
+    inset: auto !important;
+
+    margin-top: 18px;
+
+    width: 100%;
+
+  }
+
+  /* ================= SECTION TAG ================= */
+  .section-tag {
+
+    font-size: 12px;
+
+    padding:
+      8px 14px;
+
+  }
+
+  /* ================= CTA BOXES ================= */
+  .home-cta-box,
+  .about-cta-box,
+  .service-cta-box,
+  .pricing-cta-box,
+  .projects-cta-box,
+  .contact-cta-box,
+  .newsletter-box,
+  .blog-cta {
+
+    padding:
+      55px 24px !important;
+
+    border-radius: 24px;
+
+  }
+
+  /* ================= CARD PADDING ================= */
+  .main-service-card,
+  .feature-card,
+  .process-card,
+  .mission-card,
+  .why-card,
+  .why-about-card,
+  .pricing-card,
+  .included-card,
+  .faq-card,
+  .pricing-faq-card,
+  .project-content,
+  .blog-content,
+  .contact-form-card,
+  .contact-info-card {
+
+    padding: 24px !important;
+
+  }
+
+  /* ================= ICONS ================= */
+  .feature-icon,
+  .mission-icon,
+  .included-icon,
+  .contact-icon {
+
+    width: 58px !important;
+    height: 58px !important;
+
+    font-size: 1.4rem !important;
+
+  }
+
+  /* ================= PROCESS NUMBER ================= */
+  .process-number {
+
+    width: 54px;
+    height: 54px;
+
+    font-size: 1rem;
+
+  }
+
+  /* ================= TERMINAL ================= */
+  .terminal-body {
+
+    font-size: 12px;
+
+  }
+
+  /* ================= PRICE ================= */
+  .price-box h3 {
+
+    font-size: 2.5rem;
+
+  }
+
+  /* ================= FOOTER ================= */
+  .footer-socials {
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+  }
+
+  .footer-bottom-links {
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+  }
+
+}
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  h1 {
+
+    font-size: 2.2rem !important;
+
+  }
+
+  h2 {
+
+    font-size: 1.7rem !important;
+
+  }
+
+  .primary-btn,
+  .secondary-btn {
+
+    font-size: 14px;
+
+    padding:
+      14px 20px;
+
+  }
+
+  .hero-card {
+
+    padding: 20px !important;
+
+  }
+
+}

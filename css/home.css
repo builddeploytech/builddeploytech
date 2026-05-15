@@ -1,0 +1,907 @@
+/* =========================================================
+   BUILDDEPLOY TECH - HOME PAGE CSS
+========================================================= */
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding-top: 180px;
+  padding-bottom: 140px;
+
+}
+
+/* ================= HERO CONTAINER ================= */
+.hero-container {
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr 0.9fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+}
+
+/* ================= HERO CONTENT ================= */
+.hero-content {
+
+  position: relative;
+  z-index: 2;
+
+}
+
+.hero-content h1 {
+
+  margin-bottom: 28px;
+
+  max-width: 760px;
+
+}
+
+.hero-content p {
+
+  max-width: 650px;
+
+  margin-bottom: 38px;
+
+  font-size: 1.1rem;
+
+  color: #cbd5e1;
+
+}
+
+/* ================= HERO BUTTONS ================= */
+.hero-buttons {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-bottom: 50px;
+
+}
+
+/* ================= HERO STATS ================= */
+.hero-stats {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 22px;
+
+}
+
+.hero-stat {
+
+  min-width: 180px;
+
+  padding:
+    24px 28px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(16px);
+
+  transition: all 0.35s ease;
+
+}
+
+.hero-stat:hover {
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+}
+
+.hero-stat h3 {
+
+  margin-bottom: 10px;
+
+  font-size: 2rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      #60a5fa,
+      #22d3ee
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.hero-stat p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #94a3b8;
+
+}
+
+/* ================= HERO VISUAL ================= */
+.hero-visual {
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* ================= HERO CARD ================= */
+.hero-card {
+
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  padding: 35px;
+
+  border-radius: 32px;
+
+  background:
+    rgba(15, 23, 42, 0.7);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
+
+}
+
+/* ================= HERO TOP ================= */
+.hero-card-top {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+
+}
+
+.hero-card-top h3 {
+
+  font-size: 1.5rem;
+
+}
+
+.live-badge {
+
+  padding:
+    10px 16px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(34, 197, 94, 0.12);
+
+  border:
+    1px solid rgba(34, 197, 94, 0.3);
+
+  color: #4ade80;
+
+  font-size: 13px;
+  font-weight: 700;
+
+}
+
+/* ================= TERMINAL ================= */
+.terminal-box {
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  background:
+    #020617;
+
+}
+
+/* ================= TERMINAL HEADER ================= */
+.terminal-header {
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    14px 18px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+}
+
+.dot {
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+}
+
+.dot.red {
+  background: #ef4444;
+}
+
+.dot.yellow {
+  background: #facc15;
+}
+
+.dot.green {
+  background: #22c55e;
+}
+
+/* ================= TERMINAL BODY ================= */
+.terminal-body {
+
+  padding:
+    22px;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #7dd3fc;
+
+  overflow-x: auto;
+
+}
+
+.terminal-body span {
+
+  color: #22c55e;
+
+}
+
+/* ================= FLOATING CARDS ================= */
+.floating-card {
+
+  position: absolute;
+
+  padding:
+    16px 20px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(15, 23, 42, 0.85);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3);
+
+}
+
+.floating-card h4 {
+
+  margin-bottom: 6px;
+
+  font-size: 15px;
+
+}
+
+.floating-card p {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #94a3b8;
+
+}
+
+.card-1 {
+
+  top: -30px;
+  right: -20px;
+
+}
+
+.card-2 {
+
+  bottom: -20px;
+  left: -20px;
+
+}
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-section {
+
+  position: relative;
+
+}
+
+/* ================= SERVICES GRID ================= */
+.services-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 30px;
+
+}
+
+/* ================= SERVICE CARD ================= */
+.main-service-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    36px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  transition: all 0.4s ease;
+
+}
+
+.main-service-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35);
+
+}
+
+.service-icon {
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.15),
+      rgba(6, 182, 212, 0.15)
+    );
+
+  font-size: 2rem;
+
+}
+
+.main-service-card h3 {
+
+  margin-bottom: 18px;
+
+}
+
+.main-service-card p {
+
+  margin-bottom: 26px;
+
+  color: #94a3b8;
+
+}
+
+.service-link {
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #60a5fa;
+
+  font-weight: 600;
+
+}
+
+.service-link:hover {
+
+  gap: 14px;
+
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.home-about-section {
+
+  position: relative;
+
+}
+
+/* ================= ABOUT GRID ================= */
+.home-about-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+}
+
+/* ================= ABOUT IMAGE ================= */
+.home-about-image {
+
+  position: relative;
+
+}
+
+.home-about-image img {
+
+  border-radius: 32px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+}
+
+/* ================= EXPERIENCE BADGE ================= */
+.experience-badge {
+
+  position: absolute;
+
+  bottom: 25px;
+  right: -20px;
+
+  padding:
+    20px 24px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(59, 130, 246, 0.25);
+
+}
+
+.experience-badge h3 {
+
+  font-size: 2rem;
+
+}
+
+.experience-badge p {
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.85);
+
+}
+
+/* ================= ABOUT CONTENT ================= */
+.home-about-content h2 {
+
+  margin-bottom: 24px;
+
+}
+
+.home-about-content p {
+
+  margin-bottom: 22px;
+
+  color: #94a3b8;
+
+}
+
+/* ================= ABOUT FEATURES ================= */
+.about-features {
+
+  margin-top: 30px;
+
+}
+
+.about-feature {
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+
+}
+
+.about-feature-icon {
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background:
+    rgba(59, 130, 246, 0.12);
+
+  color: #60a5fa;
+
+  font-size: 1.4rem;
+
+}
+
+.about-feature-content h4 {
+
+  margin-bottom: 8px;
+
+}
+
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
+
+.projects-section {
+
+  position: relative;
+
+}
+
+/* ================= PROJECT GRID ================= */
+.projects-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 30px;
+
+}
+
+/* ================= PROJECT CARD ================= */
+.project-card {
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.35s ease;
+
+}
+
+.project-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+}
+
+/* ================= PROJECT IMAGE ================= */
+.project-image {
+
+  overflow: hidden;
+
+  height: 240px;
+
+}
+
+.project-image img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+
+}
+
+.project-card:hover .project-image img {
+
+  transform:
+    scale(1.08);
+
+}
+
+/* ================= PROJECT CONTENT ================= */
+.project-content {
+
+  padding:
+    30px;
+
+}
+
+.project-content h3 {
+
+  margin-bottom: 16px;
+
+}
+
+.project-content p {
+
+  margin-bottom: 24px;
+
+}
+
+/* ================= PROJECT TECH ================= */
+.project-tech {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.home-cta-section {
+
+  position: relative;
+
+}
+
+/* ================= CTA BOX ================= */
+.home-cta-box {
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  padding:
+    90px 60px;
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.18),
+      rgba(6, 182, 212, 0.14)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+}
+
+.home-cta-box h2 {
+
+  max-width: 850px;
+
+  margin:
+    0 auto 24px;
+
+}
+
+.home-cta-box p {
+
+  max-width: 720px;
+
+  margin:
+    0 auto 34px;
+
+  color: #cbd5e1;
+
+}
+
+/* ================= CTA BUTTONS ================= */
+.cta-buttons {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .hero-container,
+  .home-about-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .hero-content {
+
+    text-align: center;
+
+  }
+
+  .hero-content p {
+
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .hero-buttons,
+  .hero-stats {
+
+    justify-content: center;
+
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .services-grid,
+  .projects-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+  .home-cta-box {
+
+    padding:
+      70px 40px;
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-section {
+
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+  }
+
+  .services-grid,
+  .projects-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .hero-buttons,
+  .cta-buttons {
+
+    flex-direction: column;
+
+  }
+
+  .hero-stat {
+
+    width: 100%;
+
+  }
+
+  .home-cta-box {
+
+    padding:
+      60px 24px;
+
+    border-radius: 28px;
+
+  }
+
+  .main-service-card,
+  .project-content {
+
+    padding: 26px;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero-card {
+
+    padding: 24px;
+
+  }
+
+  .floating-card {
+
+    position: relative;
+
+    margin-top: 18px;
+
+    inset: auto !important;
+
+  }
+
+  .terminal-body {
+
+    font-size: 12px;
+
+  }
+
+}

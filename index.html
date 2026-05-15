@@ -1,440 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic SEO -->
+
+  <!-- ================= SEO ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BuildDeploy Tech | DevOps, Cloud & Software Solutions</title>
+  <title>
+    BuildDeploy Tech | DevOps, Cloud, Web & Mobile App Solutions
+  </title>
 
   <meta
     name="description"
-    content="BuildDeploy Tech is a DevOps-first software company providing Web Development, AWS Cloud, DevOps Automation, Mobile App Development and SEO Solutions."
+    content="BuildDeploy Tech is a DevOps-first software company delivering scalable web development, mobile applications, AWS cloud infrastructure, DevOps automation and SEO solutions."
   />
 
-  <!-- Open Graph -->
+  <meta
+    name="keywords"
+    content="DevOps company, AWS cloud solutions, web development company, mobile app development, SEO agency, CI/CD automation, BuildDeploy Tech"
+  />
+
+  <meta name="author" content="BuildDeploy Tech" />
+
+  <link rel="canonical" href="https://builddeploytech.com/" />
+
+  <!-- ================= OPEN GRAPH ================= -->
   <meta property="og:title" content="BuildDeploy Tech" />
-  <meta property="og:description" content="We Build • We Deploy • We Scale" />
+  <meta
+    property="og:description"
+    content="We Build • We Deploy • We Scale"
+  />
+
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://builddeploytech.com/" />
+  <meta property="og:image" content="/images/logo.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" />
+  <!-- ================= FAVICON ================= -->
+  <link rel="icon" href="/images/logo.png" type="image/png" />
 
-  <!-- Google Font -->
+  <!-- ================= GOOGLE FONT ================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/header-footer.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
-    :root{
-      --bg:#050816;
-      --card:#0b1225;
-      --primary:#3b82f6;
-      --secondary:#06b6d4;
-      --text:#ffffff;
-      --muted:#94a3b8;
-      --border:rgba(255,255,255,0.08);
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-    }
-
-    /* Navbar */
-
-    nav{
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(16px);
-      background:rgba(5,8,22,0.7);
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav-wrapper{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 0;
-    }
-
-    .logo{
-      font-size:1.5rem;
-      font-weight:800;
-      color:#fff;
-    }
-
-    .logo span{
-      color:var(--primary);
-    }
-
-    .nav-links{
-      display:flex;
-      gap:30px;
-    }
-
-    .nav-links a{
-      color:#fff;
-      text-decoration:none;
-      font-size:0.95rem;
-      transition:0.3s;
-    }
-
-    .nav-links a:hover{
-      color:var(--secondary);
-    }
-
-    /* Hero */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero::before{
-      content:'';
-      position:absolute;
-      width:500px;
-      height:500px;
-      background:rgba(59,130,246,0.25);
-      filter:blur(120px);
-      top:-100px;
-      right:-100px;
-    }
-
-    .hero::after{
-      content:'';
-      position:absolute;
-      width:400px;
-      height:400px;
-      background:rgba(6,182,212,0.2);
-      filter:blur(120px);
-      bottom:-100px;
-      left:-100px;
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:800px;
-    }
-
-    .badge{
-      display:inline-block;
-      padding:10px 18px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.05);
-      border-radius:50px;
-      margin-bottom:25px;
-      color:#cbd5e1;
-      font-size:0.9rem;
-    }
-
-    .hero h1{
-      font-size:4rem;
-      line-height:1.1;
-      margin-bottom:25px;
-      font-weight:800;
-    }
-
-    .gradient{
-      background:linear-gradient(to right,#3b82f6,#06b6d4);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .hero p{
-      color:var(--muted);
-      font-size:1.15rem;
-      line-height:1.8;
-      margin-bottom:40px;
-      max-width:700px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:15px 28px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.3s;
-    }
-
-    .btn-primary{
-      background:linear-gradient(to right,#3b82f6,#06b6d4);
-      color:#fff;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-3px);
-      box-shadow:0 10px 30px rgba(59,130,246,0.3);
-    }
-
-    .btn-secondary{
-      border:1px solid var(--border);
-      color:#fff;
-      background:rgba(255,255,255,0.04);
-    }
-
-    .btn-secondary:hover{
-      background:rgba(255,255,255,0.08);
-    }
-
-    /* Services */
-
-    .services{
-      padding:100px 0;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:2.5rem;
-      margin-bottom:20px;
-    }
-
-    .section-subtitle{
-      text-align:center;
-      color:var(--muted);
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-      margin-bottom:60px;
-    }
-
-    .service-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
-    }
-
-    .service-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      padding:35px;
-      border-radius:24px;
-      transition:0.4s;
-    }
-
-    .service-card:hover{
-      transform:translateY(-10px);
-      border-color:rgba(59,130,246,0.5);
-    }
-
-    .service-card h3{
-      margin:20px 0 15px;
-      font-size:1.3rem;
-    }
-
-    .service-card p{
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .icon{
-      font-size:2rem;
-    }
-
-    /* CTA */
-
-    .cta{
-      padding:100px 0;
-    }
-
-    .cta-box{
-      background:linear-gradient(
-        135deg,
-        rgba(59,130,246,0.15),
-        rgba(6,182,212,0.12)
-      );
-
-      border:1px solid var(--border);
-
-      padding:60px;
-      border-radius:30px;
-      text-align:center;
-    }
-
-    .cta-box h2{
-      font-size:2.5rem;
-      margin-bottom:20px;
-    }
-
-    .cta-box p{
-      color:var(--muted);
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-      margin-bottom:35px;
-    }
-
-    /* Footer */
-
-    footer{
-      padding:40px 0;
-      border-top:1px solid var(--border);
-      text-align:center;
-      color:var(--muted);
-    }
-
-    /* Responsive */
-
-    @media(max-width:768px){
-
-      .nav-links{
-        display:none;
-      }
-
-      .hero h1{
-        font-size:2.6rem;
-      }
-
-      .hero{
-        text-align:center;
-      }
-
-      .hero-buttons{
-        justify-content:center;
-      }
-
-      .section-title{
-        font-size:2rem;
-      }
-
-      .cta-box{
-        padding:40px 25px;
-      }
-
-      .cta-box h2{
-        font-size:2rem;
-      }
-    }
-
-  </style>
 </head>
 
-<body>
+<body class="home-page">
 
-  <!-- Navbar -->
-  <nav>
-    <div class="container nav-wrapper">
-      <div class="logo">
-        BuildDeploy<span>Tech</span>
+  <!-- ================= HEADER ================= -->
+  <div id="header-placeholder"></div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero-section">
+
+    <div class="hero-blur hero-blur-1"></div>
+    <div class="hero-blur hero-blur-2"></div>
+
+    <div class="container hero-container">
+
+      <!-- LEFT -->
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          DevOps • Cloud • Web • Mobile • SEO
+        </div>
+
+        <h1>
+          We Build.
+          <span>We Deploy.</span>
+          We Scale.
+        </h1>
+
+        <p class="hero-description">
+          BuildDeploy Tech is a DevOps-first software company delivering
+          scalable websites, cloud infrastructure, automation pipelines,
+          mobile applications and SEO-focused digital solutions.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="/contact.html" class="primary-btn">
+            Start Your Project
+          </a>
+
+          <a href="/services.html" class="secondary-btn">
+            Explore Services
+          </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div class="hero-stat">
+            <h3>28+</h3>
+            <p>Projects Delivered</p>
+          </div>
+
+          <div class="hero-stat">
+            <h3>99%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+
+          <div class="hero-stat">
+            <h3>24/7</h3>
+            <p>Technical Support</p>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Blogs</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
-  </nav>
+      <!-- RIGHT -->
+      <div class="hero-visual">
 
-  <!-- Hero -->
-  <section class="hero">
+        <div class="hero-card">
 
-    <div class="container hero-content">
+          <div class="hero-card-top">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
 
-      <div class="badge">
-        DevOps • Cloud • Web • Mobile • SEO
-      </div>
+          <div class="terminal-content">
 
-      <h1>
-        We Build.
-        <span class="gradient">We Deploy.</span>
-        We Scale.
-      </h1>
+            <p>
+              <span class="terminal-green">$</span>
+              Deploying production infrastructure...
+            </p>
 
-      <p>
-        BuildDeploy Tech is a DevOps-first software company delivering
-        scalable websites, cloud infrastructure, mobile apps,
-        automation pipelines and SEO-focused digital solutions.
-      </p>
+            <p>
+              <span class="terminal-blue">✓</span>
+              CI/CD Pipeline Connected
+            </p>
 
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">
-          Start Your Project
-        </a>
+            <p>
+              <span class="terminal-blue">✓</span>
+              Docker Containers Running
+            </p>
 
-        <a href="#" class="btn btn-secondary">
-          Explore Services
-        </a>
+            <p>
+              <span class="terminal-blue">✓</span>
+              AWS Infrastructure Active
+            </p>
+
+            <p>
+              <span class="terminal-blue">✓</span>
+              SSL & Security Configured
+            </p>
+
+            <p>
+              <span class="terminal-green">$</span>
+              builddeploytech.com is live 🚀
+            </p>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
   </section>
 
-  <!-- Services -->
-  <section class="services">
+  <!-- ================= TECHNOLOGIES ================= -->
+  <section class="tech-section">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Our Core Services
-      </h2>
+      <div class="tech-scroll">
 
-      <p class="section-subtitle">
-        Modern technology solutions engineered for performance,
-        automation, scalability and business growth.
-      </p>
+        <span>AWS</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>Jenkins</span>
+        <span>GitHub Actions</span>
+        <span>Linux</span>
+        <span>Terraform</span>
+        <span>Flutter</span>
+        <span>React</span>
+        <span>Laravel</span>
 
-      <div class="service-grid">
+      </div>
 
+    </div>
+
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="services-section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">
+          Our Services
+        </span>
+
+        <h2>
+          Scalable Technology Solutions
+          Built For Modern Businesses
+        </h2>
+
+        <p>
+          From cloud infrastructure and DevOps automation
+          to web development and SEO growth strategies —
+          we engineer reliable digital ecosystems.
+        </p>
+
+      </div>
+
+      <div class="services-grid">
+
+        <!-- CARD -->
         <div class="service-card">
-          <div class="icon">☁️</div>
-          <h3>DevOps & AWS</h3>
+
+          <div class="service-icon">
+            ☁️
+          </div>
+
+          <h3>
+            DevOps & Cloud
+          </h3>
+
           <p>
-            CI/CD pipelines, Docker, Kubernetes and scalable cloud infrastructure.
+            AWS infrastructure, CI/CD pipelines,
+            Docker, Kubernetes and deployment automation.
+          </p>
+
+          <a href="/services/devops-cloud.html">
+            Learn More →
+          </a>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="service-card">
+
+          <div class="service-icon">
+            💻
+          </div>
+
+          <h3>
+            Web Development
+          </h3>
+
+          <p>
+            SEO-optimized, high-performance websites
+            and scalable web applications.
+          </p>
+
+          <a href="/services/web-development.html">
+            Learn More →
+          </a>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="service-card">
+
+          <div class="service-icon">
+            📱
+          </div>
+
+          <h3>
+            Mobile Apps
+          </h3>
+
+          <p>
+            Android and cross-platform applications
+            designed for performance and usability.
+          </p>
+
+          <a href="/services/app-development.html">
+            Learn More →
+          </a>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="service-card">
+
+          <div class="service-icon">
+            📈
+          </div>
+
+          <h3>
+            SEO Services
+          </h3>
+
+          <p>
+            Technical SEO, content strategy
+            and ranking-focused optimization.
+          </p>
+
+          <a href="/services/seo-services.html">
+            Learn More →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= WHY US ================= -->
+  <section class="why-section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">
+          Why BuildDeploy Tech
+        </span>
+
+        <h2>
+          Engineered With A DevOps-First Mindset
+        </h2>
+
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <h3>Automation Driven</h3>
+          <p>
+            CI/CD, infrastructure automation and deployment pipelines
+            designed for speed and reliability.
           </p>
         </div>
 
-        <div class="service-card">
-          <div class="icon">💻</div>
-          <h3>Web Development</h3>
+        <div class="why-card">
+          <h3>Cloud Scalable</h3>
           <p>
-            Fast, responsive and SEO-optimized websites and web applications.
+            Production-ready AWS infrastructure built
+            for security, scalability and performance.
           </p>
         </div>
 
-        <div class="service-card">
-          <div class="icon">📱</div>
-          <h3>Mobile Apps</h3>
+        <div class="why-card">
+          <h3>SEO Focused</h3>
           <p>
-            Modern Android & cross-platform mobile applications with premium UX.
+            Websites optimized for visibility,
+            indexing and long-term organic growth.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <h3>Reliable Support</h3>
+          <p>
+            Long-term maintenance, monitoring and
+            technical support for every deployment.
           </p>
         </div>
 
@@ -444,25 +374,121 @@
 
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
+  <!-- ================= PROJECTS ================= -->
+  <section class="projects-section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">
+          Featured Projects
+        </span>
+
+        <h2>
+          Real Businesses. Real Deployments.
+        </h2>
+
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT -->
+        <div class="project-card">
+
+          <div class="project-content">
+
+            <span class="project-label">
+              Healthcare Platform
+            </span>
+
+            <h3>
+              SinghaniaMed
+            </h3>
+
+            <p>
+              SEO-optimized healthcare website
+              engineered for performance and business growth.
+            </p>
+
+            <a href="https://singhaniamed.com" target="_blank">
+              Visit Website →
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-card">
+
+          <div class="project-content">
+
+            <span class="project-label">
+              Mobile Ecosystem
+            </span>
+
+            <h3>
+              GoGeneric Apps
+            </h3>
+
+            <p>
+              Production-grade Android applications
+              powering real business operations.
+            </p>
+
+            <a
+              href="https://play.google.com/store/apps/dev?id=6729715687703980161"
+              target="_blank"
+            >
+              View Apps →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-section">
 
     <div class="container">
 
       <div class="cta-box">
 
+        <span class="section-tag">
+          Let’s Build Together
+        </span>
+
         <h2>
-          Ready To Build Something Great?
+          Ready To Scale Your Business?
         </h2>
 
         <p>
-          Let’s transform your ideas into secure,
-          scalable and production-ready digital solutions.
+          Let BuildDeploy Tech design, deploy and optimize
+          your next digital product or cloud infrastructure.
         </p>
 
-        <a href="#" class="btn btn-primary">
-          Contact BuildDeploy Tech
-        </a>
+        <div class="cta-buttons">
+
+          <a href="/contact.html" class="primary-btn">
+            Get Free Consultation
+          </a>
+
+          <a
+            href="https://wa.me/916392930918"
+            target="_blank"
+            class="secondary-btn"
+          >
+            WhatsApp Us
+          </a>
+
+        </div>
 
       </div>
 
@@ -470,12 +496,13 @@
 
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      © 2026 BuildDeploy Tech • All Rights Reserved
-    </div>
-  </footer>
+  <!-- ================= FOOTER ================= -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================= JS ================= -->
+  <script src="/js/main.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/animations.js"></script>
 
 </body>
 </html>

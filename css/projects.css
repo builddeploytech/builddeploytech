@@ -1,0 +1,649 @@
+/* =========================================================
+   BUILDDEPLOY TECH - PROJECTS PAGE CSS
+========================================================= */
+
+/* ================= HERO SECTION ================= */
+.projects-hero {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding-top: 180px;
+  padding-bottom: 130px;
+
+}
+
+/* ================= HERO CONTAINER ================= */
+.projects-hero-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+}
+
+/* ================= HERO CONTENT ================= */
+.projects-hero-content {
+
+  position: relative;
+  z-index: 2;
+
+  max-width: 950px;
+
+}
+
+.projects-hero-content h1 {
+
+  margin-bottom: 28px;
+
+}
+
+.projects-hero-content p {
+
+  max-width: 760px;
+
+  margin: auto;
+
+  font-size: 1.1rem;
+
+  color: #cbd5e1;
+
+}
+
+/* =========================================================
+   FILTER SECTION
+========================================================= */
+
+.project-filter-section {
+
+  position: relative;
+
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+}
+
+/* ================= FILTER WRAPPER ================= */
+.project-filter-wrapper {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+}
+
+/* ================= FILTER BUTTON ================= */
+.filter-btn {
+
+  padding:
+    14px 22px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  color: #dbeafe;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  border-color: transparent;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(59, 130, 246, 0.25);
+
+}
+
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
+
+.projects-main-section {
+
+  position: relative;
+
+}
+
+/* ================= PROJECT GRID ================= */
+.projects-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 32px;
+
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.4s ease;
+
+}
+
+.project-card:hover {
+
+  transform:
+    translateY(-12px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35);
+
+}
+
+/* ================= IMAGE ================= */
+.project-image {
+
+  position: relative;
+
+  overflow: hidden;
+
+  height: 260px;
+
+}
+
+.project-image img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.55s ease;
+
+}
+
+.project-card:hover .project-image img {
+
+  transform:
+    scale(1.08);
+
+}
+
+/* ================= OVERLAY ================= */
+.project-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 24px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition: all 0.35s ease;
+
+}
+
+.project-card:hover .project-overlay {
+
+  opacity: 1;
+
+}
+
+/* ================= OVERLAY BUTTON ================= */
+.project-overlay a {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    12px 20px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.project-content {
+
+  padding:
+    34px;
+
+}
+
+/* ================= CATEGORY ================= */
+.project-category {
+
+  display: inline-flex;
+
+  padding:
+    8px 14px;
+
+  margin-bottom: 18px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(59, 130, 246, 0.12);
+
+  border:
+    1px solid rgba(59, 130, 246, 0.22);
+
+  color: #7dd3fc;
+
+  font-size: 13px;
+  font-weight: 700;
+
+}
+
+/* ================= TITLE ================= */
+.project-content h3 {
+
+  margin-bottom: 16px;
+
+  line-height: 1.4;
+
+}
+
+/* ================= DESCRIPTION ================= */
+.project-content p {
+
+  margin-bottom: 24px;
+
+  color: #94a3b8;
+
+}
+
+/* ================= TECH STACK ================= */
+.project-tech {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+
+}
+
+.project-tech span {
+
+  padding:
+    10px 14px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color: #dbeafe;
+
+  font-size: 13px;
+  font-weight: 600;
+
+}
+
+/* ================= PROJECT FOOTER ================= */
+.project-footer {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+}
+
+/* ================= STATUS ================= */
+.project-status {
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #4ade80;
+
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.status-dot {
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.7);
+
+}
+
+/* ================= LINK ================= */
+.project-link {
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #60a5fa;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+
+}
+
+.project-link:hover {
+
+  gap: 14px;
+
+}
+
+/* =========================================================
+   STATS SECTION
+========================================================= */
+
+.project-stats-section {
+
+  position: relative;
+
+}
+
+/* ================= STATS GRID ================= */
+.project-stats-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 28px;
+
+}
+
+/* ================= STAT CARD ================= */
+.project-stat-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  padding:
+    40px 30px;
+
+  border-radius: 32px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.35s ease;
+
+}
+
+.project-stat-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(59, 130, 246, 0.3);
+
+}
+
+.project-stat-card h3 {
+
+  margin-bottom: 12px;
+
+  font-size: 3rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      #60a5fa,
+      #22d3ee
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.project-stat-card p {
+
+  color: #94a3b8;
+
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.projects-cta-section {
+
+  position: relative;
+
+}
+
+/* ================= CTA BOX ================= */
+.projects-cta-box {
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  padding:
+    90px 60px;
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.16),
+      rgba(6, 182, 212, 0.12)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+}
+
+.projects-cta-box h2 {
+
+  margin-bottom: 24px;
+
+}
+
+.projects-cta-box p {
+
+  max-width: 760px;
+
+  margin:
+    0 auto 34px;
+
+  color: #cbd5e1;
+
+}
+
+/* ================= BUTTONS ================= */
+.cta-buttons {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .projects-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+  .project-stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .projects-hero {
+
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+  }
+
+  .projects-grid,
+  .project-stats-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .projects-cta-box {
+
+    padding:
+      65px 26px;
+
+    border-radius: 28px;
+
+  }
+
+  .cta-buttons {
+
+    flex-direction: column;
+
+  }
+
+  .project-content,
+  .project-stat-card {
+
+    padding: 28px;
+
+  }
+
+  .project-image {
+
+    height: 230px;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .project-footer {
+
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  .filter-btn {
+
+    width: 100%;
+
+    text-align: center;
+
+  }
+
+}
