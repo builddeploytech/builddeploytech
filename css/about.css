@@ -1,55 +1,177 @@
 /* =========================================================
-   BUILDDEPLOY TECH - ABOUT PAGE CSS
+   ABOUT PAGE PREMIUM UI
 ========================================================= */
 
-/* ================= HERO SECTION ================= */
-.about-hero {
+.about-page{
 
-  position: relative;
+  background:
+  linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #ffffff 100%
+  );
 
-  overflow: hidden;
-
-  padding-top: 180px;
-  padding-bottom: 130px;
-
-}
-
-/* ================= HERO CONTAINER ================= */
-.about-hero-container {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
+  overflow-x:hidden;
 
 }
 
-/* ================= HERO CONTENT ================= */
-.about-hero-content {
+/* =========================================================
+   HERO SECTION
+========================================================= */
 
-  max-width: 900px;
+.about-hero{
 
-  position: relative;
-  z-index: 2;
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+  180px 0 120px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #eef4ff 45%,
+    #ffffff 100%
+  );
 
 }
 
-.about-hero-content h1 {
+.hero-blur{
 
-  margin-bottom: 28px;
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(90px);
+
+  opacity:0.4;
 
 }
 
-.about-hero-content p {
+.hero-blur-1{
 
-  max-width: 760px;
+  width:320px;
+  height:320px;
 
-  margin: auto;
+  background:#2563eb;
 
-  font-size: 1.12rem;
+  top:-100px;
+  right:-100px;
 
-  color: #cbd5e1;
+}
+
+.hero-blur-2{
+
+  width:280px;
+  height:280px;
+
+  background:#7c3aed;
+
+  left:-100px;
+  bottom:-100px;
+
+}
+
+.about-hero-container{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.about-hero-content{
+
+  max-width:920px;
+
+  margin:auto;
+
+  text-align:center;
+
+}
+
+/* =========================================================
+   SECTION TAG
+========================================================= */
+
+.section-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  12px 22px;
+
+  border-radius:999px;
+
+  background:
+  rgba(37,99,235,0.08);
+
+  border:
+  1px solid rgba(37,99,235,0.10);
+
+  color:#2563eb;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  text-transform:uppercase;
+
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.about-hero-content h1{
+
+  font-size:68px;
+
+  line-height:1.1;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+  margin:
+  28px 0;
+
+}
+
+.about-hero-content h1 span{
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed,
+    #0ea5e9
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+.about-hero-content p{
+
+  max-width:760px;
+
+  margin:auto;
+
+  color:#64748b;
+
+  font-size:19px;
+
+  line-height:1.9;
 
 }
 
@@ -57,150 +179,122 @@
    COMPANY SECTION
 ========================================================= */
 
-.company-section {
-
-  position: relative;
-
-}
-
-/* ================= COMPANY GRID ================= */
-.company-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 80px;
-
-  align-items: center;
-
-}
-
-/* ================= IMAGE ================= */
-.company-image {
-
-  position: relative;
-
-}
-
-.company-image img {
-
-  width: 100%;
-
-  border-radius: 32px;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
-
-}
-
-/* ================= EXPERIENCE BADGE ================= */
-.company-badge {
-
-  position: absolute;
-
-  bottom: 30px;
-  right: -20px;
+.company-section{
 
   padding:
-    22px 26px;
+  120px 0;
 
-  border-radius: 24px;
+}
 
-  background:
-    linear-gradient(
-      135deg,
-      #3b82f6,
-      #06b6d4
-    );
+.company-grid{
 
-  color: #ffffff;
+  display:grid;
+
+  grid-template-columns:
+  1.2fr 0.8fr;
+
+  gap:60px;
+
+  align-items:center;
+
+}
+
+.company-content h2{
+
+  font-size:54px;
+
+  line-height:1.2;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin:
+  24px 0;
+
+}
+
+.company-content p{
+
+  color:#64748b;
+
+  line-height:2;
+
+  font-size:17px;
+
+  margin-bottom:24px;
+
+}
+
+/* =========================================================
+   COMPANY CARD
+========================================================= */
+
+.company-card-box{
+
+  background:#ffffff;
+
+  border-radius:36px;
+
+  padding:50px 40px;
+
+  border:
+  1px solid rgba(37,99,235,0.06);
 
   box-shadow:
-    0 15px 35px rgba(59, 130, 246, 0.3);
+  0 20px 60px rgba(15,23,42,0.06);
 
 }
 
-.company-badge h3 {
+.company-card-box h3{
 
-  font-size: 2rem;
+  font-size:34px;
 
-  margin-bottom: 6px;
+  font-weight:800;
 
-}
+  color:#0f172a;
 
-.company-badge p {
-
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.85);
+  margin-bottom:32px;
 
 }
 
-/* ================= CONTENT ================= */
-.company-content h2 {
+.company-card-box ul{
 
-  margin-bottom: 24px;
+  display:flex;
 
-}
+  flex-direction:column;
 
-.company-content p {
-
-  margin-bottom: 22px;
-
-  color: #94a3b8;
+  gap:18px;
 
 }
 
-/* ================= COMPANY FEATURES ================= */
-.company-features {
+.company-card-box ul li{
 
-  margin-top: 40px;
+  list-style:none;
 
-}
+  color:#334155;
 
-.company-feature {
+  font-weight:600;
 
-  display: flex;
-  align-items: flex-start;
+  font-size:16px;
 
-  gap: 18px;
+  position:relative;
 
-  margin-bottom: 28px;
+  padding-left:32px;
 
 }
 
-.company-feature-icon {
+.company-card-box ul li::before{
 
-  width: 58px;
-  height: 58px;
+  content:"✓";
 
-  flex-shrink: 0;
+  position:absolute;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left:0;
 
-  border-radius: 18px;
+  color:#2563eb;
 
-  background:
-    rgba(59, 130, 246, 0.12);
-
-  color: #60a5fa;
-
-  font-size: 1.6rem;
-
-}
-
-.company-feature-content h4 {
-
-  margin-bottom: 10px;
-
-  font-size: 1.15rem;
+  font-weight:800;
 
 }
 
@@ -208,164 +302,98 @@
    MISSION SECTION
 ========================================================= */
 
-.mission-section {
-
-  position: relative;
-
-}
-
-/* ================= MISSION GRID ================= */
-.mission-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 30px;
-
-}
-
-/* ================= MISSION CARD ================= */
-.mission-card {
-
-  position: relative;
-
-  overflow: hidden;
+.mission-section{
 
   padding:
-    40px 34px;
-
-  border-radius: 30px;
-
-  background:
-    rgba(255, 255, 255, 0.03);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(16px);
-
-  transition: all 0.35s ease;
+  40px 0 120px;
 
 }
 
-.mission-card:hover {
+.mission-grid{
 
-  transform:
-    translateY(-10px);
-
-  border-color:
-    rgba(59, 130, 246, 0.3);
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
-
-}
-
-/* ================= ICON ================= */
-.mission-icon {
-
-  width: 72px;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 24px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.14),
-      rgba(6, 182, 212, 0.14)
-    );
-
-  font-size: 2rem;
-
-}
-
-.mission-card h3 {
-
-  margin-bottom: 16px;
-
-}
-
-.mission-card p {
-
-  color: #94a3b8;
-
-}
-
-/* =========================================================
-   WHY CHOOSE SECTION
-========================================================= */
-
-.why-about-section {
-
-  position: relative;
-
-}
-
-/* ================= WHY GRID ================= */
-.why-about-grid {
-
-  display: grid;
+  display:grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+  repeat(2,1fr);
 
-  gap: 30px;
+  gap:32px;
 
 }
 
-/* ================= WHY CARD ================= */
-.why-about-card {
+.mission-card{
 
-  position: relative;
+  background:#ffffff;
 
-  overflow: hidden;
+  border-radius:36px;
 
-  padding:
-    34px;
-
-  border-radius: 28px;
-
-  background:
-    rgba(255, 255, 255, 0.03);
+  padding:50px 42px;
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  transition: all 0.35s ease;
-
-}
-
-.why-about-card:hover {
-
-  transform:
-    translateY(-8px);
-
-  border-color:
-    rgba(59, 130, 246, 0.28);
+  1px solid rgba(37,99,235,0.06);
 
   box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.3);
+  0 20px 60px rgba(15,23,42,0.05);
+
+  transition:0.35s ease;
 
 }
 
-.why-about-card h3 {
+.mission-card:hover{
 
-  margin-bottom: 16px;
+  transform:
+  translateY(-10px);
+
+  box-shadow:
+  0 40px 80px rgba(37,99,235,0.14);
 
 }
 
-.why-about-card p {
+.mission-icon{
 
-  color: #94a3b8;
+  width:80px;
+  height:80px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color:#ffffff;
+
+  font-size:34px;
+
+  margin-bottom:28px;
+
+}
+
+.mission-card h3{
+
+  font-size:32px;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin-bottom:18px;
+
+}
+
+.mission-card p{
+
+  color:#64748b;
+
+  line-height:1.9;
+
+  font-size:16px;
 
 }
 
@@ -373,149 +401,263 @@
    FOUNDER SECTION
 ========================================================= */
 
-.founder-section {
+.founder-section{
 
-  position: relative;
+  padding:
+  40px 0 120px;
 
 }
 
-/* ================= FOUNDER GRID ================= */
-.founder-grid {
+.founder-grid{
 
-  display: grid;
+  display:grid;
 
   grid-template-columns:
-    0.9fr 1.1fr;
+  0.9fr 1.1fr;
 
-  gap: 70px;
+  gap:70px;
 
-  align-items: center;
-
-}
-
-/* ================= IMAGE ================= */
-.founder-image {
-
-  position: relative;
+  align-items:center;
 
 }
 
-.founder-image img {
+.founder-image{
 
-  width: 100%;
+  position:relative;
 
-  border-radius: 32px;
+}
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+.founder-image img{
+
+  width:100%;
+
+  border-radius:40px;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
+  0 40px 100px rgba(15,23,42,0.12);
 
 }
 
-/* ================= CONTENT ================= */
-.founder-content h2 {
+.founder-content h2{
 
-  margin-bottom: 22px;
+  font-size:58px;
+
+  line-height:1.1;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+  margin:
+  24px 0 12px;
 
 }
 
-.founder-content p {
+.founder-content h4{
 
-  margin-bottom: 22px;
+  font-size:20px;
 
-  color: #94a3b8;
+  color:#2563eb;
+
+  margin-bottom:26px;
+
+  font-weight:700;
 
 }
 
-/* ================= SKILLS ================= */
-.founder-skills {
+.founder-content p{
 
-  margin-top: 30px;
+  color:#64748b;
+
+  line-height:2;
+
+  font-size:17px;
+
+  margin-bottom:22px;
 
 }
 
 /* =========================================================
-   STATS SECTION
+   SKILLS
 ========================================================= */
 
-.about-stats-section {
+.founder-skills{
 
-  position: relative;
+  display:flex;
 
-}
+  flex-wrap:wrap;
 
-/* ================= STATS GRID ================= */
-.about-stats-grid {
+  gap:14px;
 
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 26px;
+  margin-top:34px;
 
 }
 
-/* ================= STAT CARD ================= */
-.about-stat-card {
-
-  position: relative;
-
-  overflow: hidden;
-
-  text-align: center;
+.founder-skills span{
 
   padding:
-    40px 28px;
+  12px 18px;
 
-  border-radius: 30px;
+  border-radius:999px;
 
   background:
-    rgba(255, 255, 255, 0.03);
+  rgba(37,99,235,0.08);
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+  color:#2563eb;
 
-  transition: all 0.35s ease;
+  font-size:14px;
+
+  font-weight:700;
 
 }
 
-.about-stat-card:hover {
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.founder-buttons{
+
+  margin-top:38px;
+
+}
+
+.primary-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  18px 34px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+  color:#ffffff;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,0.22);
+
+  transition:0.35s ease;
+
+}
+
+.primary-btn:hover{
 
   transform:
-    translateY(-10px);
+  translateY(-5px);
 
-  border-color:
-    rgba(59, 130, 246, 0.3);
-
-}
-
-/* ================= STAT NUMBER ================= */
-.about-stat-card h3 {
-
-  margin-bottom: 12px;
-
-  font-size: 2.8rem;
-
-  background:
-    linear-gradient(
-      90deg,
-      #60a5fa,
-      #22d3ee
-    );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  box-shadow:
+  0 30px 60px rgba(37,99,235,0.28);
 
 }
 
-.about-stat-card p {
+/* =========================================================
+   WHY SECTION
+========================================================= */
 
-  color: #94a3b8;
+.why-about-section{
 
-  margin: 0;
+  padding:
+  40px 0 120px;
+
+}
+
+.section-header{
+
+  text-align:center;
+
+  max-width:760px;
+
+  margin:
+  0 auto 70px;
+
+}
+
+.section-header h2{
+
+  font-size:52px;
+
+  line-height:1.2;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin:
+  24px 0;
+
+}
+
+.why-about-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:30px;
+
+}
+
+.why-about-card{
+
+  background:#ffffff;
+
+  border-radius:34px;
+
+  padding:42px;
+
+  border:
+  1px solid rgba(37,99,235,0.06);
+
+  box-shadow:
+  0 20px 60px rgba(15,23,42,0.05);
+
+  transition:0.35s ease;
+
+}
+
+.why-about-card:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 35px 70px rgba(37,99,235,0.12);
+
+}
+
+.why-about-card h3{
+
+  font-size:28px;
+
+  line-height:1.4;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin-bottom:18px;
+
+}
+
+.why-about-card p{
+
+  color:#64748b;
+
+  line-height:1.9;
 
 }
 
@@ -523,65 +665,135 @@
    CTA SECTION
 ========================================================= */
 
-.about-cta-section {
-
-  position: relative;
-
-}
-
-/* ================= CTA BOX ================= */
-.about-cta-box {
-
-  position: relative;
-
-  overflow: hidden;
-
-  text-align: center;
+.about-cta-section{
 
   padding:
-    90px 60px;
+  70px 0 130px;
 
-  border-radius: 40px;
+}
+
+.about-cta-box{
+
+  position:relative;
+
+  overflow:hidden;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.16),
-      rgba(6, 182, 212, 0.12)
-    );
+  linear-gradient(
+    135deg,
+    #0f172a,
+    #111827,
+    #1e293b
+  );
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+  border-radius:42px;
 
-  backdrop-filter: blur(18px);
+  padding:
+  90px 60px;
+
+  text-align:center;
+
+  color:#ffffff;
+
+  box-shadow:
+  0 40px 100px rgba(15,23,42,0.18);
 
 }
 
-.about-cta-box h2 {
+.about-cta-box::before{
 
-  margin-bottom: 24px;
+  content:"";
+
+  position:absolute;
+
+  top:-150px;
+  right:-150px;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.10),
+    transparent 70%
+  );
 
 }
 
-.about-cta-box p {
+.about-cta-box h2{
 
-  max-width: 760px;
+  font-size:56px;
+
+  line-height:1.2;
+
+  font-weight:800;
 
   margin:
-    0 auto 34px;
-
-  color: #cbd5e1;
+  24px 0;
 
 }
 
-/* ================= CTA BUTTONS ================= */
-.cta-buttons {
+.about-cta-box p{
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  max-width:760px;
 
-  gap: 18px;
+  margin:
+  0 auto 40px;
+
+  color:
+  rgba(255,255,255,0.72);
+
+  line-height:1.9;
+
+  font-size:18px;
+
+}
+
+.cta-buttons{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:18px;
+
+  flex-wrap:wrap;
+
+}
+
+.secondary-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  18px 34px;
+
+  border-radius:18px;
+
+  border:
+  1px solid rgba(255,255,255,0.14);
+
+  color:#ffffff;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:0.35s ease;
+
+}
+
+.secondary-btn:hover{
+
+  background:
+  rgba(255,255,255,0.08);
 
 }
 
@@ -589,98 +801,99 @@
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media(max-width:1200px){
 
   .company-grid,
-  .founder-grid {
+  .founder-grid{
 
-    grid-template-columns: 1fr;
-
-  }
-
-}
-
-@media (max-width: 992px) {
-
-  .mission-grid,
-  .about-stats-grid {
-
-    grid-template-columns:
-      repeat(2, 1fr);
-
-  }
-
-  .why-about-grid {
-
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
 
   }
 
 }
 
-@media (max-width: 768px) {
+@media(max-width:992px){
 
-  .about-hero {
+  .about-hero-content h1{
 
-    padding-top: 150px;
-    padding-bottom: 100px;
+    font-size:54px;
 
   }
+
+  .company-content h2,
+  .founder-content h2,
+  .section-header h2{
+
+    font-size:44px;
+
+  }
+
+}
+
+@media(max-width:768px){
 
   .mission-grid,
-  .about-stats-grid {
+  .why-about-grid{
 
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
 
   }
 
-  .about-cta-box {
+  .about-hero{
 
     padding:
-      65px 28px;
-
-    border-radius: 28px;
+    150px 0 90px;
 
   }
 
-  .mission-card,
-  .why-about-card,
-  .about-stat-card {
+  .about-hero-content h1{
 
-    padding: 28px;
+    font-size:40px;
 
   }
 
-  .cta-buttons {
+  .about-cta-box{
 
-    flex-direction: column;
+    padding:
+    70px 30px;
+
+  }
+
+  .about-cta-box h2{
+
+    font-size:38px;
 
   }
 
 }
 
-@media (max-width: 480px) {
+@media(max-width:480px){
 
-  .company-badge {
+  .about-hero-content h1{
 
-    position: relative;
-
-    right: auto;
-    bottom: auto;
-
-    margin-top: 20px;
-
-    width: fit-content;
+    font-size:34px;
 
   }
 
-  .mission-icon,
-  .company-feature-icon {
+  .company-content h2,
+  .founder-content h2,
+  .section-header h2{
 
-    width: 56px;
-    height: 56px;
+    font-size:34px;
 
-    font-size: 1.4rem;
+  }
+
+  .company-card-box,
+  .mission-card,
+  .why-about-card{
+
+    padding:32px;
+
+  }
+
+  .about-cta-box h2{
+
+    font-size:30px;
 
   }
 

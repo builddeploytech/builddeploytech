@@ -1,345 +1,444 @@
-// ================= REVEAL ANIMATION =================
-function revealElements() {
+/* =========================================================
+   BUILDDEPLOY TECH - ANIMATIONS JS
+========================================================= */
 
-  const revealItems =
-    document.querySelectorAll(
-      `
-      .service-card,
-      .project-card,
-      .why-card,
-      .feature-card,
-      .pricing-card,
-      .faq-card,
-      .blog-card,
-      .process-card,
-      .main-service-card,
-      .included-card,
-      .why-about-card,
-      .mission-card,
-      .contact-item,
-      .tech-card
-      `
-    );
+document.addEventListener("DOMContentLoaded", () => {
 
-  const windowHeight =
-    window.innerHeight;
+  /* =====================================================
+     REVEAL ELEMENTS
+  ===================================================== */
 
-  revealItems.forEach((item) => {
+  const animatedElements =
+  document.querySelectorAll(
+    ".hero-content, .hero-visual, .main-service-card, .project-card, .why-feature, .performance-card, .expertise-item, .testimonial-card, .cta-box, .section-header"
+  );
 
-    const itemTop =
-      item.getBoundingClientRect().top;
+  /* =====================================================
+     INTERSECTION OBSERVER
+  ===================================================== */
 
-    const revealPoint = 120;
+  const observer =
+  new IntersectionObserver((entries) => {
 
-    if (itemTop < windowHeight - revealPoint) {
+    entries.forEach((entry) => {
 
-      item.classList.add("reveal-active");
+      if(entry.isIntersecting){
 
-    }
-
-  });
-
-}
-
-// ================= HERO FLOATING EFFECT =================
-function floatingAnimation() {
-
-  const heroCard =
-    document.querySelector(".hero-card");
-
-  if (!heroCard) return;
-
-  let position = 0;
-
-  setInterval(() => {
-
-    position += 0.5;
-
-    heroCard.style.transform =
-      `translateY(${Math.sin(position * 0.1) * 10}px)`;
-
-  }, 30);
-
-}
-
-// ================= NUMBER COUNTER =================
-function counterAnimation() {
-
-  const counters =
-    document.querySelectorAll(
-      ".hero-stat h3, .project-stat-card h3"
-    );
-
-  counters.forEach((counter) => {
-
-    const updateCounter = () => {
-
-      const target =
-        +counter.innerText.replace(/\D/g, "");
-
-      let count =
-        +counter.getAttribute("data-count") || 0;
-
-      const increment =
-        target / 60;
-
-      if (count < target) {
-
-        count += increment;
-
-        counter.setAttribute(
-          "data-count",
-          Math.ceil(count)
+        entry.target.classList.add(
+          "animate-active"
         );
 
-        const suffix =
-          counter.innerText.replace(/[0-9]/g, "");
-
-        counter.innerText =
-          Math.ceil(count) + suffix;
-
-        requestAnimationFrame(updateCounter);
-
-      } else {
-
-        counter.innerText =
-          target +
-          counter.innerText.replace(/[0-9]/g, "");
+        observer.unobserve(
+          entry.target
+        );
 
       }
 
-    };
+    });
 
-    updateCounter();
+  },{
+    threshold:0.15
+  });
+
+  animatedElements.forEach((element) => {
+
+    observer.observe(element);
 
   });
 
-}
+  /* =====================================================
+     HERO FLOATING EFFECT
+  ===================================================== */
 
-// ================= PARALLAX EFFECT =================
-function parallaxEffect() {
+  const heroVisual =
+  document.querySelector(".hero-visual");
 
-  const blur1 =
-    document.querySelector(".hero-blur-1");
+  if(heroVisual){
 
-  const blur2 =
-    document.querySelector(".hero-blur-2");
+    window.addEventListener(
+      "mousemove",
+      (e) => {
 
-  window.addEventListener("scroll", () => {
+        if(window.innerWidth > 992){
 
-    const scrollY =
-      window.scrollY;
+          const x =
+          (
+            window.innerWidth / 2 -
+            e.clientX
+          ) / 90;
 
-    if (blur1) {
+          const y =
+          (
+            window.innerHeight / 2 -
+            e.clientY
+          ) / 90;
 
-      blur1.style.transform =
-        `translateY(${scrollY * 0.15}px)`;
+          heroVisual.style.transform =
+          `translate(${x}px, ${y}px)`;
 
-    }
+        }
 
-    if (blur2) {
-
-      blur2.style.transform =
-        `translateY(${scrollY * -0.1}px)`;
-
-    }
-
-  });
-
-}
-
-// ================= BUTTON HOVER GLOW =================
-function buttonGlowEffect() {
-
-  const buttons =
-    document.querySelectorAll(
-      ".primary-btn"
+      }
     );
 
-  buttons.forEach((button) => {
+  }
+
+  /* =====================================================
+     PARALLAX HERO
+  ===================================================== */
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      const heroSection =
+      document.querySelector(
+        ".hero-section"
+      );
+
+      if(heroSection){
+
+        const scrollY =
+        window.scrollY;
+
+        heroSection.style.backgroundPositionY =
+        `${scrollY * 0.12}px`;
+
+      }
+
+    }
+  );
+
+  /* =====================================================
+     BUTTON MAGNET EFFECT
+  ===================================================== */
+
+  const magneticButtons =
+  document.querySelectorAll(
+    ".primary-btn, .secondary-btn, .nav-cta"
+  );
+
+  magneticButtons.forEach((button) => {
 
     button.addEventListener(
       "mousemove",
       (e) => {
 
-        const rect =
+        if(window.innerWidth > 992){
+
+          const rect =
           button.getBoundingClientRect();
 
-        const x =
-          e.clientX - rect.left;
+          const x =
+          e.clientX -
+          rect.left -
+          rect.width / 2;
 
-        const y =
-          e.clientY - rect.top;
+          const y =
+          e.clientY -
+          rect.top -
+          rect.height / 2;
 
-        button.style.setProperty(
-          "--x",
-          `${x}px`
-        );
+          button.style.transform =
+          `translate(${x * 0.08}px,
+          ${y * 0.08}px)`;
 
-        button.style.setProperty(
-          "--y",
-          `${y}px`
-        );
+        }
+
+      }
+    );
+
+    button.addEventListener(
+      "mouseleave",
+      () => {
+
+        button.style.transform =
+        "translate(0px,0px)";
 
       }
     );
 
   });
 
-}
+  /* =====================================================
+     STAGGER CARD EFFECT
+  ===================================================== */
 
-// ================= SCROLL PROGRESS =================
-function scrollProgressBar() {
-
-  const progressBar =
-    document.createElement("div");
-
-  progressBar.classList.add(
-    "scroll-progress-bar"
+  const staggerCards =
+  document.querySelectorAll(
+    ".main-service-card, .project-card, .expertise-item"
   );
 
-  document.body.appendChild(progressBar);
+  staggerCards.forEach((card, index) => {
 
-  window.addEventListener("scroll", () => {
-
-    const scrollTop =
-      document.documentElement.scrollTop;
-
-    const scrollHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-
-    const progress =
-      (scrollTop / scrollHeight) * 100;
-
-    progressBar.style.width =
-      progress + "%";
+    card.style.transitionDelay =
+    `${index * 0.08}s`;
 
   });
 
-}
+  /* =====================================================
+     IMAGE PARALLAX
+  ===================================================== */
 
-// ================= ACTIVE SECTION HIGHLIGHT =================
-function activeSectionHighlight() {
+  const projectCards =
+  document.querySelectorAll(
+    ".project-card"
+  );
 
-  const sections =
-    document.querySelectorAll("section");
+  projectCards.forEach((card) => {
 
-  const navLinks =
-    document.querySelectorAll(".nav-menu a");
+    const image =
+    card.querySelector("img");
 
-  window.addEventListener("scroll", () => {
+    if(!image) return;
 
-    let current = "";
+    card.addEventListener(
+      "mousemove",
+      (e) => {
 
-    sections.forEach((section) => {
+        if(window.innerWidth > 992){
 
-      const sectionTop =
-        section.offsetTop;
+          const rect =
+          card.getBoundingClientRect();
 
-      if (window.scrollY >= sectionTop - 200) {
+          const x =
+          e.clientX - rect.left;
 
-        current =
-          section.getAttribute("id");
+          const y =
+          e.clientY - rect.top;
+
+          const moveX =
+          (
+            x - rect.width / 2
+          ) / 30;
+
+          const moveY =
+          (
+            y - rect.height / 2
+          ) / 30;
+
+          image.style.transform =
+          `scale(1.08)
+           translate(${moveX}px,
+           ${moveY}px)`;
+
+        }
 
       }
-
-    });
-
-    navLinks.forEach((link) => {
-
-      link.classList.remove("section-active");
-
-      if (
-        link.getAttribute("href") ===
-        `#${current}`
-      ) {
-
-        link.classList.add("section-active");
-
-      }
-
-    });
-
-  });
-
-}
-
-// ================= IMAGE HOVER EFFECT =================
-function imageHoverEffect() {
-
-  const images =
-    document.querySelectorAll(
-      ".project-image img, .blog-image img"
     );
 
-  images.forEach((image) => {
+    card.addEventListener(
+      "mouseleave",
+      () => {
 
-    image.addEventListener("mousemove", (e) => {
+        image.style.transform =
+        "scale(1) translate(0px,0px)";
 
-      const rect =
-        image.getBoundingClientRect();
-
-      const x =
-        e.clientX - rect.left;
-
-      const y =
-        e.clientY - rect.top;
-
-      image.style.transform =
-        `
-        perspective(1000px)
-        rotateX(${-(y - rect.height / 2) / 30}deg)
-        rotateY(${(x - rect.width / 2) / 30}deg)
-        scale(1.05)
-        `;
-
-    });
-
-    image.addEventListener("mouseleave", () => {
-
-      image.style.transform =
-        `
-        perspective(1000px)
-        rotateX(0)
-        rotateY(0)
-        scale(1)
-        `;
-
-    });
+      }
+    );
 
   });
 
-}
+  /* =====================================================
+     NUMBER COUNTER
+  ===================================================== */
 
-// ================= INIT ANIMATIONS =================
-function initAnimations() {
+  const statNumbers =
+  document.querySelectorAll(
+    ".strip-box h3"
+  );
 
-  revealElements();
+  const countObserver =
+  new IntersectionObserver((entries) => {
 
-  floatingAnimation();
+    entries.forEach((entry) => {
 
-  counterAnimation();
+      if(entry.isIntersecting){
 
-  parallaxEffect();
+        const counter =
+        entry.target;
 
-  buttonGlowEffect();
+        const originalText =
+        counter.innerText;
 
-  scrollProgressBar();
+        const target =
+        parseInt(
+          originalText.replace(/\D/g,"")
+        );
 
-  activeSectionHighlight();
+        let current = 0;
 
-  imageHoverEffect();
+        const increment =
+        target / 70;
 
-}
+        function updateCounter(){
 
-// ================= EVENTS =================
-window.addEventListener(
-  "scroll",
-  revealElements
-);
+          current += increment;
 
-document.addEventListener(
-  "DOMContentLoaded",
-  initAnimations
-);
+          if(current < target){
+
+            counter.innerText =
+            Math.floor(current) + "+";
+
+            requestAnimationFrame(
+              updateCounter
+            );
+
+          }else{
+
+            counter.innerText =
+            originalText;
+
+          }
+
+        }
+
+        updateCounter();
+
+        countObserver.unobserve(
+          counter
+        );
+
+      }
+
+    });
+
+  },{
+    threshold:0.6
+  });
+
+  statNumbers.forEach((counter) => {
+
+    countObserver.observe(counter);
+
+  });
+
+  /* =====================================================
+     SCROLL PROGRESS BAR
+  ===================================================== */
+
+  if(
+    !document.querySelector(
+      ".scroll-progress"
+    )
+  ){
+
+    const progressBar =
+    document.createElement("div");
+
+    progressBar.classList.add(
+      "scroll-progress"
+    );
+
+    document.body.appendChild(
+      progressBar
+    );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        const scrollTop =
+        window.scrollY;
+
+        const docHeight =
+        document.body.scrollHeight -
+        window.innerHeight;
+
+        const progress =
+        (scrollTop / docHeight) * 100;
+
+        progressBar.style.width =
+        progress + "%";
+
+      }
+    );
+
+  }
+
+  /* =====================================================
+     CURSOR GLOW EFFECT
+  ===================================================== */
+
+  if(window.innerWidth > 768){
+
+    const cursorGlow =
+    document.createElement("div");
+
+    cursorGlow.classList.add(
+      "cursor-glow"
+    );
+
+    document.body.appendChild(
+      cursorGlow
+    );
+
+    window.addEventListener(
+      "mousemove",
+      (e) => {
+
+        cursorGlow.style.left =
+        e.clientX + "px";
+
+        cursorGlow.style.top =
+        e.clientY + "px";
+
+      }
+    );
+
+  }
+
+  /* =====================================================
+     FADE UP EFFECT
+  ===================================================== */
+
+  const fadeElements =
+  document.querySelectorAll(
+    ".section-header, .footer-top"
+  );
+
+  const fadeObserver =
+  new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add(
+          "fade-up-active"
+        );
+
+        fadeObserver.unobserve(
+          entry.target
+        );
+
+      }
+
+    });
+
+  },{
+    threshold:0.2
+  });
+
+  fadeElements.forEach((element) => {
+
+    fadeObserver.observe(element);
+
+  });
+
+  /* =====================================================
+     PAGE LOADED
+  ===================================================== */
+
+  window.addEventListener(
+    "load",
+    () => {
+
+      document.body.classList.add(
+        "loaded"
+      );
+
+    }
+  );
+
+});

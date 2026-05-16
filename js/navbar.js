@@ -1,92 +1,161 @@
-// ================= NAVBAR SCROLL EFFECT =================
-function handleNavbarScroll() {
+/* =========================================================
+   BUILDDEPLOY TECH - NAVBAR JS
+========================================================= */
 
-  const header =
-    document.querySelector(".site-header");
+document.addEventListener("DOMContentLoaded", () => {
 
-  if (!header) return;
+  /* =====================================================
+     ELEMENTS
+  ===================================================== */
 
-  if (window.scrollY > 40) {
+  const siteHeader =
+  document.getElementById("siteHeader");
 
-    header.classList.add("navbar-scrolled");
+  const menuToggle =
+  document.getElementById("menuToggle");
 
-  } else {
+  const navMenu =
+  document.getElementById("navMenu");
 
-    header.classList.remove("navbar-scrolled");
+  const navDropdowns =
+  document.querySelectorAll(".nav-dropdown");
+
+  const navLinks =
+  document.querySelectorAll(".nav-menu a");
+
+  /* =====================================================
+     MOBILE MENU TOGGLE
+  ===================================================== */
+
+  if(menuToggle && navMenu){
+
+    menuToggle.addEventListener("click", () => {
+
+      navMenu.classList.toggle("active");
+
+      /* MENU OPEN */
+
+      if(navMenu.classList.contains("active")){
+
+        menuToggle.innerHTML = "✕";
+
+        document.body.style.overflow =
+        "hidden";
+
+      }
+
+      /* MENU CLOSE */
+
+      else{
+
+        menuToggle.innerHTML = "☰";
+
+        document.body.style.overflow =
+        "auto";
+
+      }
+
+    });
 
   }
 
-}
+  /* =====================================================
+     MOBILE DROPDOWN
+  ===================================================== */
 
-// ================= MOBILE MENU =================
-function initializeMobileMenu() {
+  navDropdowns.forEach((dropdown) => {
 
-  const menuToggle =
-    document.getElementById("menuToggle");
+    const parent =
+    dropdown.querySelector(".nav-parent");
 
-  const navMenu =
-    document.getElementById("nav-menu");
+    if(parent){
 
-  if (!menuToggle || !navMenu) return;
+      parent.addEventListener("click", (e) => {
 
-  menuToggle.addEventListener("click", () => {
+        if(window.innerWidth <= 992){
 
-    navMenu.classList.toggle("active");
+          e.preventDefault();
 
-    menuToggle.classList.toggle("active");
+          dropdown.classList.toggle("active");
 
-    document.body.classList.toggle("menu-open");
+        }
 
-  });
-
-}
-
-// ================= MOBILE DROPDOWN =================
-function initializeDropdown() {
-
-  const dropdownBtn =
-    document.getElementById("servicesDropdownBtn");
-
-  const dropdown =
-    document.querySelector(".nav-dropdown");
-
-  if (!dropdownBtn || !dropdown) return;
-
-  dropdownBtn.addEventListener("click", () => {
-
-    if (window.innerWidth <= 992) {
-
-      dropdown.classList.toggle("active");
+      });
 
     }
 
   });
 
-}
+  /* =====================================================
+     HEADER SCROLL EFFECT
+  ===================================================== */
 
-// ================= CLOSE MOBILE MENU =================
-function closeMenuOnLinkClick() {
+  window.addEventListener("scroll", () => {
 
-  const navLinks =
-    document.querySelectorAll(".nav-menu a");
+    if(siteHeader){
 
-  const navMenu =
-    document.getElementById("nav-menu");
+      if(window.scrollY > 40){
 
-  const menuToggle =
-    document.getElementById("menuToggle");
+        siteHeader.classList.add("scrolled");
+
+      }
+
+      else{
+
+        siteHeader.classList.remove("scrolled");
+
+      }
+
+    }
+
+  });
+
+  /* =====================================================
+     ACTIVE PAGE LINK
+  ===================================================== */
+
+  const currentPage =
+  window.location.pathname
+  .split("/")
+  .pop();
+
+  navLinks.forEach((link) => {
+
+    const href =
+    link.getAttribute("href");
+
+    if(href === currentPage){
+
+      link.classList.add("active");
+
+    }
+
+  });
+
+  /* =====================================================
+     CLOSE MENU ON LINK CLICK
+  ===================================================== */
 
   navLinks.forEach((link) => {
 
     link.addEventListener("click", () => {
 
-      if (window.innerWidth <= 992) {
+      if(window.innerWidth <= 992){
 
-        navMenu.classList.remove("active");
+        if(navMenu){
 
-        menuToggle.classList.remove("active");
+          navMenu.classList.remove("active");
 
-        document.body.classList.remove("menu-open");
+        }
+
+        if(menuToggle){
+
+          menuToggle.innerHTML = "☰";
+
+        }
+
+        document.body.style.overflow =
+        "auto";
 
       }
 
@@ -94,83 +163,33 @@ function closeMenuOnLinkClick() {
 
   });
 
-}
-
-// ================= ACTIVE NAVIGATION LINK =================
-function setActiveNavLink() {
-
-  const currentPage =
-    window.location.pathname;
-
-  const navLinks =
-    document.querySelectorAll(".nav-menu a");
-
-  navLinks.forEach((link) => {
-
-    const href =
-      link.getAttribute("href");
-
-    if (href === currentPage) {
-
-      link.classList.add("active-link");
-
-    }
-
-  });
-
-}
-
-// ================= ESC KEY CLOSE =================
-function escCloseMenu() {
-
-  document.addEventListener("keydown", (e) => {
-
-    if (e.key === "Escape") {
-
-      const navMenu =
-        document.getElementById("nav-menu");
-
-      const menuToggle =
-        document.getElementById("menuToggle");
-
-      navMenu.classList.remove("active");
-
-      menuToggle.classList.remove("active");
-
-      document.body.classList.remove("menu-open");
-
-    }
-
-  });
-
-}
-
-// ================= CLICK OUTSIDE =================
-function outsideClickClose() {
+  /* =====================================================
+     CLICK OUTSIDE CLOSE
+  ===================================================== */
 
   document.addEventListener("click", (e) => {
 
-    const navMenu =
-      document.getElementById("nav-menu");
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const header =
-      document.querySelector(".site-header");
-
-    if (
+    if(
       window.innerWidth <= 992 &&
+      navMenu &&
       navMenu.classList.contains("active")
-    ) {
+    ){
 
-      if (!header.contains(e.target)) {
+      if(
+        !navMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ){
 
         navMenu.classList.remove("active");
 
-        menuToggle.classList.remove("active");
+        if(menuToggle){
 
-        document.body.classList.remove("menu-open");
+          menuToggle.innerHTML = "☰";
+
+        }
+
+        document.body.style.overflow =
+        "auto";
 
       }
 
@@ -178,61 +197,31 @@ function outsideClickClose() {
 
   });
 
-}
-
-// ================= WINDOW RESIZE =================
-function handleResize() {
+  /* =====================================================
+     WINDOW RESIZE RESET
+  ===================================================== */
 
   window.addEventListener("resize", () => {
 
-    const navMenu =
-      document.getElementById("nav-menu");
+    if(window.innerWidth > 992){
 
-    const menuToggle =
-      document.getElementById("menuToggle");
+      if(navMenu){
 
-    if (window.innerWidth > 992) {
+        navMenu.classList.remove("active");
 
-      navMenu.classList.remove("active");
+      }
 
-      menuToggle.classList.remove("active");
+      if(menuToggle){
 
-      document.body.classList.remove("menu-open");
+        menuToggle.innerHTML = "☰";
+
+      }
+
+      document.body.style.overflow =
+      "auto";
 
     }
 
   });
 
-}
-
-// ================= INIT NAVBAR =================
-function initNavbar() {
-
-  initializeMobileMenu();
-
-  initializeDropdown();
-
-  closeMenuOnLinkClick();
-
-  setActiveNavLink();
-
-  escCloseMenu();
-
-  outsideClickClose();
-
-  handleResize();
-
-  handleNavbarScroll();
-
-}
-
-// ================= EVENTS =================
-window.addEventListener(
-  "scroll",
-  handleNavbarScroll
-);
-
-document.addEventListener(
-  "DOMContentLoaded",
-  initNavbar
-);
+});

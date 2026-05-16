@@ -1,604 +1,976 @@
 /* =========================================================
-   BUILDDEPLOY TECH - HOME PAGE CSS
+   HERO SECTION
 ========================================================= */
 
-/* ================= HERO SECTION ================= */
-.hero-section {
+.hero-section{
 
-  position: relative;
+  position:relative;
 
-  overflow: hidden;
+  overflow:hidden;
 
-  padding-top: 180px;
-  padding-bottom: 140px;
+  padding:140px 0 90px;
+
+  background:
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5f9ff 100%
+  );
 
 }
 
-/* ================= HERO CONTAINER ================= */
-.hero-container {
+/* =========================================================
+   HERO GLOW EFFECTS
+========================================================= */
 
-  display: grid;
+.hero-section::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-250px;
+  left:-250px;
+
+  width:650px;
+  height:650px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(37,99,235,0.10),
+    transparent 70%
+  );
+
+  filter:blur(90px);
+
+}
+
+.hero-section::after{
+
+  content:"";
+
+  position:absolute;
+
+  right:-250px;
+  bottom:-250px;
+
+  width:700px;
+  height:700px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(14,165,233,0.10),
+    transparent 70%
+  );
+
+  filter:blur(100px);
+
+}
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.hero-container{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
 
   grid-template-columns:
-    1.1fr 0.9fr;
+  1.1fr 0.9fr;
 
-  gap: 70px;
+  gap:70px;
 
-  align-items: center;
-
-}
-
-/* ================= HERO CONTENT ================= */
-.hero-content {
-
-  position: relative;
-  z-index: 2;
+  align-items:center;
 
 }
 
-.hero-content h1 {
+/* =========================================================
+   MINI BADGE
+========================================================= */
 
-  margin-bottom: 28px;
+.mini-badge{
 
-  max-width: 760px;
+  display:inline-flex;
+  align-items:center;
 
-}
+  gap:10px;
 
-.hero-content p {
+  padding:12px 22px;
 
-  max-width: 650px;
+  margin-bottom:28px;
 
-  margin-bottom: 38px;
-
-  font-size: 1.1rem;
-
-  color: #cbd5e1;
-
-}
-
-/* ================= HERO BUTTONS ================= */
-.hero-buttons {
-
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 18px;
-
-  margin-bottom: 50px;
-
-}
-
-/* ================= HERO STATS ================= */
-.hero-stats {
-
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 22px;
-
-}
-
-.hero-stat {
-
-  min-width: 180px;
-
-  padding:
-    24px 28px;
-
-  border-radius: 24px;
+  border-radius:999px;
 
   background:
-    rgba(255, 255, 255, 0.04);
+  rgba(37,99,235,0.08);
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+  1px solid rgba(37,99,235,0.14);
 
-  backdrop-filter: blur(16px);
+  color:#2563eb;
 
-  transition: all 0.35s ease;
+  font-size:14px;
+  font-weight:700;
+
+  box-shadow:
+  0 10px 25px rgba(37,99,235,0.05);
 
 }
 
-.hero-stat:hover {
+.mini-badge span{
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content h1{
+
+  margin-bottom:28px;
+
+  font-size:
+  clamp(3rem,5vw,5.4rem);
+
+  line-height:1.02;
+
+  letter-spacing:-2px;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+}
+
+.hero-content h1 span{
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9,
+    #f97316
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+.hero-content p{
+
+  max-width:620px;
+
+  margin-bottom:40px;
+
+  color:#64748b;
+
+  font-size:1.08rem;
+
+  line-height:1.9;
+
+}
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  margin-bottom:35px;
+
+}
+
+.primary-btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 32px;
+
+  border-radius:999px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,0.22);
+
+  transition:0.35s ease;
+
+}
+
+.primary-btn:hover{
 
   transform:
-    translateY(-6px);
+  translateY(-4px);
+
+  box-shadow:
+  0 28px 60px rgba(37,99,235,0.28);
+
+}
+
+.secondary-btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 32px;
+
+  border-radius:999px;
+
+  background:#ffffff;
+
+  border:
+  1px solid rgba(15,23,42,0.08);
+
+  color:#0f172a;
+
+  font-size:15px;
+  font-weight:700;
+
+  transition:0.35s ease;
+
+}
+
+.secondary-btn:hover{
+
+  transform:
+  translateY(-4px);
+
+  color:#2563eb;
 
   border-color:
-    rgba(59, 130, 246, 0.3);
+  rgba(37,99,235,0.18);
 
 }
 
-.hero-stat h3 {
+/* =========================================================
+   HERO TAGS
+========================================================= */
 
-  margin-bottom: 10px;
+.hero-tags{
 
-  font-size: 2rem;
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+
+}
+
+.hero-tag{
+
+  padding:12px 18px;
+
+  border-radius:999px;
 
   background:
-    linear-gradient(
-      90deg,
-      #60a5fa,
-      #22d3ee
-    );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-}
-
-.hero-stat p {
-
-  margin: 0;
-
-  font-size: 14px;
-
-  color: #94a3b8;
-
-}
-
-/* ================= HERO VISUAL ================= */
-.hero-visual {
-
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-/* ================= HERO CARD ================= */
-.hero-card {
-
-  position: relative;
-
-  width: 100%;
-  max-width: 500px;
-
-  padding: 35px;
-
-  border-radius: 32px;
-
-  background:
-    rgba(15, 23, 42, 0.7);
+  rgba(255,255,255,0.9);
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+  1px solid rgba(15,23,42,0.06);
 
-  backdrop-filter: blur(18px);
+  color:#0f172a;
+
+  font-size:14px;
+  font-weight:600;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
-
-  overflow: hidden;
+  0 10px 25px rgba(15,23,42,0.04);
 
 }
 
-/* ================= HERO TOP ================= */
-.hero-card-top {
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.hero-visual{
 
-  margin-bottom: 32px;
-
-}
-
-.hero-card-top h3 {
-
-  font-size: 1.5rem;
+  position:relative;
 
 }
 
-.live-badge {
+/* =========================================================
+   DASHBOARD CARD
+========================================================= */
 
-  padding:
-    10px 16px;
+.dashboard-card{
 
-  border-radius: 999px;
+  position:relative;
+
+  padding:34px;
+
+  border-radius:36px;
 
   background:
-    rgba(34, 197, 94, 0.12);
+  rgba(255,255,255,0.88);
 
   border:
-    1px solid rgba(34, 197, 94, 0.3);
+  1px solid rgba(255,255,255,0.7);
 
-  color: #4ade80;
-
-  font-size: 13px;
-  font-weight: 700;
-
-}
-
-/* ================= TERMINAL ================= */
-.terminal-box {
-
-  border-radius: 22px;
-
-  overflow: hidden;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.06);
-
-  background:
-    #020617;
-
-}
-
-/* ================= TERMINAL HEADER ================= */
-.terminal-header {
-
-  display: flex;
-  align-items: center;
-
-  gap: 8px;
-
-  padding:
-    14px 18px;
-
-  background:
-    rgba(255, 255, 255, 0.04);
-
-}
-
-.dot {
-
-  width: 12px;
-  height: 12px;
-
-  border-radius: 50%;
-
-}
-
-.dot.red {
-  background: #ef4444;
-}
-
-.dot.yellow {
-  background: #facc15;
-}
-
-.dot.green {
-  background: #22c55e;
-}
-
-/* ================= TERMINAL BODY ================= */
-.terminal-body {
-
-  padding:
-    22px;
-
-  font-size: 14px;
-
-  line-height: 1.8;
-
-  color: #7dd3fc;
-
-  overflow-x: auto;
-
-}
-
-.terminal-body span {
-
-  color: #22c55e;
-
-}
-
-/* ================= FLOATING CARDS ================= */
-.floating-card {
-
-  position: absolute;
-
-  padding:
-    16px 20px;
-
-  border-radius: 20px;
-
-  background:
-    rgba(15, 23, 42, 0.85);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(16px);
+  backdrop-filter:blur(20px);
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.3);
+  0 30px 80px rgba(15,23,42,0.08);
 
 }
 
-.floating-card h4 {
+/* =========================================================
+   DASHBOARD TOP
+========================================================= */
 
-  margin-bottom: 6px;
+.dashboard-top{
 
-  font-size: 15px;
+  display:flex;
 
-}
+  align-items:center;
+  justify-content:space-between;
 
-.floating-card p {
-
-  margin: 0;
-
-  font-size: 13px;
-
-  color: #94a3b8;
+  margin-bottom:30px;
 
 }
 
-.card-1 {
+.dashboard-top img{
 
-  top: -30px;
-  right: -20px;
-
-}
-
-.card-2 {
-
-  bottom: -20px;
-  left: -20px;
+  width:70px;
 
 }
 
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.status-badge{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  background:
+  rgba(34,197,94,0.10);
+
+  border:
+  1px solid rgba(34,197,94,0.18);
+
+  color:#16a34a;
+
+  font-size:13px;
+  font-weight:700;
+
+}
+
+.status-badge span{
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+}
+
+/* =========================================================
+   ANALYTICS GRID
+========================================================= */
+
+.analytics-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:18px;
+
+  margin-bottom:28px;
+
+}
+
+/* =========================================================
+   ANALYTICS CARD
+========================================================= */
+
+.analytics-card{
+
+  padding:22px;
+
+  border-radius:24px;
+
+  background:#ffffff;
+
+  border:
+  1px solid rgba(15,23,42,0.05);
+
+  box-shadow:
+  0 10px 25px rgba(15,23,42,0.03);
+
+}
+
+.analytics-card p{
+
+  margin-bottom:10px;
+
+  color:#64748b;
+
+  font-size:14px;
+
+}
+
+.analytics-card h3{
+
+  font-size:1.8rem;
+
+  font-weight:800;
+
+  color:#2563eb;
+
+}
+
+/* =========================================================
+   TERMINAL BOX
+========================================================= */
+
+.terminal-box{
+
+  overflow:hidden;
+
+  border-radius:24px;
+
+  background:#0f172a;
+
+}
+
+/* =========================================================
+   TERMINAL HEADER
+========================================================= */
+
+.terminal-header{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:14px 18px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.dot{
+
+  width:12px;
+  height:12px;
+
+  border-radius:50%;
+
+}
+
+.red{
+  background:#ef4444;
+}
+
+.yellow{
+  background:#facc15;
+}
+
+.green{
+  background:#22c55e;
+}
+
+/* =========================================================
+   TERMINAL BODY
+========================================================= */
+
+.terminal-body{
+
+  padding:24px;
+
+  color:#7dd3fc;
+
+  line-height:1.9;
+
+  font-size:14px;
+
+}
+
+/* =========================================================
+   STATS STRIP
+========================================================= */
+
+.stats-strip-section{
+
+  margin-top:-30px;
+
+  position:relative;
+
+  z-index:3;
+
+}
+
+/* =========================================================
+   STRIP
+========================================================= */
+
+.stats-strip{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(5,1fr);
+
+  gap:18px;
+
+  padding:24px;
+
+  border-radius:34px;
+
+  background:
+  rgba(255,255,255,0.92);
+
+  border:
+  1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+  0 30px 80px rgba(15,23,42,0.08);
+
+}
+
+/* =========================================================
+   STRIP BOX
+========================================================= */
+
+.strip-box{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+
+  padding:18px;
+
+  border-radius:24px;
+
+  background:
+  rgba(245,249,255,0.8);
+
+}
+
+/* =========================================================
+   STRIP ICON
+========================================================= */
+
+.strip-icon{
+
+  width:56px;
+  height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,0.12),
+    rgba(14,165,233,0.08)
+  );
+
+  font-size:1.3rem;
+
+}
+
+/* =========================================================
+   STRIP TEXT
+========================================================= */
+
+.strip-box h3{
+
+  margin-bottom:4px;
+
+  font-size:1.5rem;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+}
+
+.strip-box p{
+
+  font-size:14px;
+
+  color:#64748b;
+
+}
+
+/* =========================================================
+   REVIEW BOX
+========================================================= */
+
+.strip-review{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding:18px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+  color:#ffffff;
+
+  font-size:14px;
+  font-weight:600;
+
+}
+
+.strip-review img{
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+}
 /* =========================================================
    SERVICES SECTION
 ========================================================= */
 
-.services-section {
+.services-section{
 
-  position: relative;
+  position:relative;
 
-}
-
-/* ================= SERVICES GRID ================= */
-.services-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 30px;
-
-}
-
-/* ================= SERVICE CARD ================= */
-.main-service-card {
-
-  position: relative;
-
-  overflow: hidden;
-
-  padding:
-    36px;
-
-  border-radius: 30px;
+  padding:130px 0;
 
   background:
-    rgba(255, 255, 255, 0.03);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(14px);
-
-  transition: all 0.4s ease;
-
-}
-
-.main-service-card:hover {
-
-  transform:
-    translateY(-10px);
-
-  border-color:
-    rgba(59, 130, 246, 0.3);
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.35);
-
-}
-
-.service-icon {
-
-  width: 70px;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 24px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.15),
-      rgba(6, 182, 212, 0.15)
-    );
-
-  font-size: 2rem;
-
-}
-
-.main-service-card h3 {
-
-  margin-bottom: 18px;
-
-}
-
-.main-service-card p {
-
-  margin-bottom: 26px;
-
-  color: #94a3b8;
-
-}
-
-.service-link {
-
-  display: inline-flex;
-  align-items: center;
-
-  gap: 8px;
-
-  color: #60a5fa;
-
-  font-weight: 600;
-
-}
-
-.service-link:hover {
-
-  gap: 14px;
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fbff 100%
+  );
 
 }
 
 /* =========================================================
-   ABOUT SECTION
+   SECTION HEADER
 ========================================================= */
 
-.home-about-section {
+.section-header{
 
-  position: relative;
+  text-align:center;
 
-}
+  max-width:760px;
 
-/* ================= ABOUT GRID ================= */
-.home-about-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 80px;
-
-  align-items: center;
+  margin:
+  0 auto 70px;
 
 }
 
-/* ================= ABOUT IMAGE ================= */
-.home-about-image {
+.section-subtitle{
 
-  position: relative;
+  display:inline-flex;
 
-}
+  align-items:center;
 
-.home-about-image img {
+  justify-content:center;
 
-  border-radius: 32px;
+  margin-bottom:20px;
+
+  padding:12px 20px;
+
+  border-radius:999px;
+
+  background:
+  rgba(37,99,235,0.08);
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+  1px solid rgba(37,99,235,0.14);
 
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
+  color:#2563eb;
+
+  font-size:13px;
+  font-weight:700;
+
+  letter-spacing:1px;
 
 }
 
-/* ================= EXPERIENCE BADGE ================= */
-.experience-badge {
+.section-header h2{
 
-  position: absolute;
+  margin-bottom:22px;
 
-  bottom: 25px;
-  right: -20px;
+  font-size:
+  clamp(2.6rem,4vw,4.3rem);
 
-  padding:
-    20px 24px;
+  line-height:1.1;
 
-  border-radius: 22px;
+  letter-spacing:-1.5px;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+}
+
+.section-header p{
+
+  color:#64748b;
+
+  font-size:1.05rem;
+
+  line-height:1.9;
+
+}
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.services-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:28px;
+
+}
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.main-service-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:38px 34px;
+
+  border-radius:34px;
 
   background:
-    linear-gradient(
-      135deg,
-      #3b82f6,
-      #06b6d4
-    );
+  rgba(255,255,255,0.88);
 
-  color: #ffffff;
+  border:
+  1px solid rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(20px);
 
   box-shadow:
-    0 15px 35px rgba(59, 130, 246, 0.25);
+  0 20px 50px rgba(15,23,42,0.05);
+
+  transition:0.4s ease;
 
 }
 
-.experience-badge h3 {
+.main-service-card:hover{
 
-  font-size: 2rem;
+  transform:
+  translateY(-12px);
 
-}
-
-.experience-badge p {
-
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.85);
+  box-shadow:
+  0 35px 80px rgba(37,99,235,0.10);
 
 }
 
-/* ================= ABOUT CONTENT ================= */
-.home-about-content h2 {
+/* =========================================================
+   SERVICE TOP BORDER
+========================================================= */
 
-  margin-bottom: 24px;
+.main-service-card::before{
 
-}
+  content:"";
 
-.home-about-content p {
+  position:absolute;
 
-  margin-bottom: 22px;
+  top:0;
+  left:0;
 
-  color: #94a3b8;
-
-}
-
-/* ================= ABOUT FEATURES ================= */
-.about-features {
-
-  margin-top: 30px;
-
-}
-
-.about-feature {
-
-  display: flex;
-  align-items: flex-start;
-
-  gap: 18px;
-
-  margin-bottom: 24px;
-
-}
-
-.about-feature-icon {
-
-  width: 52px;
-  height: 52px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 16px;
+  width:100%;
+  height:5px;
 
   background:
-    rgba(59, 130, 246, 0.12);
-
-  color: #60a5fa;
-
-  font-size: 1.4rem;
+  linear-gradient(
+    90deg,
+    #2563eb,
+    #0ea5e9,
+    #f97316
+  );
 
 }
 
-.about-feature-content h4 {
+/* =========================================================
+   SERVICE ICON
+========================================================= */
 
-  margin-bottom: 8px;
+.service-icon{
+
+  width:82px;
+  height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:28px;
+
+  border-radius:26px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,0.12),
+    rgba(14,165,233,0.08)
+  );
+
+  color:#2563eb;
+
+  font-size:2rem;
+
+  transition:0.35s ease;
+
+}
+
+.main-service-card:hover .service-icon{
+
+  transform:
+  rotate(-6deg)
+  scale(1.08);
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+  color:#ffffff;
+
+}
+
+/* =========================================================
+   SERVICE TEXT
+========================================================= */
+
+.main-service-card h3{
+
+  margin-bottom:18px;
+
+  font-size:1.45rem;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+}
+
+.main-service-card p{
+
+  margin-bottom:26px;
+
+  color:#64748b;
+
+  line-height:1.9;
+
+  font-size:15px;
+
+}
+
+/* =========================================================
+   SERVICE BUTTON
+========================================================= */
+
+.main-service-card a{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  color:#2563eb;
+
+  font-size:15px;
+  font-weight:700;
+
+  transition:0.3s ease;
+
+}
+
+.main-service-card a:hover{
+
+  gap:12px;
+
+  color:#0f172a;
 
 }
 
@@ -606,107 +978,1099 @@
    PROJECTS SECTION
 ========================================================= */
 
-.projects-section {
+.projects-section{
 
-  position: relative;
+  position:relative;
 
-}
+  padding:130px 0;
 
-/* ================= PROJECT GRID ================= */
-.projects-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 30px;
+  background:#ffffff;
 
 }
 
-/* ================= PROJECT CARD ================= */
-.project-card {
+/* =========================================================
+   PROJECT HEADER
+========================================================= */
 
-  overflow: hidden;
+.projects-header{
 
-  border-radius: 28px;
+  display:flex;
+
+  align-items:flex-end;
+  justify-content:space-between;
+
+  gap:30px;
+
+  margin-bottom:70px;
+
+}
+
+.projects-header h2{
+
+  margin-bottom:16px;
+
+  font-size:
+  clamp(2.6rem,4vw,4.2rem);
+
+  line-height:1.1;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+}
+
+.projects-header p{
+
+  color:#64748b;
+
+  line-height:1.9;
+
+}
+
+/* =========================================================
+   VIEW ALL BTN
+========================================================= */
+
+.view-all-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 28px;
+
+  border-radius:999px;
 
   background:
-    rgba(255, 255, 255, 0.03);
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+  white-space:nowrap;
+
+  box-shadow:
+  0 18px 40px rgba(37,99,235,0.20);
+
+  transition:0.35s ease;
+
+}
+
+.view-all-btn:hover{
+
+  transform:
+  translateY(-4px);
+
+}
+
+/* =========================================================
+   PROJECTS GRID
+========================================================= */
+
+.projects-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:30px;
+
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card{
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  background:#ffffff;
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+  1px solid rgba(15,23,42,0.06);
 
-  transition: all 0.35s ease;
+  box-shadow:
+  0 20px 50px rgba(15,23,42,0.05);
+
+  transition:0.4s ease;
 
 }
 
-.project-card:hover {
+.project-card:hover{
 
   transform:
-    translateY(-10px);
+  translateY(-10px);
 
-  border-color:
-    rgba(59, 130, 246, 0.3);
-
-}
-
-/* ================= PROJECT IMAGE ================= */
-.project-image {
-
-  overflow: hidden;
-
-  height: 240px;
+  box-shadow:
+  0 35px 80px rgba(37,99,235,0.10);
 
 }
 
-.project-image img {
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
 
-  width: 100%;
-  height: 100%;
+.project-image{
 
-  object-fit: cover;
+  position:relative;
 
-  transition: transform 0.5s ease;
+  overflow:hidden;
+
+  height:260px;
 
 }
 
-.project-card:hover .project-image img {
+.project-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.5s ease;
+
+}
+
+.project-card:hover .project-image img{
 
   transform:
-    scale(1.08);
+  scale(1.08);
 
 }
 
-/* ================= PROJECT CONTENT ================= */
-.project-content {
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
 
-  padding:
-    30px;
+.project-content{
 
-}
-
-.project-content h3 {
-
-  margin-bottom: 16px;
+  padding:30px;
 
 }
 
-.project-content p {
+/* =========================================================
+   PROJECT TOP
+========================================================= */
 
-  margin-bottom: 24px;
+.project-top{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:22px;
 
 }
 
-/* ================= PROJECT TECH ================= */
-.project-tech {
+.project-top h3{
 
-  display: flex;
-  flex-wrap: wrap;
+  font-size:1.35rem;
 
-  gap: 10px;
+  font-weight:800;
 
-  margin-bottom: 24px;
+  color:#0f172a;
+
+}
+
+.project-top a{
+
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+  rgba(37,99,235,0.08);
+
+  color:#2563eb;
+
+  font-size:1.2rem;
+
+  transition:0.35s ease;
+
+}
+
+.project-top a:hover{
+
+  background:#2563eb;
+
+  color:#ffffff;
+
+}
+
+/* =========================================================
+   PROJECT TAGS
+========================================================= */
+
+.project-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+}
+
+.project-tags span{
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  background:
+  rgba(37,99,235,0.08);
+
+  color:#2563eb;
+
+  font-size:13px;
+  font-weight:700;
+
+}
+/* =========================================================
+   WHY SECTION
+========================================================= */
+
+.why-section{
+
+  position:relative;
+
+  padding:140px 0;
+
+  background:
+  linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #ffffff 100%
+  );
+
+}
+
+/* =========================================================
+   WHY GRID
+========================================================= */
+
+.why-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:80px;
+
+  align-items:center;
+
+}
+
+/* =========================================================
+   WHY CONTENT
+========================================================= */
+
+.why-content h2{
+
+  margin-bottom:24px;
+
+  font-size:
+  clamp(2.7rem,4vw,4.5rem);
+
+  line-height:1.08;
+
+  font-weight:900;
+
+  letter-spacing:-2px;
+
+  color:#0f172a;
+
+}
+
+.why-content h2 span{
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9,
+    #f97316
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+.why-content p{
+
+  margin-bottom:40px;
+
+  color:#64748b;
+
+  line-height:1.9;
+
+  font-size:1.05rem;
+
+}
+
+/* =========================================================
+   WHY FEATURES
+========================================================= */
+
+.why-features{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:24px;
+
+  margin-bottom:40px;
+
+}
+
+/* =========================================================
+   WHY FEATURE
+========================================================= */
+
+.why-feature{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:18px;
+
+  padding:24px;
+
+  border-radius:28px;
+
+  background:
+  rgba(255,255,255,0.88);
+
+  border:
+  1px solid rgba(15,23,42,0.05);
+
+  box-shadow:
+  0 15px 40px rgba(15,23,42,0.04);
+
+  transition:0.35s ease;
+
+}
+
+.why-feature:hover{
+
+  transform:
+  translateY(-6px);
+
+  box-shadow:
+  0 28px 60px rgba(37,99,235,0.08);
+
+}
+
+/* =========================================================
+   WHY ICON
+========================================================= */
+
+.why-icon{
+
+  width:60px;
+  height:60px;
+
+  min-width:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,0.12),
+    rgba(14,165,233,0.08)
+  );
+
+  color:#2563eb;
+
+  font-size:1.4rem;
+
+}
+
+/* =========================================================
+   WHY FEATURE TEXT
+========================================================= */
+
+.why-feature h3{
+
+  margin-bottom:10px;
+
+  font-size:1.1rem;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+}
+
+.why-feature p{
+
+  margin:0;
+
+  font-size:14px;
+
+  line-height:1.8;
+
+}
+
+/* =========================================================
+   PERFORMANCE CARDS
+========================================================= */
+
+.performance-cards{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:28px;
+
+}
+
+/* =========================================================
+   PERFORMANCE CARD
+========================================================= */
+
+.performance-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:36px;
+
+  border-radius:34px;
+
+  background:#ffffff;
+
+  border:
+  1px solid rgba(15,23,42,0.05);
+
+  box-shadow:
+  0 25px 60px rgba(15,23,42,0.06);
+
+}
+
+/* =========================================================
+   SEO CARD TOP BORDER
+========================================================= */
+
+.seo-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:6px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+}
+
+/* =========================================================
+   APP CARD TOP BORDER
+========================================================= */
+
+.app-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:6px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #f97316,
+    #fb7185
+  );
+
+}
+
+/* =========================================================
+   PERFORMANCE LABEL
+========================================================= */
+
+.performance-label{
+
+  margin-bottom:18px;
+
+  color:#2563eb;
+
+  font-size:14px;
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+}
+
+/* =========================================================
+   PERFORMANCE SCORE
+========================================================= */
+
+.performance-card h3{
+
+  margin-bottom:10px;
+
+  font-size:4rem;
+
+  line-height:1;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+}
+
+.performance-card h3 span{
+
+  font-size:1.4rem;
+
+  color:#64748b;
+
+}
+
+/* =========================================================
+   PERFORMANCE TEXT
+========================================================= */
+
+.performance-text{
+
+  margin-bottom:28px;
+
+  color:#64748b;
+
+  font-size:15px;
+
+}
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-bar{
+
+  position:relative;
+
+  overflow:hidden;
+
+  width:100%;
+  height:14px;
+
+  margin-bottom:30px;
+
+  border-radius:999px;
+
+  background:
+  rgba(15,23,42,0.06);
+
+}
+
+/* =========================================================
+   PROGRESS FILL
+========================================================= */
+
+.progress-fill{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  height:100%;
+
+  border-radius:999px;
+
+}
+
+.seo-fill{
+
+  width:95%;
+
+  background:
+  linear-gradient(
+    90deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+}
+
+.app-fill{
+
+  width:98%;
+
+  background:
+  linear-gradient(
+    90deg,
+    #f97316,
+    #fb7185
+  );
+
+}
+
+/* =========================================================
+   PERFORMANCE LIST
+========================================================= */
+
+.performance-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:16px;
+
+  margin-bottom:30px;
+
+}
+
+.performance-list li{
+
+  color:#0f172a;
+
+  font-size:15px;
+  font-weight:600;
+
+}
+
+/* =========================================================
+   PERFORMANCE BOTTOM
+========================================================= */
+
+.performance-bottom{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding-top:24px;
+
+  border-top:
+  1px solid rgba(15,23,42,0.06);
+
+}
+
+.performance-bottom img{
+
+  width:42px;
+  height:42px;
+
+  object-fit:contain;
+
+}
+
+.performance-bottom span{
+
+  color:#64748b;
+
+  font-size:14px;
+  font-weight:600;
+
+}
+
+/* =========================================================
+   EXPERTISE SECTION
+========================================================= */
+
+.expertise-section{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:140px 0;
+
+  background:
+  linear-gradient(
+    135deg,
+    #0f172a,
+    #111827,
+    #172554
+  );
+
+}
+
+/* =========================================================
+   EXPERTISE HEADER
+========================================================= */
+
+.expertise-header{
+
+  text-align:center;
+
+  max-width:760px;
+
+  margin:
+  0 auto 80px;
+
+}
+
+.light-subtitle{
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#7dd3fc;
+
+}
+
+.expertise-header h2{
+
+  margin-bottom:22px;
+
+  font-size:
+  clamp(2.8rem,4vw,4.5rem);
+
+  line-height:1.1;
+
+  font-weight:900;
+
+  color:#ffffff;
+
+}
+
+.expertise-header p{
+
+  color:
+  rgba(255,255,255,0.72);
+
+  line-height:1.9;
+
+  font-size:1.05rem;
+
+}
+
+/* =========================================================
+   EXPERTISE GRID
+========================================================= */
+
+.expertise-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(5,1fr);
+
+  gap:24px;
+
+}
+
+/* =========================================================
+   EXPERTISE ITEM
+========================================================= */
+
+.expertise-item{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:36px 28px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  transition:0.35s ease;
+
+}
+
+.expertise-item:hover{
+
+  transform:
+  translateY(-10px);
+
+  background:
+  rgba(255,255,255,0.08);
+
+}
+
+/* =========================================================
+   EXPERTISE ICON
+========================================================= */
+
+.expertise-icon{
+
+  width:74px;
+  height:74px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:24px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,0.25),
+    rgba(14,165,233,0.18)
+  );
+
+  color:#7dd3fc;
+
+  font-size:1.8rem;
+
+}
+
+/* =========================================================
+   EXPERTISE TEXT
+========================================================= */
+
+.expertise-item h3{
+
+  margin-bottom:14px;
+
+  font-size:1.2rem;
+
+  font-weight:800;
+
+  color:#ffffff;
+
+}
+
+.expertise-item p{
+
+  color:
+  rgba(255,255,255,0.72);
+
+  line-height:1.8;
+
+  font-size:14px;
+
+}
+/* =========================================================
+   TESTIMONIALS SECTION
+========================================================= */
+
+.testimonials-section{
+
+  position:relative;
+
+  padding:140px 0;
+
+  background:
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fbff 100%
+  );
+
+}
+
+/* =========================================================
+   TESTIMONIAL GRID
+========================================================= */
+
+.testimonials-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:30px;
+
+}
+
+/* =========================================================
+   TESTIMONIAL CARD
+========================================================= */
+
+.testimonial-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:38px;
+
+  border-radius:34px;
+
+  background:
+  rgba(255,255,255,0.92);
+
+  border:
+  1px solid rgba(15,23,42,0.05);
+
+  box-shadow:
+  0 20px 50px rgba(15,23,42,0.05);
+
+  transition:0.35s ease;
+
+}
+
+.testimonial-card:hover{
+
+  transform:
+  translateY(-10px);
+
+  box-shadow:
+  0 35px 80px rgba(37,99,235,0.10);
+
+}
+
+/* =========================================================
+   QUOTE EFFECT
+========================================================= */
+
+.testimonial-card::before{
+
+  content:"“";
+
+  position:absolute;
+
+  top:20px;
+  right:28px;
+
+  font-size:7rem;
+
+  line-height:1;
+
+  color:
+  rgba(37,99,235,0.08);
+
+  font-weight:900;
+
+}
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.testimonial-stars{
+
+  margin-bottom:22px;
+
+  font-size:1.1rem;
+
+}
+
+/* =========================================================
+   TESTIMONIAL TEXT
+========================================================= */
+
+.testimonial-text{
+
+  margin-bottom:32px;
+
+  color:#64748b;
+
+  line-height:1.9;
+
+  font-size:15px;
+
+}
+
+/* =========================================================
+   USER
+========================================================= */
+
+.testimonial-user{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+
+}
+
+.testimonial-user img{
+
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:
+  3px solid rgba(37,99,235,0.10);
+
+}
+
+/* =========================================================
+   USER TEXT
+========================================================= */
+
+.testimonial-user h3{
+
+  margin-bottom:6px;
+
+  font-size:1rem;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+}
+
+.testimonial-user span{
+
+  color:#64748b;
+
+  font-size:14px;
 
 }
 
@@ -714,68 +2078,360 @@
    CTA SECTION
 ========================================================= */
 
-.home-cta-section {
+.cta-section{
 
-  position: relative;
+  position:relative;
+
+  padding:140px 0;
+
+  background:#ffffff;
 
 }
 
-/* ================= CTA BOX ================= */
-.home-cta-box {
+/* =========================================================
+   CTA BOX
+========================================================= */
 
-  position: relative;
+.cta-box{
 
-  overflow: hidden;
+  position:relative;
 
-  text-align: center;
+  overflow:hidden;
 
-  padding:
-    90px 60px;
+  display:grid;
 
-  border-radius: 40px;
+  grid-template-columns:
+  1fr 0.9fr;
+
+  gap:60px;
+
+  align-items:center;
+
+  padding:80px;
+
+  border-radius:40px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.18),
-      rgba(6, 182, 212, 0.14)
-    );
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9,
+    #3b82f6
+  );
+
+  box-shadow:
+  0 40px 100px rgba(37,99,235,0.22);
+
+}
+
+/* =========================================================
+   CTA GLOW
+========================================================= */
+
+.cta-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-250px;
+  right:-250px;
+
+  width:600px;
+  height:600px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.18),
+    transparent 70%
+  );
+
+}
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.cta-content{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.cta-content .section-subtitle{
+
+  background:
+  rgba(255,255,255,0.12);
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+  1px solid rgba(255,255,255,0.12);
 
-  backdrop-filter: blur(18px);
-
-}
-
-.home-cta-box h2 {
-
-  max-width: 850px;
-
-  margin:
-    0 auto 24px;
+  color:#ffffff;
 
 }
 
-.home-cta-box p {
+.cta-content h2{
 
-  max-width: 720px;
+  margin-bottom:24px;
 
-  margin:
-    0 auto 34px;
+  font-size:
+  clamp(2.8rem,4vw,4.6rem);
 
-  color: #cbd5e1;
+  line-height:1.08;
+
+  font-weight:900;
+
+  color:#ffffff;
 
 }
 
-/* ================= CTA BUTTONS ================= */
-.cta-buttons {
+.cta-content p{
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-bottom:40px;
 
-  gap: 18px;
+  color:
+  rgba(255,255,255,0.82);
+
+  line-height:1.9;
+
+  font-size:1.05rem;
+
+}
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
+
+.cta-buttons{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+}
+
+.cta-buttons .primary-btn{
+
+  background:#ffffff;
+
+  color:#2563eb;
+
+  box-shadow:none;
+
+}
+
+.cta-buttons .primary-btn:hover{
+
+  background:#f8fafc;
+
+}
+
+.cta-buttons .secondary-btn{
+
+  background:
+  rgba(255,255,255,0.10);
+
+  border:
+  1px solid rgba(255,255,255,0.14);
+
+  color:#ffffff;
+
+}
+
+.cta-buttons .secondary-btn:hover{
+
+  background:
+  rgba(255,255,255,0.18);
+
+}
+
+/* =========================================================
+   CTA VISUAL
+========================================================= */
+
+.cta-visual{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+/* =========================================================
+   CTA CARD
+========================================================= */
+
+.cta-card{
+
+  padding:36px;
+
+  border-radius:34px;
+
+  background:
+  rgba(255,255,255,0.12);
+
+  border:
+  1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(18px);
+
+}
+
+/* =========================================================
+   CTA CARD TOP
+========================================================= */
+
+.cta-card-top{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:34px;
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:700;
+
+}
+
+/* =========================================================
+   PULSE DOT
+========================================================= */
+
+.pulse-dot{
+
+  width:12px;
+  height:12px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+  box-shadow:
+  0 0 0 rgba(34,197,94,0.5);
+
+  animation:pulse 2s infinite;
+
+}
+
+/* =========================================================
+   GROWTH ITEM
+========================================================= */
+
+.growth-item{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:14px;
+
+  color:#ffffff;
+
+  font-size:15px;
+  font-weight:600;
+
+}
+
+/* =========================================================
+   GROWTH BAR
+========================================================= */
+
+.growth-bar{
+
+  position:relative;
+
+  overflow:hidden;
+
+  width:100%;
+  height:12px;
+
+  margin-bottom:26px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,0.14);
+
+}
+
+/* =========================================================
+   GROWTH FILL
+========================================================= */
+
+.growth-fill{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  height:100%;
+
+  width:85%;
+
+  border-radius:999px;
+
+  background:#ffffff;
+
+}
+
+.seo-growth{
+
+  width:92%;
+
+}
+
+.app-growth{
+
+  width:88%;
+
+}
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes pulse{
+
+  0%{
+
+    transform:scale(1);
+
+    box-shadow:
+    0 0 0 0 rgba(34,197,94,0.5);
+
+  }
+
+  70%{
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 0 16px rgba(34,197,94,0);
+
+  }
+
+  100%{
+
+    transform:scale(1);
+
+    box-shadow:
+    0 0 0 0 rgba(34,197,94,0);
+
+  }
 
 }
 
@@ -783,124 +2439,175 @@
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media(max-width:1200px){
 
   .hero-container,
-  .home-about-grid {
+  .why-grid,
+  .cta-box{
 
-    grid-template-columns: 1fr;
-
-  }
-
-  .hero-content {
-
-    text-align: center;
+    grid-template-columns:1fr;
 
   }
 
-  .hero-content p {
+  .hero-content,
+  .why-content,
+  .cta-content{
 
-    margin-left: auto;
-    margin-right: auto;
+    text-align:center;
+
+  }
+
+  .hero-content p,
+  .why-content p,
+  .cta-content p{
+
+    margin-left:auto;
+    margin-right:auto;
 
   }
 
   .hero-buttons,
-  .hero-stats {
+  .cta-buttons{
 
-    justify-content: center;
+    justify-content:center;
 
   }
 
-}
-
-@media (max-width: 992px) {
-
+  .projects-grid,
   .services-grid,
-  .projects-grid {
+  .testimonials-grid{
 
     grid-template-columns:
-      repeat(2, 1fr);
+    repeat(2,1fr);
 
   }
 
-  .home-cta-box {
+  .expertise-grid{
 
-    padding:
-      70px 40px;
+    grid-template-columns:
+    repeat(3,1fr);
 
   }
 
 }
 
-@media (max-width: 768px) {
+@media(max-width:992px){
 
-  .hero-section {
+  .hero-container{
 
-    padding-top: 150px;
-    padding-bottom: 100px;
+    gap:50px;
 
   }
 
-  .services-grid,
-  .projects-grid {
+  .stats-strip{
 
-    grid-template-columns: 1fr;
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+  .projects-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+  }
+
+  .why-features{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .expertise-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+}
+
+@media(max-width:768px){
+
+  .hero-section,
+  .services-section,
+  .projects-section,
+  .why-section,
+  .expertise-section,
+  .testimonials-section,
+  .cta-section{
+
+    padding:100px 0;
+
+  }
+
+  .hero-content h1,
+  .why-content h2,
+  .expertise-header h2,
+  .cta-content h2{
+
+    font-size:2.8rem;
+
+  }
+
+  .projects-grid,
+  .services-grid,
+  .testimonials-grid,
+  .stats-strip,
+  .expertise-grid{
+
+    grid-template-columns:1fr;
 
   }
 
   .hero-buttons,
-  .cta-buttons {
+  .cta-buttons{
 
-    flex-direction: column;
-
-  }
-
-  .hero-stat {
-
-    width: 100%;
+    flex-direction:column;
 
   }
 
-  .home-cta-box {
+  .primary-btn,
+  .secondary-btn{
 
-    padding:
-      60px 24px;
+    width:100%;
 
-    border-radius: 28px;
+  }
+
+  .cta-box{
+
+    padding:50px 30px;
+
+  }
+
+}
+
+@media(max-width:480px){
+
+  .hero-content h1,
+  .why-content h2,
+  .expertise-header h2,
+  .cta-content h2{
+
+    font-size:2.2rem;
+
+  }
+
+  .dashboard-card,
+  .performance-card,
+  .testimonial-card,
+  .cta-card{
+
+    padding:26px;
 
   }
 
   .main-service-card,
-  .project-content {
+  .project-content{
 
-    padding: 26px;
-
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .hero-card {
-
-    padding: 24px;
-
-  }
-
-  .floating-card {
-
-    position: relative;
-
-    margin-top: 18px;
-
-    inset: auto !important;
-
-  }
-
-  .terminal-body {
-
-    font-size: 12px;
+    padding:26px;
 
   }
 

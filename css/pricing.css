@@ -1,234 +1,447 @@
 /* =========================================================
-   BUILDDEPLOY TECH - PRICING PAGE CSS
+   PRICING PAGE PREMIUM UI
 ========================================================= */
 
-/* ================= HERO SECTION ================= */
-.pricing-hero {
+.pricing-page{
 
-  position: relative;
+  background:
+  linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #ffffff 100%
+  );
 
-  overflow: hidden;
-
-  padding-top: 180px;
-  padding-bottom: 120px;
-
-}
-
-/* ================= HERO CONTAINER ================= */
-.pricing-hero-container {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-}
-
-/* ================= HERO CONTENT ================= */
-.pricing-hero-content {
-
-  position: relative;
-  z-index: 2;
-
-  max-width: 920px;
-
-}
-
-.pricing-hero-content h1 {
-
-  margin-bottom: 28px;
-
-}
-
-.pricing-hero-content p {
-
-  max-width: 760px;
-
-  margin: auto;
-
-  font-size: 1.1rem;
-
-  color: #cbd5e1;
+  overflow-x:hidden;
 
 }
 
 /* =========================================================
-   PRICING SECTION
+   HERO SECTION
 ========================================================= */
 
-.pricing-main-section {
+.pricing-hero{
 
-  position: relative;
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+  180px 0 120px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #eef4ff 45%,
+    #ffffff 100%
+  );
 
 }
 
-/* ================= GRID ================= */
-.pricing-grid {
+.pricing-hero::before{
 
-  display: grid;
+  content:"";
+
+  position:absolute;
+
+  top:-180px;
+  right:-180px;
+
+  width:500px;
+  height:500px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(37,99,235,0.12),
+    transparent 70%
+  );
+
+}
+
+.pricing-hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:-140px;
+  bottom:-140px;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(124,58,237,0.10),
+    transparent 70%
+  );
+
+}
+
+.pricing-hero-content{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:920px;
+
+  margin:auto;
+
+  text-align:center;
+
+}
+
+/* =========================================================
+   SECTION TAG
+========================================================= */
+
+.section-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  12px 22px;
+
+  border-radius:999px;
+
+  background:
+  rgba(37,99,235,0.08);
+
+  border:
+  1px solid rgba(37,99,235,0.10);
+
+  color:#2563eb;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:0.5px;
+
+  text-transform:uppercase;
+
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.pricing-hero-content h1{
+
+  font-size:68px;
+
+  line-height:1.1;
+
+  font-weight:900;
+
+  color:#0f172a;
+
+  margin:
+  28px 0;
+
+}
+
+.pricing-hero-content h1 span{
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed,
+    #0ea5e9
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+.pricing-hero-content p{
+
+  max-width:760px;
+
+  margin:auto;
+
+  color:#64748b;
+
+  font-size:19px;
+
+  line-height:1.9;
+
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.pricing-section{
+
+  padding:
+  120px 0 40px;
+
+}
+
+.section-header{
+
+  text-align:center;
+
+  max-width:760px;
+
+  margin:
+  0 auto 70px;
+
+}
+
+.section-header h2{
+
+  font-size:52px;
+
+  line-height:1.2;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin:
+  22px 0;
+
+}
+
+.section-header p{
+
+  color:#64748b;
+
+  line-height:1.9;
+
+  font-size:18px;
+
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.pricing-grid{
+
+  display:grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+  repeat(3,1fr);
 
-  gap: 30px;
-
-  align-items: stretch;
+  gap:32px;
 
 }
 
 /* =========================================================
-   PRICING CARD
+   CARD
 ========================================================= */
 
-.pricing-card {
+.pricing-card{
 
-  position: relative;
+  position:relative;
 
-  overflow: hidden;
+  overflow:hidden;
 
-  display: flex;
-  flex-direction: column;
+  background:#ffffff;
 
-  padding:
-    42px 34px;
+  border-radius:34px;
 
-  border-radius: 34px;
-
-  background:
-    rgba(255, 255, 255, 0.03);
+  padding:42px 36px;
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(16px);
-
-  transition: all 0.4s ease;
-
-}
-
-.pricing-card:hover {
-
-  transform:
-    translateY(-12px);
-
-  border-color:
-    rgba(59, 130, 246, 0.32);
+  1px solid rgba(37,99,235,0.06);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.35);
+  0 20px 60px rgba(15,23,42,0.06);
+
+  transition:0.4s ease;
 
 }
 
-/* ================= POPULAR ================= */
-.pricing-card.popular {
-
-  border:
-    1px solid rgba(59, 130, 246, 0.35);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.1),
-      rgba(6, 182, 212, 0.06)
-    );
+.pricing-card:hover{
 
   transform:
-    scale(1.03);
-
-}
-
-/* ================= BADGE ================= */
-.popular-badge {
-
-  position: absolute;
-
-  top: 22px;
-  right: 22px;
-
-  padding:
-    10px 16px;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #3b82f6,
-      #06b6d4
-    );
-
-  color: #ffffff;
-
-  font-size: 13px;
-  font-weight: 700;
+  translateY(-12px);
 
   box-shadow:
-    0 10px 25px rgba(59, 130, 246, 0.28);
+  0 45px 90px rgba(37,99,235,0.14);
 
 }
 
 /* =========================================================
-   HEADER
+   FEATURED CARD
 ========================================================= */
 
-.pricing-header {
+.featured-pricing{
 
-  margin-bottom: 34px;
+  border:
+  2px solid #2563eb;
 
-}
-
-.pricing-header h2 {
-
-  margin-bottom: 14px;
-
-  font-size: 2rem;
+  transform:
+  scale(1.03);
 
 }
 
-.pricing-header p {
+.featured-pricing:hover{
 
-  color: #94a3b8;
-
-}
-
-/* ================= PRICE ================= */
-.price-box {
-
-  display: flex;
-  align-items: flex-end;
-
-  gap: 8px;
-
-  margin-top: 24px;
+  transform:
+  scale(1.03)
+  translateY(-12px);
 
 }
 
-.price-box h3 {
+/* =========================================================
+   BADGES
+========================================================= */
 
-  font-size: 3.4rem;
+.discount-badge{
 
-  line-height: 1;
+  position:absolute;
+
+  top:20px;
+  right:20px;
+
+  padding:
+  10px 16px;
+
+  border-radius:999px;
 
   background:
-    linear-gradient(
-      90deg,
-      #60a5fa,
-      #22d3ee
-    );
+  linear-gradient(
+    135deg,
+    #ef4444,
+    #f97316
+  );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#ffffff;
+
+  font-size:12px;
+
+  font-weight:700;
 
 }
 
-.price-box span {
+.popular-tag{
 
-  margin-bottom: 8px;
+  position:absolute;
 
-  color: #94a3b8;
+  top:20px;
+  right:20px;
 
-  font-size: 15px;
+  padding:
+  10px 16px;
+
+  border-radius:999px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color:#ffffff;
+
+  font-size:12px;
+
+  font-weight:700;
+
+}
+
+.pricing-label{
+
+  display:inline-flex;
+
+  padding:
+  8px 14px;
+
+  border-radius:999px;
+
+  background:
+  rgba(37,99,235,0.08);
+
+  color:#2563eb;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  margin-bottom:22px;
+
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.pricing-card h3{
+
+  font-size:32px;
+
+  line-height:1.3;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin-bottom:20px;
+
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.old-price{
+
+  color:#94a3b8;
+
+  text-decoration:line-through;
+
+  font-size:22px;
+
+  margin-bottom:10px;
+
+}
+
+.pricing-price{
+
+  font-size:54px;
+
+  font-weight:900;
+
+  line-height:1;
+
+  color:#2563eb;
+
+  margin-bottom:22px;
+
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.pricing-card p{
+
+  color:#64748b;
+
+  line-height:1.9;
+
+  margin-bottom:28px;
 
 }
 
@@ -236,228 +449,97 @@
    FEATURES
 ========================================================= */
 
-.pricing-features {
+.pricing-card ul{
 
-  display: flex;
-  flex-direction: column;
+  display:flex;
 
-  gap: 18px;
+  flex-direction:column;
 
-  margin-bottom: 40px;
+  gap:16px;
 
-}
-
-/* ================= FEATURE ITEM ================= */
-.pricing-feature {
-
-  display: flex;
-  align-items: flex-start;
-
-  gap: 14px;
+  margin-bottom:34px;
 
 }
 
-.feature-check {
+.pricing-card ul li{
 
-  width: 24px;
-  height: 24px;
+  list-style:none;
 
-  flex-shrink: 0;
+  color:#334155;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight:500;
 
-  border-radius: 50%;
-
-  background:
-    rgba(34, 197, 94, 0.14);
-
-  color: #4ade80;
-
-  font-size: 13px;
-  font-weight: 800;
+  line-height:1.7;
 
 }
 
-.pricing-feature p {
+.pricing-card ul li::before{
 
-  color: #cbd5e1;
+  content:"✓";
 
-  margin: 0;
+  margin-right:12px;
+
+  color:#2563eb;
+
+  font-weight:700;
 
 }
 
 /* =========================================================
-   BUTTON
+   BUTTONS
 ========================================================= */
 
-.pricing-btn {
+.primary-btn{
 
-  margin-top: auto;
+  display:inline-flex;
 
-  width: 100%;
+  align-items:center;
+  justify-content:center;
 
-  justify-content: center;
-
-}
-
-/* =========================================================
-   INCLUDED SECTION
-========================================================= */
-
-.included-section {
-
-  position: relative;
-
-}
-
-/* ================= INCLUDED GRID ================= */
-.included-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 28px;
-
-}
-
-/* ================= INCLUDED CARD ================= */
-.included-card {
-
-  position: relative;
-
-  overflow: hidden;
-
-  text-align: center;
+  width:100%;
 
   padding:
-    34px 26px;
+  18px 30px;
 
-  border-radius: 30px;
+  border-radius:16px;
 
   background:
-    rgba(255, 255, 255, 0.03);
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+  color:#ffffff;
 
-  transition: all 0.35s ease;
+  font-weight:700;
+
+  text-decoration:none;
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,0.22);
+
+  transition:0.35s ease;
 
 }
 
-.included-card:hover {
+.primary-btn:hover{
 
   transform:
-    translateY(-8px);
+  translateY(-5px);
 
-  border-color:
-    rgba(59, 130, 246, 0.28);
-
-}
-
-.included-icon {
-
-  width: 74px;
-  height: 74px;
-
-  margin:
-    0 auto 22px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.14),
-      rgba(6, 182, 212, 0.14)
-    );
-
-  font-size: 2rem;
-
-}
-
-.included-card h3 {
-
-  margin-bottom: 14px;
-
-}
-
-.included-card p {
-
-  color: #94a3b8;
+  box-shadow:
+  0 30px 60px rgba(37,99,235,0.28);
 
 }
 
 /* =========================================================
-   FAQ SECTION
+   SEO SECTION
 ========================================================= */
 
-.pricing-faq-section {
+.seo-pricing-section{
 
-  position: relative;
-
-}
-
-/* ================= FAQ GRID ================= */
-.pricing-faq-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  gap: 28px;
-
-}
-
-/* ================= FAQ CARD ================= */
-.pricing-faq-card {
-
-  position: relative;
-
-  overflow: hidden;
-
-  padding:
-    34px;
-
-  border-radius: 30px;
-
-  background:
-    rgba(255, 255, 255, 0.03);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  transition: all 0.35s ease;
-
-}
-
-.pricing-faq-card:hover {
-
-  transform:
-    translateY(-6px);
-
-  border-color:
-    rgba(59, 130, 246, 0.26);
-
-}
-
-.pricing-faq-card h3 {
-
-  margin-bottom: 16px;
-
-}
-
-.pricing-faq-card p {
-
-  color: #94a3b8;
+  padding-top:60px;
 
 }
 
@@ -465,65 +547,139 @@
    CTA SECTION
 ========================================================= */
 
-.pricing-cta-section {
-
-  position: relative;
-
-}
-
-/* ================= CTA BOX ================= */
-.pricing-cta-box {
-
-  position: relative;
-
-  overflow: hidden;
-
-  text-align: center;
+.pricing-cta-section{
 
   padding:
-    90px 60px;
+  90px 0 130px;
 
-  border-radius: 40px;
+}
+
+.pricing-cta-box{
+
+  position:relative;
+
+  overflow:hidden;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.16),
-      rgba(6, 182, 212, 0.12)
-    );
+  linear-gradient(
+    135deg,
+    #0f172a,
+    #111827,
+    #1e293b
+  );
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+  border-radius:42px;
 
-  backdrop-filter: blur(18px);
+  padding:
+  90px 60px;
+
+  text-align:center;
+
+  color:#ffffff;
+
+  box-shadow:
+  0 40px 100px rgba(15,23,42,0.18);
 
 }
 
-.pricing-cta-box h2 {
+.pricing-cta-box::before{
 
-  margin-bottom: 24px;
+  content:"";
+
+  position:absolute;
+
+  top:-150px;
+  right:-150px;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.10),
+    transparent 70%
+  );
 
 }
 
-.pricing-cta-box p {
+.pricing-cta-box h2{
 
-  max-width: 760px;
+  font-size:56px;
+
+  line-height:1.2;
+
+  font-weight:800;
 
   margin:
-    0 auto 34px;
-
-  color: #cbd5e1;
+  24px 0;
 
 }
 
-/* ================= BUTTONS ================= */
-.cta-buttons {
+.pricing-cta-box p{
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  max-width:760px;
 
-  gap: 18px;
+  margin:
+  0 auto 40px;
+
+  color:
+  rgba(255,255,255,0.72);
+
+  line-height:1.9;
+
+  font-size:18px;
+
+}
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
+
+.cta-buttons{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:18px;
+
+  flex-wrap:wrap;
+
+}
+
+.secondary-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+  18px 34px;
+
+  border-radius:16px;
+
+  border:
+  1px solid rgba(255,255,255,0.14);
+
+  color:#ffffff;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:0.35s ease;
+
+}
+
+.secondary-btn:hover{
+
+  background:
+  rgba(255,255,255,0.08);
 
 }
 
@@ -531,95 +687,98 @@
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media(max-width:1200px){
 
-  .pricing-grid {
-
-    grid-template-columns:
-      repeat(2, 1fr);
-
-  }
-
-  .included-grid {
+  .pricing-grid{
 
     grid-template-columns:
-      repeat(2, 1fr);
+    repeat(2,1fr);
 
   }
 
 }
 
-@media (max-width: 992px) {
+@media(max-width:992px){
 
-  .pricing-faq-grid {
+  .pricing-hero-content h1{
 
-    grid-template-columns: 1fr;
+    font-size:54px;
+
+  }
+
+  .section-header h2{
+
+    font-size:42px;
 
   }
 
 }
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-  .pricing-hero {
+  .pricing-grid{
 
-    padding-top: 150px;
-    padding-bottom: 100px;
-
-  }
-
-  .pricing-grid,
-  .included-grid {
-
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
 
   }
 
-  .pricing-card.popular {
-
-    transform: none;
-
-  }
-
-  .pricing-cta-box {
+  .pricing-hero{
 
     padding:
-      65px 26px;
-
-    border-radius: 28px;
+    150px 0 90px;
 
   }
 
-  .cta-buttons {
+  .pricing-hero-content h1{
 
-    flex-direction: column;
+    font-size:42px;
 
   }
 
-  .pricing-card,
-  .included-card,
-  .pricing-faq-card {
+  .section-header h2{
 
-    padding: 28px;
+    font-size:34px;
+
+  }
+
+  .pricing-cta-box{
+
+    padding:
+    70px 30px;
+
+  }
+
+  .pricing-cta-box h2{
+
+    font-size:38px;
 
   }
 
 }
 
-@media (max-width: 480px) {
+@media(max-width:480px){
 
-  .price-box h3 {
+  .pricing-hero-content h1{
 
-    font-size: 2.8rem;
+    font-size:34px;
 
   }
 
-  .included-icon {
+  .pricing-card{
 
-    width: 62px;
-    height: 62px;
+    padding:34px 28px;
 
-    font-size: 1.6rem;
+  }
+
+  .pricing-price{
+
+    font-size:44px;
+
+  }
+
+  .pricing-cta-box h2{
+
+    font-size:30px;
 
   }
 

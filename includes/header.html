@@ -1,14 +1,17 @@
-<header class="site-header">
+<header class="site-header"
+        id="siteHeader">
 
   <div class="container header-container">
 
-    <!-- ================= LOGO ================= -->
-    <a href="/index.html" class="logo">
+    <!-- ===================================================== -->
+    <!-- LOGO -->
+    <!-- ===================================================== -->
 
-      <img
-        src="/images/logo.png"
-        alt="BuildDeploy Tech Logo"
-      />
+    <a href="index.html"
+       class="logo">
+
+      <img src="images/logo.png"
+           alt="BuildDeploy Tech Logo" />
 
       <div class="logo-text">
 
@@ -28,82 +31,128 @@
 
     </a>
 
-    <!-- ================= NAVIGATION ================= -->
-    <nav class="nav-menu" id="nav-menu">
+    <!-- ===================================================== -->
+    <!-- NAVIGATION -->
+    <!-- ===================================================== -->
 
-      <a href="/index.html">
+    <nav class="nav-menu"
+         id="navMenu">
+
+      <!-- HOME -->
+
+      <a href="index.html"
+         class="active">
+
         Home
+
       </a>
 
-      <!-- ================= DROPDOWN ================= -->
+      <!-- SERVICES -->
+
       <div class="nav-dropdown">
 
-        <button
-          class="nav-dropdown-btn"
-          id="servicesDropdownBtn"
-        >
+        <a href="services.html"
+           class="nav-parent">
+
           Services
-          <span>⌄</span>
-        </button>
+
+          <span class="dropdown-arrow">
+
+            ▾
+
+          </span>
+
+        </a>
+
+        <!-- DROPDOWN -->
 
         <div class="dropdown-menu">
 
-          <a href="/services/devops-cloud.html">
-            DevOps & AWS
+          <a href="services/web-development.html">
+
+            💻 Web Development
+
           </a>
 
-          <a href="/services/web-development.html">
-            Web Development
+          <a href="services/app-development.html">
+
+            📱 Mobile App Development
+
           </a>
 
-          <a href="/services/app-development.html">
-            Mobile App Development
+          <a href="services/seo-services.html">
+
+            📈 SEO Services
+
           </a>
 
-          <a href="/services/seo-services.html">
-            SEO Services
+          <a href="services/devops-cloud.html">
+
+            ☁️ DevOps & Cloud
+
           </a>
 
-          <a href="/services/government-tenders.html">
-            Government Solutions
+          <a href="services/government-tenders.html">
+
+            🏛 Government Tenders
+
           </a>
 
         </div>
 
       </div>
 
-      <a href="/projects.html">
+      <!-- PROJECTS -->
+
+      <a href="projects.html">
+
         Projects
+
       </a>
 
-      <a href="/pricing.html">
+      <!-- PRICING -->
+
+      <a href="pricing.html">
+
         Pricing
+
       </a>
 
-      <a href="/about.html">
+      <!-- ABOUT -->
+
+      <a href="about.html">
+
         About
+
       </a>
 
-      <a href="/blogs.html">
-        Blogs
+      <!-- BLOG -->
+
+      <a href="blogs.html">
+
+        Blog
+
       </a>
 
-      <a href="/contact.html" class="nav-contact-btn">
-        Contact
+      <!-- CONTACT BUTTON -->
+
+      <a href="contact.html"
+         class="nav-cta">
+
+        Contact Us →
+
       </a>
 
     </nav>
 
-    <!-- ================= MOBILE MENU BUTTON ================= -->
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      aria-label="Toggle Navigation"
-    >
+    <!-- ===================================================== -->
+    <!-- MOBILE TOGGLE -->
+    <!-- ===================================================== -->
 
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle"
+            id="menuToggle">
+
+      ☰
 
     </button>
 
