@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
-  <!-- ================= SEO ================= -->
+  <!-- ================= GA4 ================= -->
+
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4XWD9BT36R">
+  </script>
+
+  <script>
+
+    window.dataLayer =
+    window.dataLayer || [];
+
+    function gtag(){
+
+      dataLayer.push(arguments);
+
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-4XWD9BT36R');
+
+  </script>
+
+  <!-- ================= BASIC SEO ================= -->
+
   <meta charset="UTF-8" />
 
   <meta
@@ -12,17 +37,23 @@
   />
 
   <title>
-    Blogs | BuildDeploy Tech – DevOps, Cloud & SEO Insights
+
+    Blogs |
+    BuildDeploy Tech -
+    Web Development,
+    DevOps,
+    SEO & Cloud Articles
+
   </title>
 
   <meta
     name="description"
-    content="Read BuildDeploy Tech blogs on DevOps, AWS cloud, CI/CD, Docker, Kubernetes, SEO strategies, mobile app development and modern software engineering."
+    content="Read the latest blogs from BuildDeploy Tech about web development, mobile apps, DevOps, AWS cloud, SEO optimization, digital marketing and modern technologies."
   />
 
   <meta
     name="keywords"
-    content="DevOps blogs, AWS tutorials, CI/CD blogs, Docker guide, Kubernetes blogs, SEO blogs, BuildDeploy Tech"
+    content="web development blogs, DevOps blogs, AWS cloud articles, SEO tips, mobile app development blogs, software company blogs, digital marketing articles"
   />
 
   <meta
@@ -30,20 +61,39 @@
     content="BuildDeploy Tech"
   />
 
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
   <link
     rel="canonical"
     href="https://builddeploytech.com/blogs.html"
   />
 
+  <!-- ================= FAVICON ================= -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.png"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="images/logo.png"
+  />
+
   <!-- ================= OPEN GRAPH ================= -->
+
   <meta
     property="og:title"
-    content="BuildDeploy Tech Blogs"
+    content="BuildDeploy Tech Blogs | Web, SEO & DevOps Articles"
   />
 
   <meta
     property="og:description"
-    content="Technical blogs and digital growth insights from BuildDeploy Tech."
+    content="Explore blogs about website development, SEO, DevOps, AWS cloud and mobile app technologies."
   />
 
   <meta
@@ -58,17 +108,33 @@
 
   <meta
     property="og:image"
-    content="/images/logo.webp"
+    content="https://builddeploytech.com/images/logo.png"
   />
 
-  <!-- ================= FAVICON ================= -->
-  <link
-    rel="icon"
-    href="/images/logo.webp"
-    type="image/webp"
+  <!-- ================= TWITTER SEO ================= -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="BuildDeploy Tech Blogs"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Latest articles on web development, DevOps, cloud computing and SEO optimization."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://builddeploytech.com/images/logo.png"
   />
 
   <!-- ================= GOOGLE FONT ================= -->
+
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
 
@@ -79,20 +145,150 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <!-- ================= CSS ================= -->
-  <link rel="stylesheet"
-        href="/css/global.css" />
 
   <link rel="stylesheet"
-        href="/css/header-footer.css" />
+        href="css/global.css" />
 
   <link rel="stylesheet"
-        href="/css/blogs.css" />
+        href="css/header-footer.css" />
 
   <link rel="stylesheet"
-        href="/css/responsive.css" />
+        href="css/blogs.css" />
+
+  <link rel="stylesheet"
+        href="css/responsive.css" />
+
+  <!-- ================= FONT AWESOME ================= -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- ================= SEO SCHEMA ================= -->
+
+  <!-- ORGANIZATION -->
+
+  <script type="application/ld+json">
+
+  {
+    "@context":"https://schema.org",
+
+    "@type":"Organization",
+
+    "name":"BuildDeploy Tech",
+
+    "url":"https://builddeploytech.com/",
+
+    "logo":"https://builddeploytech.com/images/logo.png"
+
+  }
+
+  </script>
+
+  <!-- BLOG PAGE -->
+
+  <script type="application/ld+json">
+
+  {
+    "@context":"https://schema.org",
+
+    "@type":"Blog",
+
+    "name":"BuildDeploy Tech Blogs",
+
+    "url":"https://builddeploytech.com/blogs.html",
+
+    "description":"Blogs about web development, DevOps, AWS cloud, SEO and mobile app development."
+
+  }
+
+  </script>
+
+  <!-- BLOG POSTS -->
+
+  <script type="application/ld+json">
+
+  {
+    "@context":"https://schema.org",
+
+    "@type":"BlogPosting",
+
+    "headline":"Modern Web Development & DevOps Solutions",
+
+    "author":{
+
+      "@type":"Organization",
+
+      "name":"BuildDeploy Tech"
+
+    },
+
+    "publisher":{
+
+      "@type":"Organization",
+
+      "name":"BuildDeploy Tech",
+
+      "logo":{
+
+        "@type":"ImageObject",
+
+        "url":"https://builddeploytech.com/images/logo.png"
+
+      }
+
+    },
+
+    "url":"https://builddeploytech.com/blogs.html"
+
+  }
+
+  </script>
+
+  <!-- LOCAL BUSINESS -->
+
+  <script type="application/ld+json">
+
+  {
+    "@context":"https://schema.org",
+
+    "@type":"ProfessionalService",
+
+    "name":"BuildDeploy Tech",
+
+    "image":"https://builddeploytech.com/images/logo.png",
+
+    "url":"https://builddeploytech.com/",
+
+    "telephone":"+91-6392930918",
+
+    "areaServed":[
+
+      "Noida",
+      "Delhi NCR",
+      "Gurgaon"
+
+    ],
+
+    "address":{
+
+      "@type":"PostalAddress",
+
+      "addressLocality":"Noida",
+
+      "addressRegion":"Uttar Pradesh",
+
+      "addressCountry":"India"
+
+    }
+
+  }
+
+  </script>
 
 </head>
 
