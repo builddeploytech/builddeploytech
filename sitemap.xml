@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://www.sitemaps.org/schemas/sitemap/0.9
+http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ================= HOME ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      weekly
+    </changefreq>
+
+    <priority>
+      1.00
+    </priority>
+
+  </url>
+
+  <!-- ================= ABOUT ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/about.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.90
+    </priority>
+
+  </url>
+
+  <!-- ================= SERVICES ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/services.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      weekly
+    </changefreq>
+
+    <priority>
+      0.95
+    </priority>
+
+  </url>
+
+  <!-- ================= WEB DEVELOPMENT ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/services/web-development.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.85
+    </priority>
+
+  </url>
+
+  <!-- ================= APP DEVELOPMENT ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/services/app-development.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.85
+    </priority>
+
+  </url>
+
+  <!-- ================= SEO SERVICES ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/services/seo-services.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.85
+    </priority>
+
+  </url>
+
+  <!-- ================= DEVOPS CLOUD ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/services/devops-cloud.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.85
+    </priority>
+
+  </url>
+
+  <!-- ================= GOVERNMENT TENDERS ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/services/government-tenders.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.80
+    </priority>
+
+  </url>
+
+  <!-- ================= PROJECTS ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/projects.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      weekly
+    </changefreq>
+
+    <priority>
+      0.90
+    </priority>
+
+  </url>
+
+  <!-- ================= PRICING ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/pricing.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.85
+    </priority>
+
+  </url>
+
+  <!-- ================= BLOGS ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/blogs.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      weekly
+    </changefreq>
+
+    <priority>
+      0.85
+    </priority>
+
+  </url>
+
+  <!-- ================= DEVOPS ROADMAP BLOG ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/blogs/devops-roadmap-2026
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.75
+    </priority>
+
+  </url>
+
+  <!-- ================= TEAM ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/team.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.80
+    </priority>
+
+  </url>
+
+  <!-- ================= CONTACT ================= -->
+
+  <url>
+
+    <loc>
+      https://builddeploytech.com/contact.html
+    </loc>
+
+    <lastmod>
+      2026-05-17T09:30:11+00:00
+    </lastmod>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      0.80
+    </priority>
+
+  </url>
+
+</urlset>
