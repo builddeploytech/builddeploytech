@@ -2,59 +2,296 @@
    BUILDDEPLOY TECH - MAIN JS
 ========================================================= */
 
-/* =========================================================
-   LOAD HEADER
-========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-fetch("includes/header.html")
-.then((response) => response.text())
-.then((data) => {
+  /* =========================================================
+     BASE PATH DETECTION
+  ========================================================= */
+
+  let basePath = "/";
+
+  /* =========================================================
+     LOAD HEADER
+  ========================================================= */
 
   const header =
   document.getElementById("header");
 
   if(header){
 
-    header.innerHTML = data;
+    fetch(basePath + "includes/header.html")
 
-    initNavbar();
+      .then((response) => {
+
+        if(!response.ok){
+
+          throw new Error(
+            "Header not found"
+          );
+
+        }
+
+        return response.text();
+
+      })
+
+      .then((data) => {
+
+        header.innerHTML = data;
+
+        initNavbar();
+
+      })
+
+      .catch((error) => {
+
+        console.error(
+          "Header Load Error:",
+          error
+        );
+
+      });
 
   }
 
-})
-.catch((error) => {
-
-  console.log(
-    "Header Load Error:",
-    error
-  );
-
-});
-
-/* =========================================================
-   LOAD FOOTER
-========================================================= */
-
-fetch("includes/footer.html")
-.then((response) => response.text())
-.then((data) => {
+  /* =========================================================
+     LOAD FOOTER
+  ========================================================= */
 
   const footer =
   document.getElementById("footer");
 
   if(footer){
 
-    footer.innerHTML = data;
+    fetch(basePath + "includes/footer.html")
+
+      .then((response) => {
+
+        if(!response.ok){
+
+          throw new Error(
+            "Footer not found"
+          );
+
+        }
+
+        return response.text();
+
+      })
+
+      .then((data) => {
+
+        footer.innerHTML = data;
+
+      })
+
+      .catch((error) => {
+
+        console.error(
+          "Footer Load Error:",
+          error
+        );
+
+      });
 
   }
 
-})
-.catch((error) => {
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================= */
 
-  console.log(
-    "Footer Load Error:",
-    error
+  const revealElements =
+  document.querySelectorAll(
+
+    ".main-service-card,\
+    .project-card,\
+    .why-feature,\
+    .performance-card,\
+    .expertise-item,\
+    .testimonial-card,\
+    .cta-card,\
+    .strip-box,\
+    .feature-card,\
+    .process-card"
+
   );
+
+  function revealOnScroll(){
+
+    const triggerBottom =
+    window.innerHeight * 0.88;
+
+    revealElements.forEach((element) => {
+
+      const elementTop =
+      element.getBoundingClientRect().top;
+
+      if(elementTop < triggerBottom){
+
+        element.classList.add(
+          "show-reveal"
+        );
+
+      }
+
+    });
+
+  }
+
+  window.addEventListener(
+    "scroll",
+    revealOnScroll
+  );
+
+  window.addEventListener(
+    "load",
+    revealOnScroll
+  );
+
+  revealOnScroll();
+
+  /* =========================================================
+     COUNTER ANIMATION
+  ========================================================= */
+
+  const counters =
+  document.querySelectorAll(
+
+    ".strip-box h3,\
+    .analytics-card h3"
+
+  );
+
+  function animateCounter(counter){
+
+    const target =
+    counter.innerText;
+
+    const numericValue =
+    parseInt(
+      target.replace(/\D/g, "")
+    );
+
+    let current = 0;
+
+    const increment =
+    numericValue / 60;
+
+    function updateCounter(){
+
+      current += increment;
+
+      if(current < numericValue){
+
+        counter.innerText =
+        Math.floor(current) + "+";
+
+        requestAnimationFrame(
+          updateCounter
+        );
+
+      }else{
+
+        counter.innerText =
+        target;
+
+      }
+
+    }
+
+    updateCounter();
+
+  }
+
+  const counterObserver =
+  new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+      if(entry.isIntersecting){
+
+        animateCounter(
+          entry.target
+        );
+
+        counterObserver.unobserve(
+          entry.target
+        );
+
+      }
+
+    });
+
+  },{
+    threshold:0.5
+  });
+
+  counters.forEach((counter) => {
+
+    counterObserver.observe(
+      counter
+    );
+
+  });
+
+  /* =========================================================
+     SCROLL TO TOP BUTTON
+  ========================================================= */
+
+  const scrollBtn =
+  document.createElement("button");
+
+  scrollBtn.innerHTML = "↑";
+
+  scrollBtn.classList.add(
+    "scroll-top-btn"
+  );
+
+  document.body.appendChild(
+    scrollBtn
+  );
+
+  window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 400){
+
+      scrollBtn.classList.add(
+        "show-scroll"
+      );
+
+    }else{
+
+      scrollBtn.classList.remove(
+        "show-scroll"
+      );
+
+    }
+
+  });
+
+  scrollBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+      top:0,
+
+      behavior:"smooth"
+
+    });
+
+  });
+
+  /* =========================================================
+     PAGE LOADED
+  ========================================================= */
+
+  window.addEventListener("load", () => {
+
+    document.body.classList.add(
+      "loaded"
+    );
+
+  });
 
 });
 
@@ -65,28 +302,42 @@ fetch("includes/footer.html")
 function initNavbar(){
 
   const siteHeader =
-  document.getElementById("siteHeader");
+  document.getElementById(
+    "siteHeader"
+  );
 
   const menuToggle =
-  document.getElementById("menuToggle");
+  document.getElementById(
+    "menuToggle"
+  );
 
   const navMenu =
-  document.getElementById("navMenu");
+  document.getElementById(
+    "navMenu"
+  );
 
   const navDropdowns =
-  document.querySelectorAll(".nav-dropdown");
+  document.querySelectorAll(
+    ".nav-dropdown"
+  );
 
-  /* =========================================
+  /* =========================================================
      MOBILE MENU
-  ========================================= */
+  ========================================================= */
 
   if(menuToggle && navMenu){
 
     menuToggle.addEventListener("click", () => {
 
-      navMenu.classList.toggle("active");
+      navMenu.classList.toggle(
+        "active"
+      );
 
-      if(navMenu.classList.contains("active")){
+      if(
+        navMenu.classList.contains(
+          "active"
+        )
+      ){
 
         menuToggle.innerHTML = "✕";
 
@@ -106,36 +357,43 @@ function initNavbar(){
 
   }
 
-  /* =========================================
+  /* =========================================================
      MOBILE DROPDOWN
-  ========================================= */
+  ========================================================= */
 
   navDropdowns.forEach((dropdown) => {
 
     const parent =
-    dropdown.querySelector(".nav-parent");
+    dropdown.querySelector(
+      ".nav-parent"
+    );
 
     if(parent){
 
-      parent.addEventListener("click", (e) => {
+      parent.addEventListener(
+        "click",
+        (e) => {
 
-        if(window.innerWidth <= 992){
+          if(window.innerWidth <= 992){
 
-          e.preventDefault();
+            e.preventDefault();
 
-          dropdown.classList.toggle("active");
+            dropdown.classList.toggle(
+              "active"
+            );
+
+          }
 
         }
-
-      });
+      );
 
     }
 
   });
 
-  /* =========================================
+  /* =========================================================
      HEADER SCROLL EFFECT
-  ========================================= */
+  ========================================================= */
 
   window.addEventListener("scroll", () => {
 
@@ -143,11 +401,15 @@ function initNavbar(){
 
       if(window.scrollY > 40){
 
-        siteHeader.classList.add("scrolled");
+        siteHeader.classList.add(
+          "scrolled"
+        );
 
       }else{
 
-        siteHeader.classList.remove("scrolled");
+        siteHeader.classList.remove(
+          "scrolled"
+        );
 
       }
 
@@ -155,34 +417,39 @@ function initNavbar(){
 
   });
 
-  /* =========================================
+  /* =========================================================
      ACTIVE PAGE LINK
-  ========================================= */
+  ========================================================= */
 
   const navLinks =
-  document.querySelectorAll(".nav-menu a");
+  document.querySelectorAll(
+    ".nav-menu a"
+  );
 
-  const currentPage =
-  window.location.pathname
-  .split("/")
-  .pop();
+  const currentPath =
+  window.location.pathname;
 
   navLinks.forEach((link) => {
 
     const href =
     link.getAttribute("href");
 
-    if(href === currentPage){
+    if(
+      href &&
+      currentPath.includes(href)
+    ){
 
-      link.classList.add("active");
+      link.classList.add(
+        "active"
+      );
 
     }
 
   });
 
-  /* =========================================
+  /* =========================================================
      CLOSE MENU ON LINK CLICK
-  ========================================= */
+  ========================================================= */
 
   navLinks.forEach((link) => {
 
@@ -192,7 +459,9 @@ function initNavbar(){
 
         if(navMenu){
 
-          navMenu.classList.remove("active");
+          navMenu.classList.remove(
+            "active"
+          );
 
         }
 
@@ -211,9 +480,9 @@ function initNavbar(){
 
   });
 
-  /* =========================================
+  /* =========================================================
      RESET ON RESIZE
-  ========================================= */
+  ========================================================= */
 
   window.addEventListener("resize", () => {
 
@@ -221,7 +490,9 @@ function initNavbar(){
 
       if(navMenu){
 
-        navMenu.classList.remove("active");
+        navMenu.classList.remove(
+          "active"
+        );
 
       }
 
@@ -239,173 +510,3 @@ function initNavbar(){
   });
 
 }
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealElements =
-document.querySelectorAll(
-  ".main-service-card, .project-card, .why-feature, .performance-card, .expertise-item, .testimonial-card, .cta-card, .strip-box"
-);
-
-function revealOnScroll(){
-
-  const triggerBottom =
-  window.innerHeight * 0.88;
-
-  revealElements.forEach((element) => {
-
-    const elementTop =
-    element.getBoundingClientRect().top;
-
-    if(elementTop < triggerBottom){
-
-      element.classList.add("show-reveal");
-
-    }
-
-  });
-
-}
-
-window.addEventListener(
-  "scroll",
-  revealOnScroll
-);
-
-window.addEventListener(
-  "load",
-  revealOnScroll
-);
-
-/* =========================================================
-   COUNTER ANIMATION
-========================================================= */
-
-const counters =
-document.querySelectorAll(
-  ".strip-box h3, .analytics-card h3"
-);
-
-function animateCounter(counter){
-
-  const target =
-  counter.innerText;
-
-  const numericValue =
-  parseInt(
-    target.replace(/\D/g, "")
-  );
-
-  let current = 0;
-
-  const increment =
-  numericValue / 60;
-
-  function updateCounter(){
-
-    current += increment;
-
-    if(current < numericValue){
-
-      counter.innerText =
-      Math.floor(current) + "+";
-
-      requestAnimationFrame(updateCounter);
-
-    }else{
-
-      counter.innerText = target;
-
-    }
-
-  }
-
-  updateCounter();
-
-}
-
-const counterObserver =
-new IntersectionObserver((entries) => {
-
-  entries.forEach((entry) => {
-
-    if(entry.isIntersecting){
-
-      animateCounter(entry.target);
-
-      counterObserver.unobserve(
-        entry.target
-      );
-
-    }
-
-  });
-
-},{
-  threshold:0.5
-});
-
-counters.forEach((counter) => {
-
-  counterObserver.observe(counter);
-
-});
-
-/* =========================================================
-   SCROLL TO TOP BUTTON
-========================================================= */
-
-const scrollBtn =
-document.createElement("button");
-
-scrollBtn.innerHTML = "↑";
-
-scrollBtn.classList.add(
-  "scroll-top-btn"
-);
-
-document.body.appendChild(scrollBtn);
-
-window.addEventListener("scroll", () => {
-
-  if(window.scrollY > 400){
-
-    scrollBtn.classList.add(
-      "show-scroll"
-    );
-
-  }else{
-
-    scrollBtn.classList.remove(
-      "show-scroll"
-    );
-
-  }
-
-});
-
-scrollBtn.addEventListener("click", () => {
-
-  window.scrollTo({
-
-    top:0,
-
-    behavior:"smooth"
-
-  });
-
-});
-
-/* =========================================================
-   PAGE LOADED
-========================================================= */
-
-window.addEventListener("load", () => {
-
-  document.body.classList.add(
-    "loaded"
-  );
-
-});

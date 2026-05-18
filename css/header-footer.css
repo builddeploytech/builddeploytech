@@ -607,6 +607,8 @@
 
   gap:14px;
 
+  margin-top:24px;
+
 }
 
 /* =========================================================
@@ -615,14 +617,16 @@
 
 .footer-socials a{
 
-  width:48px;
-  height:48px;
+  width:50px;
+  height:50px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  border-radius:18px;
+  border-radius:16px;
 
   background:
   rgba(255,255,255,0.06);
@@ -632,9 +636,16 @@
 
   color:#ffffff;
 
-  font-size:1.1rem;
+  font-size:18px;
 
-  transition:0.35s ease;
+  text-decoration:none;
+
+  backdrop-filter:blur(10px);
+
+  transition:
+  transform 0.35s ease,
+  background 0.35s ease,
+  box-shadow 0.35s ease;
 
 }
 
@@ -651,11 +662,14 @@
   linear-gradient(
     135deg,
     #2563eb,
+    #7c3aed,
     #0ea5e9
   );
 
-}
+  box-shadow:
+  0 15px 35px rgba(37,99,235,0.30);
 
+}
 /* =========================================================
    FOOTER COLUMN
 ========================================================= */
@@ -784,132 +798,6 @@
 
 }
 
-/* =========================================================
-   NEWSLETTER BOX
-========================================================= */
-
-.newsletter-box{
-
-  margin-top:34px;
-
-  padding:28px;
-
-  border-radius:30px;
-
-  background:
-  rgba(255,255,255,0.06);
-
-  border:
-  1px solid rgba(255,255,255,0.08);
-
-}
-
-/* =========================================================
-   NEWSLETTER TITLE
-========================================================= */
-
-.newsletter-box h4{
-
-  margin-bottom:14px;
-
-  font-size:1.2rem;
-
-  font-weight:800;
-
-  color:#ffffff;
-
-}
-
-/* =========================================================
-   NEWSLETTER TEXT
-========================================================= */
-
-.newsletter-box p{
-
-  margin-bottom:22px;
-
-  color:
-  rgba(255,255,255,0.68);
-
-  font-size:14px;
-
-  line-height:1.8;
-
-}
-
-/* =========================================================
-   NEWSLETTER FORM
-========================================================= */
-
-.newsletter-form{
-
-  display:flex;
-
-  gap:12px;
-
-}
-
-/* =========================================================
-   NEWSLETTER INPUT
-========================================================= */
-
-.newsletter-form input{
-
-  flex:1;
-
-  height:54px;
-
-  padding:0 20px;
-
-  border:none;
-
-  outline:none;
-
-  border-radius:18px;
-
-  background:
-  rgba(255,255,255,0.08);
-
-  color:#ffffff;
-
-  font-size:14px;
-
-}
-
-.newsletter-form input::placeholder{
-
-  color:
-  rgba(255,255,255,0.5);
-
-}
-
-/* =========================================================
-   NEWSLETTER BUTTON
-========================================================= */
-
-.newsletter-form button{
-
-  height:54px;
-
-  padding:0 24px;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #2563eb,
-    #0ea5e9
-  );
-
-  color:#ffffff;
-
-  font-size:14px;
-  font-weight:700;
-
-  transition:0.35s ease;
-
-}
 
 /* =========================================================
    BUTTON HOVER

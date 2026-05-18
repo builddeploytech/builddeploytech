@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <!-- ===================================================== -->
+  <!-- BASIC META -->
+  <!-- ===================================================== -->
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  />
+
+  <meta
+    name="theme-color"
+    content="#0f172a"
+  />
+
+  <!-- ===================================================== -->
+  <!-- GA4 -->
+  <!-- ===================================================== -->
+
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4XWD9BT36R">
+  </script>
+
+  <script>
+
+    window.dataLayer =
+    window.dataLayer || [];
+
+    function gtag(){
+
+      dataLayer.push(arguments);
+
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-4XWD9BT36R');
+
+  </script>
+
+  <!-- ===================================================== -->
+  <!-- SEO -->
+  <!-- ===================================================== -->
+
+  <title>
+
+    CI/CD Pipeline With Jenkins 2026 |
+    GitHub & Docker Deployment Guide -
+    BuildDeploy Tech
+
+  </title>
+
+  <meta
+    name="description"
+    content="Learn CI/CD pipeline with Jenkins, GitHub and Docker. Automate deployments, build workflows and DevOps pipelines step-by-step in 2026."
+  />
+
+  <meta
+    name="keywords"
+    content="CI/CD pipeline Jenkins, Jenkins deployment guide, GitHub Jenkins Docker workflow, automate deployment, DevOps CI/CD tutorial"
+  />
+
+  <meta
+    name="author"
+    content="BuildDeploy Tech"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <meta
+    name="googlebot"
+    content="index, follow"
+  />
+
+  <link
+    rel="canonical"
+    href="https://builddeploytech.com/blogs/cicd-pipeline-jenkins.html"
+  />
+
+  <!-- ===================================================== -->
+  <!-- FAVICON -->
+  <!-- ===================================================== -->
+
+  <link
+    rel="icon"
+    href="/images/logo.png"
+    type="image/png"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="/images/logo.png"
+  />
+
+  <!-- ===================================================== -->
+  <!-- OPEN GRAPH -->
+  <!-- ===================================================== -->
+
+  <meta
+    property="og:title"
+    content="CI/CD Pipeline With Jenkins 2026 | BuildDeploy Tech"
+  />
+
+  <meta
+    property="og:description"
+    content="Automate deployments using GitHub, Jenkins and Docker workflows with CI/CD pipelines."
+  />
+
+  <meta
+    property="og:type"
+    content="article"
+  />
+
+  <meta
+    property="og:url"
+    content="https://builddeploytech.com/blogs/cicd-pipeline-jenkins.html"
+  />
+
+  <meta
+    property="og:image"
+    content="https://builddeploytech.com/images/blogs/jenkins-cicd.webp"
+  />
+
+  <meta
+    property="og:site_name"
+    content="BuildDeploy Tech"
+  />
+
+  <!-- ===================================================== -->
+  <!-- TWITTER -->
+  <!-- ===================================================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="CI/CD Pipeline With Jenkins 2026"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Learn Jenkins CI/CD pipeline automation with GitHub and Docker deployment workflows."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://builddeploytech.com/images/blogs/jenkins-cicd.webp"
+  />
+
+  <!-- ===================================================== -->
+  <!-- GOOGLE FONT -->
+  <!-- ===================================================== -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===================================================== -->
+  <!-- CSS -->
+  <!-- ===================================================== -->
+
+  <link rel="stylesheet"
+        href="/css/global.css" />
+
+  <link rel="stylesheet"
+        href="/css/header-footer.css" />
+
+  <link rel="stylesheet"
+        href="/css/blog-detail.css" />
+
+  <link rel="stylesheet"
+        href="/css/responsive.css" />
+
+</head>
+
+<body class="blog-details-page">
+
+  <!-- ===================================================== -->
+  <!-- HEADER -->
+  <!-- ===================================================== -->
+
+  <div id="header"></div>
+
+  <!-- ===================================================== -->
+  <!-- HERO -->
+  <!-- ===================================================== -->
+
+  <section class="blog-hero">
+
+    <div class="hero-blur hero-blur-1"></div>
+
+    <div class="hero-blur hero-blur-2"></div>
+
+    <div class="container">
+
+      <div class="blog-hero-content">
+
+        <span class="section-tag">
+
+          Jenkins CI/CD Guide
+
+        </span>
+
+        <h1>
+
+          CI/CD Pipeline
+          With Jenkins,
+          GitHub
+          & Docker
+
+        </h1>
+
+        <p>
+
+          Learn how to automate deployments
+          using Jenkins pipelines,
+          GitHub repositories
+          and Docker workflows
+          for modern DevOps infrastructure.
+
+        </p>
+
+        <div class="blog-meta">
+
+          <span>
+
+            Jenkins
+
+          </span>
+
+          <span>
+
+            CI/CD
+
+          </span>
+
+          <span>
+
+            Docker
+
+          </span>
+
+          <span>
+
+            GitHub
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- BLOG CONTENT -->
+  <!-- ===================================================== -->
+
+  <section class="blog-content-section">
+
+    <div class="container blog-layout">
+
+      <!-- ===================================================== -->
+      <!-- SIDEBAR -->
+      <!-- ===================================================== -->
+
+      <aside class="blog-sidebar">
+
+        <div class="toc-card">
+
+          <h3>
+
+            Table Of Contents
+
+          </h3>
+
+          <ul>
+
+            <li>
+              <a href="#what-is-cicd">
+                What Is CI/CD
+              </a>
+            </li>
+
+            <li>
+              <a href="#jenkins">
+                Jenkins Setup
+              </a>
+            </li>
+
+            <li>
+              <a href="#github">
+                GitHub Integration
+              </a>
+            </li>
+
+            <li>
+              <a href="#docker">
+                Docker Workflow
+              </a>
+            </li>
+
+            <li>
+              <a href="#pipeline">
+                Jenkins Pipeline
+              </a>
+            </li>
+
+            <li>
+              <a href="#deployment">
+                Deployment Strategy
+              </a>
+            </li>
+
+            <li>
+              <a href="#conclusion">
+                Final Workflow
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </aside>
+
+      <!-- ===================================================== -->
+      <!-- ARTICLE -->
+      <!-- ===================================================== -->
+
+      <article class="blog-article">
+
+        <!-- ===================================================== -->
+        <!-- WHAT IS CICD -->
+        <!-- ===================================================== -->
+
+        <section id="what-is-cicd">
+
+          <h2>
+
+            What Is CI/CD?
+
+          </h2>
+
+          <p>
+
+            CI/CD stands for
+            Continuous Integration
+            and Continuous Deployment.
+
+          </p>
+
+          <p>
+
+            CI/CD automates application testing,
+            building
+            and deployment workflows.
+
+          </p>
+
+          <ul>
+
+            <li>
+
+              Faster Deployments
+
+            </li>
+
+            <li>
+
+              Reduced Manual Work
+
+            </li>
+
+            <li>
+
+              Better Code Quality
+
+            </li>
+
+            <li>
+
+              Automated Delivery
+
+            </li>
+
+          </ul>
+
+          <div class="blog-note">
+
+            <strong>
+
+              Important:
+
+            </strong>
+
+            CI/CD pipelines are one of the most important
+            DevOps practices in modern software development.
+
+          </div>
+
+        </section>
+                <!-- ===================================================== -->
+        <!-- JENKINS -->
+        <!-- ===================================================== -->
+
+        <section id="jenkins">
+
+          <h2>
+
+            Jenkins Installation & Setup
+
+          </h2>
+
+          <p>
+
+            Jenkins is an open-source
+            automation server
+            used for building CI/CD pipelines.
+
+          </p>
+
+          <p>
+
+            Install Jenkins on Ubuntu server:
+
+          </p>
+
+<pre>
+sudo apt update
+
+sudo apt install openjdk-17-jdk -y
+</pre>
+
+<pre>
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+</pre>
+
+<pre>
+sudo apt install jenkins -y
+</pre>
+
+          <p>
+
+            Start Jenkins service:
+
+          </p>
+
+<pre>
+sudo systemctl start jenkins
+
+sudo systemctl enable jenkins
+</pre>
+
+          <p>
+
+            Open browser:
+
+          </p>
+
+<pre>
+http://SERVER-IP:8080
+</pre>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- GITHUB -->
+        <!-- ===================================================== -->
+
+        <section id="github">
+
+          <h2>
+
+            GitHub Integration With Jenkins
+
+          </h2>
+
+          <p>
+
+            GitHub repositories
+            can automatically trigger Jenkins pipelines
+            using webhooks.
+
+          </p>
+
+          <h3>
+
+            GitHub Integration Steps
+
+          </h3>
+
+          <ul>
+
+            <li>
+
+              Create GitHub Repository
+
+            </li>
+
+            <li>
+
+              Push Application Code
+
+            </li>
+
+            <li>
+
+              Connect Jenkins Credentials
+
+            </li>
+
+            <li>
+
+              Add GitHub Webhook
+
+            </li>
+
+            <li>
+
+              Configure Jenkins Job
+
+            </li>
+
+          </ul>
+
+<pre>
+http://YOUR-JENKINS/github-webhook/
+</pre>
+
+          <div class="blog-note">
+
+            <strong>
+
+              Tip:
+
+            </strong>
+
+            GitHub webhooks automate deployments
+            whenever code is pushed.
+
+          </div>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- DOCKER -->
+        <!-- ===================================================== -->
+
+        <section id="docker">
+
+          <h2>
+
+            Docker Workflow In CI/CD
+
+          </h2>
+
+          <p>
+
+            Docker containers help create
+            consistent deployment environments.
+
+          </p>
+
+          <p>
+
+            Jenkins pipelines often build
+            Docker images automatically.
+
+          </p>
+
+<pre>
+docker build -t myapp .
+
+docker run -d -p 80:80 myapp
+</pre>
+
+          <h3>
+
+            Docker Benefits
+
+          </h3>
+
+          <ul>
+
+            <li>
+
+              Consistent Deployments
+
+            </li>
+
+            <li>
+
+              Faster Delivery
+
+            </li>
+
+            <li>
+
+              Easy Scaling
+
+            </li>
+
+            <li>
+
+              Environment Isolation
+
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- PIPELINE -->
+        <!-- ===================================================== -->
+
+        <section id="pipeline">
+
+          <h2>
+
+            Jenkins Pipeline Example
+
+          </h2>
+
+          <p>
+
+            Jenkins pipelines
+            automate the entire deployment workflow.
+
+          </p>
+
+<pre>
+pipeline {
+
+  agent any
+
+  stages {
+
+    stage('Clone') {
+
+      steps {
+
+        git 'https://github.com/user/project.git'
+
+      }
+
+    }
+
+    stage('Build Docker Image') {
+
+      steps {
+
+        sh 'docker build -t myapp .'
+
+      }
+
+    }
+
+    stage('Deploy') {
+
+      steps {
+
+        sh 'docker run -d -p 80:80 myapp'
+
+      }
+
+    }
+
+  }
+
+}
+</pre>
+
+          <p>
+
+            This pipeline automatically:
+
+          </p>
+
+          <ul>
+
+            <li>
+
+              Pulls Code
+
+            </li>
+
+            <li>
+
+              Builds Docker Image
+
+            </li>
+
+            <li>
+
+              Deploys Application
+
+            </li>
+
+          </ul>
+
+        </section>
+                <!-- ===================================================== -->
+        <!-- DEPLOYMENT -->
+        <!-- ===================================================== -->
+
+        <section id="deployment">
+
+          <h2>
+
+            Production Deployment Strategy
+
+          </h2>
+
+          <p>
+
+            Production deployments
+            should be secure,
+            automated
+            and scalable.
+
+          </p>
+
+          <h3>
+
+            Recommended CI/CD Workflow
+
+          </h3>
+
+          <div class="roadmap-box">
+
+            <div class="roadmap-step">
+
+              GitHub Push
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Jenkins Trigger
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Build Docker Image
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Run Tests
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Deploy Container
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Monitor Application
+
+            </div>
+
+          </div>
+
+          <p>
+
+            A good CI/CD pipeline
+            reduces deployment errors
+            and improves release speed.
+
+          </p>
+
+          <h3>
+
+            Best Practices
+
+          </h3>
+
+          <ul>
+
+            <li>
+
+              Use Environment Variables
+
+            </li>
+
+            <li>
+
+              Secure Credentials
+
+            </li>
+
+            <li>
+
+              Enable Rollback Strategy
+
+            </li>
+
+            <li>
+
+              Monitor Logs
+
+            </li>
+
+            <li>
+
+              Automate Testing
+
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- FINAL -->
+        <!-- ===================================================== -->
+
+        <section id="conclusion">
+
+          <h2>
+
+            Final CI/CD Pipeline Architecture
+
+          </h2>
+
+          <p>
+
+            Modern DevOps infrastructure
+            depends heavily
+            on automation workflows.
+
+          </p>
+
+          <div class="roadmap-box">
+
+            <div class="roadmap-step">
+
+              GitHub
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Jenkins
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Docker
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Linux Server
+
+            </div>
+
+            <div class="roadmap-step">
+
+              NGINX
+
+            </div>
+
+            <div class="roadmap-step">
+
+              AWS EC2
+
+            </div>
+
+            <div class="roadmap-step">
+
+              Automated Deployment
+
+            </div>
+
+          </div>
+
+          <p>
+
+            Learning CI/CD pipelines
+            is essential
+            for DevOps Engineers in 2026.
+
+          </p>
+
+          <p>
+
+            Practice building pipelines regularly
+            using GitHub,
+            Jenkins
+            and Docker projects.
+
+          </p>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- CTA -->
+        <!-- ===================================================== -->
+
+        <div class="blog-cta">
+
+          <h3>
+
+            Need DevOps Automation Services?
+
+          </h3>
+
+          <p>
+
+            BuildDeploy Tech provides
+            CI/CD automation,
+            Jenkins pipelines,
+            Docker deployment,
+            Linux server management
+            and cloud infrastructure solutions.
+
+          </p>
+
+          <div class="cta-buttons">
+
+            <a href="/contact.html"
+               class="primary-btn">
+
+              Contact Us
+
+            </a>
+
+            <a href="https://wa.me/916392930918"
+               target="_blank"
+               class="secondary-btn">
+
+              WhatsApp Us
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- RELATED BLOGS -->
+  <!-- ===================================================== -->
+
+  <section class="related-blogs-section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="section-tag">
+
+          Related Articles
+
+        </span>
+
+        <h2>
+
+          Continue Learning DevOps & Automation
+
+        </h2>
+
+        <p>
+
+          Explore more cloud,
+          deployment
+          and DevOps workflow guides
+          from BuildDeploy Tech.
+
+        </p>
+
+      </div>
+
+      <div class="blogs-grid">
+
+        <!-- BLOG -->
+
+        <article class="blog-card">
+
+          <div class="blog-content">
+
+            <span class="blog-category">
+
+              DevOps
+
+            </span>
+
+            <h3>
+
+              DevOps Roadmap For Beginners
+
+            </h3>
+
+            <p>
+
+              Learn Linux,
+              Docker,
+              AWS,
+              Kubernetes
+              and CI/CD step-by-step.
+
+            </p>
+
+            <a href="/blogs/devops-roadmap-for-beginners.html">
+
+              Read More →
+
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- BLOG -->
+
+        <article class="blog-card">
+
+          <div class="blog-content">
+
+            <span class="blog-category">
+
+              AWS
+
+            </span>
+
+            <h3>
+
+              AWS EC2 Deployment Guide
+
+            </h3>
+
+            <p>
+
+              Deploy applications
+              using AWS EC2,
+              Ubuntu Linux
+              and NGINX server.
+
+            </p>
+
+            <a href="/blogs/aws-ec2-deployment.html">
+
+              Read More →
+
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- BLOG -->
+
+        <article class="blog-card">
+
+          <div class="blog-content">
+
+            <span class="blog-category">
+
+              Docker
+
+            </span>
+
+            <h3>
+
+              Docker Beginner Guide
+
+            </h3>
+
+            <p>
+
+              Learn Docker containers,
+              images,
+              Docker Compose
+              and deployment workflows.
+
+            </p>
+
+            <a href="/blogs/docker-beginner-guide.html">
+
+              Read More →
+
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- FOOTER -->
+  <!-- ===================================================== -->
+
+  <div id="footer"></div>
+
+  <!-- ===================================================== -->
+  <!-- JS -->
+  <!-- ===================================================== -->
+
+  <script defer src="/js/main.js"></script>
+
+  <script defer src="/js/navbar.js"></script>
+
+  <script defer src="/js/animations.js"></script>
+
+</body>
+
+</html>
