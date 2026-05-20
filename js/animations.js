@@ -1,5 +1,5 @@
 /* =========================================================
-   BUILDDEPLOY TECH - ANIMATIONS JS
+   BUILDDEPLOY TECH - OPTIMIZED ANIMATIONS JS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,7 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animatedElements =
   document.querySelectorAll(
-    ".hero-content, .hero-visual, .main-service-card, .project-card, .why-feature, .performance-card, .expertise-item, .testimonial-card, .cta-box, .section-header"
+
+    ".hero-content,\
+    .hero-visual,\
+    .main-service-card,\
+    .project-card,\
+    .why-feature,\
+    .performance-card,\
+    .expertise-item,\
+    .testimonial-card,\
+    .cta-box,\
+    .section-header,\
+    .blog-card,\
+    .faq-card,\
+    .pricing-card,\
+    .process-card,\
+    .feature-card"
+
   );
 
   /* =====================================================
@@ -37,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   },{
-    threshold:0.15
+    threshold:0.12
   });
 
   animatedElements.forEach((element) => {
@@ -47,195 +63,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================================================
-     HERO FLOATING EFFECT
-  ===================================================== */
-
-  const heroVisual =
-  document.querySelector(".hero-visual");
-
-  if(heroVisual){
-
-    window.addEventListener(
-      "mousemove",
-      (e) => {
-
-        if(window.innerWidth > 992){
-
-          const x =
-          (
-            window.innerWidth / 2 -
-            e.clientX
-          ) / 90;
-
-          const y =
-          (
-            window.innerHeight / 2 -
-            e.clientY
-          ) / 90;
-
-          heroVisual.style.transform =
-          `translate(${x}px, ${y}px)`;
-
-        }
-
-      }
-    );
-
-  }
-
-  /* =====================================================
-     PARALLAX HERO
-  ===================================================== */
-
-  window.addEventListener(
-    "scroll",
-    () => {
-
-      const heroSection =
-      document.querySelector(
-        ".hero-section"
-      );
-
-      if(heroSection){
-
-        const scrollY =
-        window.scrollY;
-
-        heroSection.style.backgroundPositionY =
-        `${scrollY * 0.12}px`;
-
-      }
-
-    }
-  );
-
-  /* =====================================================
-     BUTTON MAGNET EFFECT
-  ===================================================== */
-
-  const magneticButtons =
-  document.querySelectorAll(
-    ".primary-btn, .secondary-btn, .nav-cta"
-  );
-
-  magneticButtons.forEach((button) => {
-
-    button.addEventListener(
-      "mousemove",
-      (e) => {
-
-        if(window.innerWidth > 992){
-
-          const rect =
-          button.getBoundingClientRect();
-
-          const x =
-          e.clientX -
-          rect.left -
-          rect.width / 2;
-
-          const y =
-          e.clientY -
-          rect.top -
-          rect.height / 2;
-
-          button.style.transform =
-          `translate(${x * 0.08}px,
-          ${y * 0.08}px)`;
-
-        }
-
-      }
-    );
-
-    button.addEventListener(
-      "mouseleave",
-      () => {
-
-        button.style.transform =
-        "translate(0px,0px)";
-
-      }
-    );
-
-  });
-
-  /* =====================================================
      STAGGER CARD EFFECT
   ===================================================== */
 
   const staggerCards =
   document.querySelectorAll(
-    ".main-service-card, .project-card, .expertise-item"
+
+    ".main-service-card,\
+    .project-card,\
+    .expertise-item,\
+    .blog-card,\
+    .pricing-card"
+
   );
 
   staggerCards.forEach((card, index) => {
 
     card.style.transitionDelay =
-    `${index * 0.08}s`;
-
-  });
-
-  /* =====================================================
-     IMAGE PARALLAX
-  ===================================================== */
-
-  const projectCards =
-  document.querySelectorAll(
-    ".project-card"
-  );
-
-  projectCards.forEach((card) => {
-
-    const image =
-    card.querySelector("img");
-
-    if(!image) return;
-
-    card.addEventListener(
-      "mousemove",
-      (e) => {
-
-        if(window.innerWidth > 992){
-
-          const rect =
-          card.getBoundingClientRect();
-
-          const x =
-          e.clientX - rect.left;
-
-          const y =
-          e.clientY - rect.top;
-
-          const moveX =
-          (
-            x - rect.width / 2
-          ) / 30;
-
-          const moveY =
-          (
-            y - rect.height / 2
-          ) / 30;
-
-          image.style.transform =
-          `scale(1.08)
-           translate(${moveX}px,
-           ${moveY}px)`;
-
-        }
-
-      }
-    );
-
-    card.addEventListener(
-      "mouseleave",
-      () => {
-
-        image.style.transform =
-        "scale(1) translate(0px,0px)";
-
-      }
-    );
+    `${index * 0.05}s`;
 
   });
 
@@ -245,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const statNumbers =
   document.querySelectorAll(
-    ".strip-box h3"
+    ".strip-box h3,\
+    .analytics-card h3"
   );
 
   const countObserver =
@@ -266,10 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
           originalText.replace(/\D/g,"")
         );
 
+        if(isNaN(target)) return;
+
         let current = 0;
 
         const increment =
-        target / 70;
+        target / 60;
 
         function updateCounter(){
 
@@ -304,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   },{
-    threshold:0.6
+    threshold:0.5
   });
 
   statNumbers.forEach((counter) => {
@@ -334,54 +182,40 @@ document.addEventListener("DOMContentLoaded", () => {
       progressBar
     );
 
+    let ticking = false;
+
+    function updateProgress(){
+
+      const scrollTop =
+      window.scrollY;
+
+      const docHeight =
+      document.body.scrollHeight -
+      window.innerHeight;
+
+      const progress =
+      (scrollTop / docHeight) * 100;
+
+      progressBar.style.width =
+      progress + "%";
+
+      ticking = false;
+
+    }
+
     window.addEventListener(
       "scroll",
       () => {
 
-        const scrollTop =
-        window.scrollY;
+        if(!ticking){
 
-        const docHeight =
-        document.body.scrollHeight -
-        window.innerHeight;
+          requestAnimationFrame(
+            updateProgress
+          );
 
-        const progress =
-        (scrollTop / docHeight) * 100;
+          ticking = true;
 
-        progressBar.style.width =
-        progress + "%";
-
-      }
-    );
-
-  }
-
-  /* =====================================================
-     CURSOR GLOW EFFECT
-  ===================================================== */
-
-  if(window.innerWidth > 768){
-
-    const cursorGlow =
-    document.createElement("div");
-
-    cursorGlow.classList.add(
-      "cursor-glow"
-    );
-
-    document.body.appendChild(
-      cursorGlow
-    );
-
-    window.addEventListener(
-      "mousemove",
-      (e) => {
-
-        cursorGlow.style.left =
-        e.clientX + "px";
-
-        cursorGlow.style.top =
-        e.clientY + "px";
+        }
 
       }
     );
@@ -394,7 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fadeElements =
   document.querySelectorAll(
-    ".section-header, .footer-top"
+    ".section-header,\
+    .footer-top,\
+    .blog-hero-content"
   );
 
   const fadeObserver =
@@ -417,12 +253,72 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   },{
-    threshold:0.2
+    threshold:0.15
   });
 
   fadeElements.forEach((element) => {
 
     fadeObserver.observe(element);
+
+  });
+
+  /* =====================================================
+     SMOOTH IMAGE LOADING
+  ===================================================== */
+
+  const images =
+  document.querySelectorAll("img");
+
+  images.forEach((image) => {
+
+    image.addEventListener(
+      "load",
+      () => {
+
+        image.classList.add(
+          "image-loaded"
+        );
+
+      }
+    );
+
+  });
+
+  /* =====================================================
+     BUTTON HOVER EFFECT
+     LIGHTWEIGHT VERSION
+  ===================================================== */
+
+  const buttons =
+  document.querySelectorAll(
+    ".primary-btn,\
+    .secondary-btn,\
+    .nav-cta"
+  );
+
+  buttons.forEach((button) => {
+
+    button.addEventListener(
+      "mouseenter",
+      () => {
+
+        button.classList.add(
+          "btn-hover-active"
+        );
+
+      }
+    );
+
+    button.addEventListener(
+      "mouseleave",
+      () => {
+
+        button.classList.remove(
+          "btn-hover-active"
+        );
+
+      }
+    );
 
   });
 

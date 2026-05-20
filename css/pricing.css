@@ -635,6 +635,375 @@
 
 }
 
+/* ===================================================== */
+/* BENEFITS SECTION */
+/* ===================================================== */
+
+.pricing-benefits-section{
+
+  padding:100px 0;
+
+}
+
+.benefits-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:24px;
+
+  margin-top:60px;
+
+}
+
+.benefit-card{
+
+  background:linear-gradient(
+    145deg,
+    #6a9de4,
+    #0c53c5
+  );
+
+  border-radius:24px;
+
+  padding:34px;
+
+  border:
+  1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+  0 12px 40px rgba(12,83,197,0.25);
+
+  transition:0.4s ease;
+
+}
+
+.benefit-card:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 20px 50px rgba(12,83,197,0.45);
+
+}
+
+.benefit-card h3{
+
+  font-size:24px;
+
+  color:#ffffff;
+
+  margin-bottom:18px;
+
+  line-height:1.4;
+
+}
+
+.benefit-card p{
+
+  color:#e5ecff;
+
+  line-height:1.9;
+
+  font-size:15px;
+
+}
+
+/* ===================================================== */
+/* COMPARISON TABLE */
+/* ===================================================== */
+
+.pricing-comparison-section{
+
+  padding:100px 0;
+
+}
+
+.pricing-table-wrapper{
+
+  overflow-x:auto;
+
+  margin-top:60px;
+
+  border-radius:24px;
+
+}
+
+.pricing-table{
+
+  width:100%;
+
+  border-collapse:collapse;
+
+  overflow:hidden;
+
+  background:#111827;
+
+  border-radius:24px;
+
+}
+
+.pricing-table th{
+
+  background:linear-gradient(
+    145deg,
+    #6a9de4,
+    #0c53c5
+  );
+
+  color:#ffffff;
+
+  padding:24px;
+
+  font-size:18px;
+
+}
+
+.pricing-table td{
+
+  padding:22px;
+
+  text-align:center;
+
+  color:#d1d5db;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.08);
+
+}
+
+.pricing-table tr:hover{
+
+  background:#1f2937;
+
+}
+
+/* ===================================================== */
+/* TECHNOLOGY */
+/* ===================================================== */
+
+.pricing-tech-section{
+
+  padding:100px 0;
+
+}
+
+.tech-grid{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-top:50px;
+
+}
+
+.tech-grid span{
+
+  padding:14px 24px;
+
+  border-radius:50px;
+
+  background:linear-gradient(
+    145deg,
+    #6a9de4,
+    #0c53c5
+  );
+
+  color:#ffffff;
+
+  font-weight:600;
+
+  transition:0.3s ease;
+
+}
+
+.tech-grid span:hover{
+
+  transform:
+  translateY(-5px);
+
+}
+
+/* ===================================================== */
+/* STATS */
+/* ===================================================== */
+
+.pricing-stats-section{
+
+  padding:100px 0;
+
+}
+
+.stats-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:24px;
+
+}
+
+.stat-card{
+
+  background:linear-gradient(
+    145deg,
+    #6a9de4,
+    #0c53c5
+  );
+
+  padding:40px;
+
+  border-radius:24px;
+
+  text-align:center;
+
+  transition:0.4s ease;
+
+}
+
+.stat-card:hover{
+
+  transform:
+  translateY(-8px);
+
+}
+
+.stat-card h3{
+
+  font-size:52px;
+
+  color:#ffffff;
+
+  margin-bottom:12px;
+
+}
+
+.stat-card p{
+
+  color:#eef3ff;
+
+  font-size:16px;
+
+}
+
+/* ===================================================== */
+/* FAQ */
+/* ===================================================== */
+
+.pricing-faq-section{
+
+  padding:100px 0;
+
+}
+
+.faq-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:24px;
+
+  margin-top:60px;
+
+}
+
+.faq-card{
+
+  background:linear-gradient(
+  145deg,
+  #144c9b,
+  #484c52
+);
+
+  border-radius:24px;
+
+  padding:34px;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  transition:0.4s ease;
+
+}
+
+.faq-card:hover{
+
+  transform:
+  translateY(-6px);
+
+  border-color:#0c53c5;
+
+}
+
+.faq-card h3{
+
+  color:#ffffff;
+
+  font-size:22px;
+
+  margin-bottom:18px;
+
+  line-height:1.5;
+
+}
+
+.faq-card p{
+
+  color:#d1d5db;
+
+  line-height:1.9;
+
+  font-size:15px;
+
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media(max-width:991px){
+
+  .benefits-grid,
+  .stats-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+  }
+
+}
+
+@media(max-width:768px){
+
+  .benefits-grid,
+  .stats-grid,
+  .faq-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .pricing-table th,
+  .pricing-table td{
+
+    padding:16px;
+
+    font-size:14px;
+
+  }
+
+}
+
 /* =========================================================
    CTA BUTTONS
 ========================================================= */

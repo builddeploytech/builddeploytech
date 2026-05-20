@@ -1,0 +1,66 @@
+# BuildDeploy Tech
+
+BuildDeploy Tech provides:
+- Web Development
+- Mobile App Development
+- SEO Services
+- DevOps & Cloud Solutions
+- Government Tender Services
+
+Website:
+https://builddeploytech.com
+
+Main Pages:
+https://builddeploytech.com/
+https://builddeploytech.com/about.html
+https://builddeploytech.com/services.html
+https://builddeploytech.com/projects.html
+https://builddeploytech.com/pricing.html
+https://builddeploytech.com/blogs.html
+https://builddeploytech.com/team.html
+https://builddeploytech.com/contact.html
+
+Services:
+https://builddeploytech.com/services/web-development.html
+https://builddeploytech.com/services/app-development.html
+https://builddeploytech.com/services/seo-services.html
+https://builddeploytech.com/services/devops-cloud.html
+https://builddeploytech.com/services/government-tenders.html
+
+Popular Blogs:
+https://builddeploytech.com/blogs/devops-roadmap-for-beginners.html
+https://builddeploytech.com/blogs/docker-beginner-guide.html
+https://builddeploytech.com/blogs/cicd-pipeline-jenkins.html
+https://builddeploytech.com/blogs/aws-ec2-deployment.html
+https://builddeploytech.com/blogs/flutter-app-development-guide.html
+https://builddeploytech.com/blogs/flutter-app-development-strategy.html
+https://builddeploytech.com/blogs/how-to-rank-website-on-google.html
+https://builddeploytech.com/blogs/website-speed-optimization.html
+https://builddeploytech.com/blogs/local-seo-for-business.html
+https://builddeploytech.com/blogs/technical-seo-guide.html
+
+Technology Topics:
+- DevOps
+- Docker
+- Kubernetes
+- Jenkins
+- AWS Cloud
+- Website Development
+- Flutter Development
+- SEO Optimization
+- Technical SEO
+- Local SEO
+- Website Performance
+- CI/CD Pipelines
+- Cloud Infrastructure
+- Linux Servers
+- NGINX Deployment
+
+Contact:
+https://builddeploytech.com/contact.html
+
+Sitemap:
+https://builddeploytech.com/sitemap.xml
+
+Robots:
+https://builddeploytech.com/robots.txt

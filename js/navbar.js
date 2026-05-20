@@ -1,5 +1,5 @@
 /* =========================================================
-   BUILDDEPLOY TECH - NAVBAR JS
+   BUILDDEPLOY TECH - OPTIMIZED NAVBAR JS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,19 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
   ===================================================== */
 
   const siteHeader =
-  document.getElementById("siteHeader");
+  document.getElementById(
+    "siteHeader"
+  );
 
   const menuToggle =
-  document.getElementById("menuToggle");
+  document.getElementById(
+    "menuToggle"
+  );
 
   const navMenu =
-  document.getElementById("navMenu");
+  document.getElementById(
+    "navMenu"
+  );
 
   const navDropdowns =
-  document.querySelectorAll(".nav-dropdown");
+  document.querySelectorAll(
+    ".nav-dropdown"
+  );
 
   const navLinks =
-  document.querySelectorAll(".nav-menu a");
+  document.querySelectorAll(
+    ".nav-menu a"
+  );
 
   /* =====================================================
      MOBILE MENU TOGGLE
@@ -29,33 +39,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if(menuToggle && navMenu){
 
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener(
+      "click",
+      () => {
 
-      navMenu.classList.toggle("active");
+        navMenu.classList.toggle(
+          "active"
+        );
 
-      /* MENU OPEN */
+        const isActive =
+        navMenu.classList.contains(
+          "active"
+        );
 
-      if(navMenu.classList.contains("active")){
-
-        menuToggle.innerHTML = "✕";
-
-        document.body.style.overflow =
-        "hidden";
-
-      }
-
-      /* MENU CLOSE */
-
-      else{
-
-        menuToggle.innerHTML = "☰";
+        menuToggle.innerHTML =
+        isActive ? "✕" : "☰";
 
         document.body.style.overflow =
-        "auto";
+        isActive ? "hidden" : "auto";
 
       }
-
-    });
+    );
 
   }
 
@@ -66,21 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
   navDropdowns.forEach((dropdown) => {
 
     const parent =
-    dropdown.querySelector(".nav-parent");
+    dropdown.querySelector(
+      ".nav-parent"
+    );
 
     if(parent){
 
-      parent.addEventListener("click", (e) => {
+      parent.addEventListener(
+        "click",
+        (e) => {
 
-        if(window.innerWidth <= 992){
+          if(window.innerWidth <= 992){
 
-          e.preventDefault();
+            e.preventDefault();
 
-          dropdown.classList.toggle("active");
+            dropdown.classList.toggle(
+              "active"
+            );
+
+          }
 
         }
-
-      });
+      );
 
     }
 
@@ -88,27 +99,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =====================================================
      HEADER SCROLL EFFECT
+     OPTIMIZED
   ===================================================== */
 
-  window.addEventListener("scroll", () => {
+  let ticking = false;
+
+  function updateHeader(){
 
     if(siteHeader){
 
       if(window.scrollY > 40){
 
-        siteHeader.classList.add("scrolled");
+        siteHeader.classList.add(
+          "scrolled"
+        );
 
-      }
+      }else{
 
-      else{
-
-        siteHeader.classList.remove("scrolled");
+        siteHeader.classList.remove(
+          "scrolled"
+        );
 
       }
 
     }
 
-  });
+    ticking = false;
+
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      if(!ticking){
+
+        requestAnimationFrame(() => {
+
+          updateHeader();
+
+        });
+
+        ticking = true;
+
+      }
+
+    }
+  );
 
   /* =====================================================
      ACTIVE PAGE LINK
@@ -124,9 +161,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const href =
     link.getAttribute("href");
 
-    if(href === currentPage){
+    if(!href) return;
 
-      link.classList.add("active");
+    const cleanHref =
+    href.split("/").pop();
+
+    if(cleanHref === currentPage){
+
+      link.classList.add(
+        "active"
+      );
 
     }
 
@@ -138,28 +182,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navLinks.forEach((link) => {
 
-    link.addEventListener("click", () => {
+    link.addEventListener(
+      "click",
+      () => {
 
-      if(window.innerWidth <= 992){
+        if(window.innerWidth <= 992){
 
-        if(navMenu){
+          if(navMenu){
 
-          navMenu.classList.remove("active");
+            navMenu.classList.remove(
+              "active"
+            );
+
+          }
+
+          if(menuToggle){
+
+            menuToggle.innerHTML =
+            "☰";
+
+          }
+
+          document.body.style.overflow =
+          "auto";
 
         }
-
-        if(menuToggle){
-
-          menuToggle.innerHTML = "☰";
-
-        }
-
-        document.body.style.overflow =
-        "auto";
 
       }
-
-    });
+    );
 
   });
 
@@ -167,24 +217,65 @@ document.addEventListener("DOMContentLoaded", () => {
      CLICK OUTSIDE CLOSE
   ===================================================== */
 
-  document.addEventListener("click", (e) => {
-
-    if(
-      window.innerWidth <= 992 &&
-      navMenu &&
-      navMenu.classList.contains("active")
-    ){
+  document.addEventListener(
+    "click",
+    (e) => {
 
       if(
-        !navMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
+        window.innerWidth <= 992 &&
+        navMenu &&
+        menuToggle &&
+        navMenu.classList.contains(
+          "active"
+        )
       ){
 
-        navMenu.classList.remove("active");
+        if(
+          !navMenu.contains(e.target) &&
+          !menuToggle.contains(e.target)
+        ){
+
+          navMenu.classList.remove(
+            "active"
+          );
+
+          menuToggle.innerHTML =
+          "☰";
+
+          document.body.style.overflow =
+          "auto";
+
+        }
+
+      }
+
+    }
+  );
+
+  /* =====================================================
+     ESC KEY CLOSE
+  ===================================================== */
+
+  document.addEventListener(
+    "keydown",
+    (e) => {
+
+      if(
+        e.key === "Escape" &&
+        navMenu &&
+        navMenu.classList.contains(
+          "active"
+        )
+      ){
+
+        navMenu.classList.remove(
+          "active"
+        );
 
         if(menuToggle){
 
-          menuToggle.innerHTML = "☰";
+          menuToggle.innerHTML =
+          "☰";
 
         }
 
@@ -194,34 +285,45 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     }
-
-  });
+  );
 
   /* =====================================================
      WINDOW RESIZE RESET
   ===================================================== */
 
-  window.addEventListener("resize", () => {
+  window.addEventListener(
+    "resize",
+    () => {
 
-    if(window.innerWidth > 992){
+      if(window.innerWidth > 992){
 
-      if(navMenu){
+        if(navMenu){
 
-        navMenu.classList.remove("active");
+          navMenu.classList.remove(
+            "active"
+          );
+
+        }
+
+        if(menuToggle){
+
+          menuToggle.innerHTML =
+          "☰";
+
+        }
+
+        document.body.style.overflow =
+        "auto";
 
       }
-
-      if(menuToggle){
-
-        menuToggle.innerHTML = "☰";
-
-      }
-
-      document.body.style.overflow =
-      "auto";
 
     }
+  );
 
-  });
+  /* =====================================================
+     INITIAL HEADER STATE
+  ===================================================== */
+
+  updateHeader();
 
 });

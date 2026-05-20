@@ -1,14 +1,14 @@
 /* =========================================================
-   BUILDDEPLOY TECH - MAIN JS
+   BUILDDEPLOY TECH - OPTIMIZED MAIN JS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
-     BASE PATH DETECTION
+     BASE PATH
   ========================================================= */
 
-  let basePath = "/";
+  const basePath = "/";
 
   /* =========================================================
      LOAD HEADER
@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-     SCROLL REVEAL
+     REVEAL ANIMATION
+     OPTIMIZED WITH INTERSECTION OBSERVER
   ========================================================= */
 
   const revealElements =
@@ -112,43 +113,43 @@ document.addEventListener("DOMContentLoaded", () => {
     .cta-card,\
     .strip-box,\
     .feature-card,\
-    .process-card"
+    .process-card,\
+    .blog-card,\
+    .faq-card,\
+    .pricing-card"
 
   );
 
-  function revealOnScroll(){
+  const revealObserver =
+  new IntersectionObserver((entries) => {
 
-    const triggerBottom =
-    window.innerHeight * 0.88;
+    entries.forEach((entry) => {
 
-    revealElements.forEach((element) => {
+      if(entry.isIntersecting){
 
-      const elementTop =
-      element.getBoundingClientRect().top;
-
-      if(elementTop < triggerBottom){
-
-        element.classList.add(
+        entry.target.classList.add(
           "show-reveal"
+        );
+
+        revealObserver.unobserve(
+          entry.target
         );
 
       }
 
     });
 
-  }
+  },{
+    threshold:0.12
+  });
 
-  window.addEventListener(
-    "scroll",
-    revealOnScroll
-  );
+  revealElements.forEach((element) => {
 
-  window.addEventListener(
-    "load",
-    revealOnScroll
-  );
+    revealObserver.observe(
+      element
+    );
 
-  revealOnScroll();
+  });
 
   /* =========================================================
      COUNTER ANIMATION
@@ -171,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
     parseInt(
       target.replace(/\D/g, "")
     );
+
+    if(isNaN(numericValue)) return;
 
     let current = 0;
 
@@ -251,9 +254,34 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollBtn
   );
 
-  window.addEventListener("scroll", () => {
+  scrollBtn.addEventListener("click", () => {
 
-    if(window.scrollY > 400){
+    window.scrollTo({
+
+      top:0,
+
+      behavior:"smooth"
+
+    });
+
+  });
+
+  /* =========================================================
+     GLOBAL SCROLL OPTIMIZATION
+  ========================================================= */
+
+  let ticking = false;
+
+  function handleScroll(){
+
+    const scrollY =
+    window.scrollY;
+
+    /* =========================
+       SCROLL TOP BUTTON
+    ========================= */
+
+    if(scrollY > 400){
 
       scrollBtn.classList.add(
         "show-scroll"
@@ -267,17 +295,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-  });
+    /* =========================
+       HEADER EFFECT
+    ========================= */
 
-  scrollBtn.addEventListener("click", () => {
+    const siteHeader =
+    document.getElementById(
+      "siteHeader"
+    );
 
-    window.scrollTo({
+    if(siteHeader){
 
-      top:0,
+      if(scrollY > 40){
 
-      behavior:"smooth"
+        siteHeader.classList.add(
+          "scrolled"
+        );
 
-    });
+      }else{
+
+        siteHeader.classList.remove(
+          "scrolled"
+        );
+
+      }
+
+    }
+
+    ticking = false;
+
+  }
+
+  window.addEventListener("scroll", () => {
+
+    if(!ticking){
+
+      window.requestAnimationFrame(() => {
+
+        handleScroll();
+
+      });
+
+      ticking = true;
+
+    }
 
   });
 
@@ -300,11 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================================================= */
 
 function initNavbar(){
-
-  const siteHeader =
-  document.getElementById(
-    "siteHeader"
-  );
 
   const menuToggle =
   document.getElementById(
@@ -392,32 +448,6 @@ function initNavbar(){
   });
 
   /* =========================================================
-     HEADER SCROLL EFFECT
-  ========================================================= */
-
-  window.addEventListener("scroll", () => {
-
-    if(siteHeader){
-
-      if(window.scrollY > 40){
-
-        siteHeader.classList.add(
-          "scrolled"
-        );
-
-      }else{
-
-        siteHeader.classList.remove(
-          "scrolled"
-        );
-
-      }
-
-    }
-
-  });
-
-  /* =========================================================
      ACTIVE PAGE LINK
   ========================================================= */
 
@@ -436,7 +466,7 @@ function initNavbar(){
 
     if(
       href &&
-      currentPath.includes(href)
+      currentPath === href
     ){
 
       link.classList.add(
