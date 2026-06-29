@@ -85,81 +85,79 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =====================================================
-     NUMBER COUNTER
-  ===================================================== */
+   SMART NUMBER COUNTER
+===================================================== */
 
-  const statNumbers =
-  document.querySelectorAll(
-    ".strip-box h3,\
-    .analytics-card h3"
-  );
+const statNumbers = document.querySelectorAll(
+  ".strip-box h3, .analytics-card h3"
+);
 
-  const countObserver =
-  new IntersectionObserver((entries) => {
+const countObserver = new IntersectionObserver((entries) => {
 
-    entries.forEach((entry) => {
+  entries.forEach((entry) => {
 
-      if(entry.isIntersecting){
+    if (!entry.isIntersecting) return;
 
-        const counter =
-        entry.target;
+    const counter = entry.target;
+    const originalText = counter.textContent.trim();
 
-        const originalText =
-        counter.innerText;
+    /* Don't animate percentage or 24/7 values */
 
-        const target =
-        parseInt(
-          originalText.replace(/\D/g,"")
-        );
+    if (
+      originalText.includes("%") ||
+      originalText.includes("/")
+    ) {
 
-        if(isNaN(target)) return;
+      counter.textContent = originalText;
+      countObserver.unobserve(counter);
+      return;
 
-        let current = 0;
+    }
 
-        const increment =
-        target / 60;
+    const target = parseInt(
+      originalText.replace(/[^\d]/g, "")
+    );
 
-        function updateCounter(){
+    if (isNaN(target)) {
 
-          current += increment;
+      countObserver.unobserve(counter);
+      return;
 
-          if(current < target){
+    }
 
-            counter.innerText =
-            Math.floor(current) + "+";
+    let current = 0;
+    const increment = Math.max(1, Math.ceil(target / 50));
 
-            requestAnimationFrame(
-              updateCounter
-            );
+    function updateCounter() {
 
-          }else{
+      current += increment;
 
-            counter.innerText =
-            originalText;
+      if (current < target) {
 
-          }
+        counter.textContent = current + "+";
+        requestAnimationFrame(updateCounter);
 
-        }
+      } else {
 
-        updateCounter();
-
-        countObserver.unobserve(
-          counter
-        );
+        counter.textContent = originalText;
 
       }
 
-    });
+    }
 
-  },{
-    threshold:0.5
-  });
+    updateCounter();
 
-  statNumbers.forEach((counter) => {
-
-    countObserver.observe(counter);
+    countObserver.unobserve(counter);
 
   });
+
+}, {
+  threshold: 0.4
+});
+
+statNumbers.forEach((counter) => {
+  countObserver.observe(counter);
+});
 
   /* =====================================================
      SCROLL PROGRESS BAR

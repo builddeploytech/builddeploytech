@@ -10,13 +10,12 @@
 
   padding:140px 0 90px;
 
-  background:
-  linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f5f9ff 100%
-  );
-
+background:
+linear-gradient(
+180deg,
+#e5ebf3 0%,
+#d8eaff 100%
+);
 }
 
 /* =========================================================
@@ -368,7 +367,7 @@
 
 .dashboard-top img{
 
-  width:70px;
+  width:120px;
 
 }
 
@@ -708,12 +707,12 @@
 
   padding:130px 0;
 
-  background:
-  linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f8fbff 100%
-  );
+background:
+linear-gradient(
+180deg,
+#e6ebf8 0%,
+#d8eaff 100%
+);
 
 }
 
@@ -984,7 +983,7 @@
 
   padding:130px 0;
 
-  background:#ffffff;
+  background:#d8eaff;
 
 }
 
@@ -1001,7 +1000,7 @@
 
   gap:30px;
 
-  margin-bottom:70px;
+  margin-bottom:60px;
 
 }
 
@@ -1256,12 +1255,12 @@
 
   padding:140px 0;
 
-  background:
-  linear-gradient(
-    180deg,
-    #f8fbff 0%,
-    #ffffff 100%
-  );
+background:
+linear-gradient(
+180deg,
+#f3f4f6 0%,
+#d8eaff 100%
+);
 
 }
 
@@ -1732,9 +1731,9 @@
   background:
   linear-gradient(
     135deg,
-    #0f172a,
-    #111827,
-    #172554
+    #00114b,
+    #041c69,
+    #00114b
   );
 
 }
@@ -1909,12 +1908,12 @@
 
   padding:140px 0;
 
-  background:
-  linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f8fbff 100%
-  );
+background:
+linear-gradient(
+180deg,
+#ffffff 0%,
+#d8eaff 100%
+);
 
 }
 
@@ -2084,7 +2083,7 @@
 
   padding:140px 0;
 
-  background:#ffffff;
+  background:#d8eaff ;
 
 }
 
