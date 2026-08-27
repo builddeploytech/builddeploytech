@@ -1,4 +1,25 @@
-<footer class="site-footer">
+<footer class="site-footer" id="siteFooter">
+
+  <!-- =====================================================
+       SCOPED HELPERS (self-contained for the injected partial)
+       Only 3 tiny rules, all namespaced to .site-footer so they
+       cannot leak. Safe to migrate into css/header-footer.css later.
+  ===================================================== -->
+  <style>
+    .site-footer .footer-subhead {
+      margin-top: 36px;
+    }
+
+    .site-footer .footer-contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: 0.35s ease;
+    }
+
+    .site-footer .footer-contact-item a:hover {
+      color: #ffffff;
+    }
+  </style>
 
   <div class="container footer-container">
 
@@ -9,7 +30,7 @@
     <div class="footer-top">
 
       <!-- ===================================================== -->
-      <!-- ABOUT -->
+      <!-- BRAND / ABOUT -->
       <!-- ===================================================== -->
 
       <div class="footer-about">
@@ -18,122 +39,67 @@
           loading="lazy" decoding="async" />
 
         <p>
-
-          BuildDeploy Tech helps startups,
-          businesses
-          and enterprises build modern websites,
-          mobile applications,
-          cloud infrastructure,
-          SEO strategies
-          and scalable digital solutions
-          across Noida,
-          Delhi NCR
-          and India.
-
+          BuildDeploy Tech builds digital products, custom software and
+          SaaS platforms, and delivers web, mobile app, cloud, DevOps and
+          SEO services for startups, businesses and enterprises across
+          Noida, Delhi NCR and India.
         </p>
 
         <!-- SOCIALS -->
 
         <div class="footer-socials">
 
-
           <!-- INSTAGRAM -->
+          <a href="https://www.instagram.com/builddeploy.tech/" target="_blank" rel="noopener"
+            aria-label="BuildDeploy Tech on Instagram" class="social-icon">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
 
-          <a href="https://www.instagram.com/builddeploy.tech/" target="_blank" aria-label="Instagram"
+          <!-- X (TWITTER) -->
+          <a href="https://x.com/BuildDeployTech" target="_blank" rel="noopener" aria-label="BuildDeploy Tech on X"
             class="social-icon">
-
-            <i class="fab fa-instagram"></i>
-
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
           </a>
 
-          <!-- X (Twitter) -->
-          <a href="https://x.com/BuildDeployTech" target="_blank" aria-label="X" class="social-icon">
-            <i class="fab fa-x-twitter"></i>
+          <!-- YOUTUBE -->
+          <a href="https://www.youtube.com/@BuildDeployTech" target="_blank" rel="noopener"
+            aria-label="BuildDeploy Tech on YouTube" class="social-icon">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
           </a>
 
-          <!-- YouTube -->
-          <a href="https://www.youtube.com/@BuildDeployTech" target="_blank" aria-label="YouTube" class="social-icon">
-            <i class="fab fa-youtube"></i>
-          </a>
-
-
-          <!-- LINKEDIN 
-
-          <a href="https://www.linkedin.com/in/sarvesh-singh-24im/" target="_blank" aria-label="LinkedIn"
-            class="social-icon">
-
-            <i class="fab fa-linkedin-in"></i>
-
-          </a>  -->
+          <!-- LINKEDIN (kept for future use)
+          <a href="https://www.linkedin.com/in/sarvesh-singh-24im/"
+             target="_blank"
+             rel="noopener"
+             aria-label="BuildDeploy Tech on LinkedIn"
+             class="social-icon">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a> -->
 
         </div>
 
       </div>
 
       <!-- ===================================================== -->
-      <!-- QUICK LINKS -->
+      <!-- PRODUCTS + SOLUTIONS -->
       <!-- ===================================================== -->
 
       <div class="footer-column">
 
-        <h3>
-
-          Quick Links
-
-        </h3>
+        <h3>Products</h3>
 
         <ul>
+          <li><a href="/products/bdt-retail.html">BDT Retail &mdash; Billing &amp; POS</a></li>
+        </ul>
 
-          <li>
+        <h3 class="footer-subhead">Solutions</h3>
 
-            <a href="/">
-
-              Home
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/projects.html">
-
-              Projects
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/pricing.html">
-
-              Pricing
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/about.html">
-
-              About
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/contact.html">
-
-              Contact
-
-            </a>
-
-          </li>
-
+        <ul>
+          <li><a href="/solutions/saas-development.html">SaaS Product Development</a></li>
+          <li><a href="/solutions/billing-software.html">Billing &amp; Invoicing Software</a></li>
+          <li><a href="/solutions/custom-software.html">Custom Software Development</a></li>
+          <li><a href="/solutions/white-label-saas.html">White-Label SaaS</a></li>
+          <li><a href="/solutions/enterprise-solutions.html">Enterprise Solutions</a></li>
         </ul>
 
       </div>
@@ -144,138 +110,54 @@
 
       <div class="footer-column">
 
-        <h3>
-
-          Our Services
-
-        </h3>
+        <h3>Services</h3>
 
         <ul>
-
-          <li>
-
-            <a href="/services/web-development.html">
-
-              Web Development
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/services/app-development.html">
-
-              Mobile App Development
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/services/seo-services.html">
-
-              SEO Services
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/services/devops-cloud.html">
-
-              DevOps & Cloud
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a href="/services/government-tenders.html">
-
-              Government Tenders
-
-            </a>
-
-          </li>
-
+          <li><a href="/services/web-development.html">Web Development</a></li>
+          <li><a href="/services/app-development.html">Mobile App Development</a></li>
+          <li><a href="/services/seo-services.html">SEO Services</a></li>
+          <li><a href="/services/devops-cloud.html">DevOps &amp; Cloud</a></li>
+          <li><a href="/services/wordpress-development.html">WordPress Development</a></li>
+          <li><a href="/services/government-tenders.html">Government Tenders</a></li>
         </ul>
 
       </div>
 
       <!-- ===================================================== -->
-      <!-- CONTACT -->
+      <!-- COMPANY + CONTACT -->
       <!-- ===================================================== -->
 
       <div class="footer-column">
 
-        <h3>
-
-          Contact Us
-
-        </h3>
-
-        <!-- CONTACT ITEMS -->
+        <h3>Get In Touch</h3>
 
         <div class="footer-contact">
 
-          <!-- LOCATION -->
-
+          <!-- WHATSAPP -->
           <div class="footer-contact-item">
-
-            <div class="footer-contact-icon">
-
-              📍
-
-            </div>
-
+            <div class="footer-contact-icon" aria-hidden="true">&#128172;</div>
             <p>
-
-              Noida,
-              Delhi NCR,
-              India
-
+              <a href="https://wa.me/916392930918" target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
             </p>
-
-          </div>
-
-          <!-- EMAIL -->
-
-          <div class="footer-contact-item">
-
-            <div class="footer-contact-icon">
-
-              📧
-
-            </div>
-
-            <p>
-
-              builddeploytech@gmail.com
-
-            </p>
-
           </div>
 
           <!-- PHONE -->
-
           <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">&#128222;</div>
+            <p><a href="tel:+916392930918">+91 639293 0918</a></p>
+          </div>
+          <!-- EMAIL -->
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">&#128231;</div>
+            <p><a href="mailto:builddeploytech@gmail.com">builddeploytech@gmail.com</a></p>
+          </div>
 
-            <div class="footer-contact-icon">
-
-              📞
-
-            </div>
-
-            <p>
-
-              +91 639293 0918
-
-            </p>
-
+          <!-- LOCATION -->
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">&#128205;</div>
+            <p>Noida, Delhi NCR, Uttar Pradesh, India</p>
           </div>
 
         </div>
@@ -290,25 +172,11 @@
 
     <div class="footer-bottom">
 
-      <!-- COPYRIGHT -->
+      <p>&copy; 2026 BuildDeploy Tech. All Rights Reserved.</p>
 
-      <p>
-
-        © 2026 BuildDeploy Tech.
-        All Rights Reserved.
-
-      </p>
-
-      <!-- LINKS -->
-
+      <!-- Privacy Policy is a placeholder anchor (no legal page exists yet). -->
       <div class="footer-bottom-links">
-
-        <a href="#">
-
-          Privacy Policy
-
-        </a>
-
+        <a href="#">Privacy Policy</a>
       </div>
 
     </div>
