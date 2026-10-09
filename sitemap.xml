@@ -13,7 +13,7 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
     <loc>https://builddeploytech.com/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -72,6 +72,56 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   </url>
 
   <!-- ===================================================== -->
+  <!-- PRODUCTS (own SaaS) -->
+  <!-- ===================================================== -->
+
+  <url>
+    <loc>https://builddeploytech.com/products/bdt-retail.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+
+  <!-- ===================================================== -->
+  <!-- SOLUTIONS (custom software / SaaS) -->
+  <!-- ===================================================== -->
+
+  <url>
+    <loc>https://builddeploytech.com/solutions/custom-software.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.com/solutions/saas-development.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.com/solutions/billing-software.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.com/solutions/white-label-saas.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.com/solutions/enterprise-solutions.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- ===================================================== -->
   <!-- SERVICES -->
   <!-- ===================================================== -->
 
@@ -87,6 +137,13 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
+  </url>
+
+  <url>
+    <loc>https://builddeploytech.com/services/wordpress-development.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>
@@ -113,6 +170,13 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- ===================================================== -->
   <!-- BLOGS -->
   <!-- ===================================================== -->
+
+  <url>
+    <loc>https://builddeploytech.com/blogs/devops-roadmap-2026.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
 
   <url>
     <loc>https://builddeploytech.com/blogs/devops-roadmap-for-beginners.html</loc>
@@ -148,7 +212,8 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <changefreq>monthly</changefreq>
     <priority>0.81</priority>
   </url>
-    <url>
+
+  <url>
     <loc>https://builddeploytech.com/blogs/flutter-app-development-guide.html</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>

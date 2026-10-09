@@ -1,8 +1,13 @@
 # BuildDeploy Tech
 
+BuildDeploy Tech is a software company based in Noida, Delhi NCR (Uttar Pradesh, India) that builds its own SaaS products, delivers custom software and SaaS solutions, and provides web, mobile, cloud, and SEO services for businesses.
+
 BuildDeploy Tech provides:
+- Software Products (own SaaS — BDT Retail billing & retail platform)
+- Custom Software & SaaS Solutions
 - Web Development
 - Mobile App Development
+- WordPress Development
 - SEO Services
 - DevOps & Cloud Solutions
 - Government Tender Services
@@ -20,14 +25,26 @@ https://builddeploytech.com/blogs.html
 https://builddeploytech.com/team.html
 https://builddeploytech.com/contact.html
 
+Products (own SaaS):
+https://builddeploytech.com/products/bdt-retail.html — BDT Retail: billing, invoicing, inventory, and multi-store retail management platform
+
+Solutions (custom software & SaaS):
+https://builddeploytech.com/solutions/custom-software.html — Custom software built around your workflow
+https://builddeploytech.com/solutions/saas-development.html — End-to-end SaaS product design and development
+https://builddeploytech.com/solutions/billing-software.html — Billing, invoicing, and subscription software
+https://builddeploytech.com/solutions/white-label-saas.html — Launch your own branded, white-label SaaS platform
+https://builddeploytech.com/solutions/enterprise-solutions.html — Secure, scalable enterprise software and integrations
+
 Services:
 https://builddeploytech.com/services/web-development.html
 https://builddeploytech.com/services/app-development.html
+https://builddeploytech.com/services/wordpress-development.html
 https://builddeploytech.com/services/seo-services.html
 https://builddeploytech.com/services/devops-cloud.html
 https://builddeploytech.com/services/government-tenders.html
 
 Popular Blogs:
+https://builddeploytech.com/blogs/devops-roadmap-2026.html
 https://builddeploytech.com/blogs/devops-roadmap-for-beginners.html
 https://builddeploytech.com/blogs/docker-beginner-guide.html
 https://builddeploytech.com/blogs/cicd-pipeline-jenkins.html
@@ -40,24 +57,38 @@ https://builddeploytech.com/blogs/local-seo-for-business.html
 https://builddeploytech.com/blogs/technical-seo-guide.html
 
 Technology Topics:
+- SaaS Development
+- Multi-tenant Architecture
+- Billing & Invoicing Software
+- Point of Sale (POS) & Retail
+- Custom Software Development
+- Web Development
+- Flutter Mobile Development
+- WordPress Development
 - DevOps
 - Docker
 - Kubernetes
 - Jenkins
+- CI/CD Pipelines
 - AWS Cloud
-- Website Development
-- Flutter Development
+- Cloud Infrastructure
+- Linux Servers
+- NGINX Deployment
 - SEO Optimization
 - Technical SEO
 - Local SEO
 - Website Performance
-- CI/CD Pipelines
-- Cloud Infrastructure
-- Linux Servers
-- NGINX Deployment
 
 Contact:
+Email: builddeploytech@gmail.com
+Phone: +91 639293 0918
+Location: Noida, Delhi NCR, Uttar Pradesh, India
 https://builddeploytech.com/contact.html
+
+Social Profiles:
+https://instagram.com/builddeploy.tech
+https://x.com/BuildDeployTech
+https://youtube.com/@BuildDeployTech
 
 Sitemap:
 https://builddeploytech.com/sitemap.xml
