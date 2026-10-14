@@ -1,1491 +1,922 @@
 /* =========================================================
-   BLOG DETAIL PAGE
+   BLOG DETAIL PAGE — BuildDeploy Tech
+   Premium COLOURFUL article UI, aligned with home.css.
+   Used by EVERY blog article (blogs/*.html).
+   Styles: hero · article (h2/h3/p/lists/pre/table/quote) ·
+   sidebar TOC · blog note · CTA · related grid · buttons.
+   Tokens from global.css. Keep class names stable — 13 articles
+   depend on them.
+
+   v2:
+   • HERO TITLE FIX — the old 76px/900 gradient H1 was far too
+     large; now a balanced clamp() scale that still looks bold.
+   • COLOUR PASS — 8-accent palette (matches home.css): gradient
+     section tag, meta chips, a subtle colour-cycling bar on
+     article H2s, tinted blog-note, colourful TOC hover, cycling
+     related-cards, brand-glow CTA.
+   • Readability kept: body 18px / line-height 2, strong contrast.
 ========================================================= */
 
-.blog-details-page{
+/* ---------------------------------------------------------
+   ACCENT PALETTE (page-scoped)
+--------------------------------------------------------- */
+:root {
+  --c-blue: #2563eb;
+  --c-sky: #0ea5e9;
+  --c-orange: #f97316;
+  --c-green: #16a34a;
+  --c-violet: #7c3aed;
+  --c-amber: #d97706;
+  --c-rose: #e11d48;
+  --c-teal: #0d9488;
+  --bd-blue: rgba(37, 99, 235, 0.16);
+  --sh-blue: rgba(37, 99, 235, 0.16);
+  --sh-green: rgba(22, 163, 74, 0.16);
+  --sh-orange: rgba(249, 115, 22, 0.18);
+  --sh-violet: rgba(124, 58, 237, 0.16);
+  --sh-sky: rgba(14, 165, 233, 0.16);
+  --sh-rose: rgba(225, 29, 72, 0.16);
+  --sh-teal: rgba(13, 148, 136, 0.16);
+  --sh-amber: rgba(217, 119, 6, 0.16);
+}
 
-  background:
-  linear-gradient(
-    180deg,
-    #f8fbff 0%,
-    #ffffff 100%
-  );
+.blog-details-page {
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  overflow-x: hidden;
+}
+.blog-details-page h1,
+.blog-details-page h2,
+.blog-details-page h3 {
+  font-family: "Sora", "Inter", sans-serif;
+}
 
-  overflow-x:hidden;
-
+/* a11y: visible focus */
+.blog-details-page a:focus-visible,
+.blog-details-page button:focus-visible,
+.blog-details-page summary:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 8px;
 }
 
 /* =========================================================
    CONTAINER
 ========================================================= */
-
-.container{
-
-  width:100%;
-
-  max-width:1280px;
-
-  margin:auto;
-
-  padding:
-  0 20px;
-
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 /* =========================================================
    BLOG HERO
 ========================================================= */
-
-.blog-hero{
-
-  position:relative;
-
-  overflow:hidden;
-
-  padding:
-  190px 0 120px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #f8fbff 0%,
-    #eef4ff 45%,
-    #ffffff 100%
-  );
-
+.blog-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0 96px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 45%, #fff6ef 100%);
 }
-
-/* =========================================================
-   HERO BLUR EFFECT
-========================================================= */
-
-.hero-blur{
-
-  position:absolute;
-
-  border-radius:50%;
-
-  filter:blur(90px);
-
-  z-index:0;
-
+.hero-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: 0;
 }
-
-.hero-blur-1{
-
-  top:-100px;
-  right:-100px;
-
-  width:320px;
-  height:320px;
-
-  background:
-  rgba(37,99,235,0.18);
-
+.hero-blur-1 {
+  top: -100px;
+  right: -100px;
+  width: 320px;
+  height: 320px;
+  background: rgba(37, 99, 235, 0.18);
 }
-
-.hero-blur-2{
-
-  bottom:-120px;
-  left:-120px;
-
-  width:340px;
-  height:340px;
-
-  background:
-  rgba(124,58,237,0.18);
-
+.hero-blur-2 {
+  bottom: -120px;
+  left: -120px;
+  width: 340px;
+  height: 340px;
+  background: rgba(249, 115, 22, 0.15);
 }
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.blog-hero-content{
-
-  position:relative;
-
-  z-index:2;
-
-  max-width:950px;
-
-  margin:auto;
-
-  text-align:center;
-
+.blog-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
 /* =========================================================
    SECTION TAG
 ========================================================= */
-
-.section-tag{
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:
-  12px 24px;
-
-  border-radius:999px;
-
-  background:
-  rgba(37,99,235,0.08);
-
-  border:
-  1px solid rgba(37,99,235,0.10);
-
-  color:#2563eb;
-
-  font-size:13px;
-
-  font-weight:700;
-
-  text-transform:uppercase;
-
-  letter-spacing:0.5px;
-
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.1),
+    rgba(249, 115, 22, 0.1)
+  );
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
 }
 
 /* =========================================================
-   HERO HEADING
+   HERO HEADING  (FIXED — was 76px/900, far too big)
 ========================================================= */
-
-.blog-hero-content h1{
-
-  margin:
-  34px 0 28px;
-
-  font-size:76px;
-
-  line-height:1.08;
-
-  font-weight:900;
-
-  background:
-  linear-gradient(
-    135deg,
-    #0f172a 0%,
-    #2563eb 40%,
-    #7c3aed 70%,
-    #0ea5e9 100%
-  );
-
-  -webkit-background-clip:text;
-
-  -webkit-text-fill-color:transparent;
-
+.blog-hero-content h1 {
+  margin: 26px 0 20px;
+  font-size: clamp(2.1rem, 4.4vw, 3.1rem);
+  line-height: 1.14;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 55%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* =========================================================
    HERO PARAGRAPH
 ========================================================= */
+.blog-hero-content p {
+  max-width: 760px;
+  margin: auto;
+  color: var(--text);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.9;
+}
 
-.blog-hero-content p{
-
-  max-width:780px;
-
-  margin:auto;
-
-  color:#64748b;
-
-  font-size:20px;
-
-  line-height:2;
-
+/* hero CTA buttons (used by a few article heroes) */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
 }
 
 /* =========================================================
    BLOG META
 ========================================================= */
-
-.blog-meta{
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  flex-wrap:wrap;
-
-  gap:14px;
-
-  margin-top:40px;
-
+.blog-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
 }
-
-.blog-meta span{
-
-  padding:
-  12px 20px;
-
-  border-radius:999px;
-
-  background:#ffffff;
-
-  border:
-  1px solid rgba(15,23,42,0.08);
-
-  color:#0f172a;
-
-  font-size:14px;
-
-  font-weight:700;
-
-  box-shadow:
-  0 10px 30px rgba(15,23,42,0.04);
-
+.blog-meta span {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--dark);
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
 }
 
 /* =========================================================
    BLOG CONTENT SECTION
 ========================================================= */
-
-.blog-content-section{
-
-  padding:
-  40px 0 120px;
-
+.blog-content-section {
+  padding: 32px 0 100px;
 }
 
 /* =========================================================
    BLOG LAYOUT
 ========================================================= */
-
-.blog-layout{
-
-  display:grid;
-
-  grid-template-columns:
-  320px 1fr;
-
-  gap:42px;
-
-  align-items:start;
-
+.blog-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 /* =========================================================
-   SIDEBAR
+   SIDEBAR + TOC
 ========================================================= */
-
-.blog-sidebar{
-
-  position:sticky;
-
-  top:120px;
-
+.blog-sidebar {
+  position: sticky;
+  top: 120px;
+}
+.toc-card {
+  background: #fff;
+  border-radius: 26px;
+  padding: 32px;
+  border: 1px solid var(--bd-blue);
+  box-shadow: 0 20px 56px rgba(15, 23, 42, 0.06);
+}
+.toc-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--bd-blue);
+}
+.toc-card ul {
+  list-style: none;
+}
+.toc-card ul li {
+  margin-bottom: 10px;
+}
+.toc-card ul li a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 7px 10px;
+  border-left: 3px solid transparent;
+  border-radius: 0 8px 8px 0;
+  transition: var(--transition);
+}
+.toc-card ul li a:hover {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.06);
+  border-left-color: var(--primary);
+  padding-left: 14px;
 }
 
-/* =========================================================
-   TOC CARD
-========================================================= */
-
-.toc-card{
-
-  background:#ffffff;
-
-  border-radius:34px;
-
-  padding:36px;
-
-  border:
-  1px solid rgba(37,99,235,0.06);
-
-  box-shadow:
-  0 20px 60px rgba(15,23,42,0.05);
-
-}
-
-.toc-card h3{
-
-  font-size:24px;
-
-  font-weight:800;
-
-  color:#0f172a;
-
-  margin-bottom:28px;
-
-}
-
-.toc-card ul{
-
-  list-style:none;
-
-}
-
-.toc-card ul li{
-
-  margin-bottom:16px;
-
-}
-
-.toc-card ul li a{
-
-  color:#64748b;
-
-  text-decoration:none;
-
-  font-size:16px;
-
-  font-weight:600;
-
-  transition:0.3s ease;
-
-}
-
-.toc-card ul li a:hover{
-
-  color:#2563eb;
-
-  padding-left:6px;
-
-}
 /* =========================================================
    BLOG ARTICLE
 ========================================================= */
-
-.blog-article{
-
-  background:#ffffff;
-
-  border-radius:42px;
-
-  padding:
-  70px 65px;
-
-  border:
-  1px solid rgba(37,99,235,0.06);
-
-  box-shadow:
-  0 20px 70px rgba(15,23,42,0.05);
-
+.blog-article {
+  background: #fff;
+  border-radius: 30px;
+  padding: 60px 56px;
+  border: 1px solid var(--bd-blue);
+  box-shadow: 0 20px 64px rgba(15, 23, 42, 0.05);
+}
+.blog-article section {
+  margin-bottom: 64px;
 }
 
-/* =========================================================
-   ARTICLE SECTIONS
-========================================================= */
-
-.blog-article section{
-
-  margin-bottom:80px;
-
+/* ---- H2 with a subtle colour-cycling accent bar ---- */
+.blog-article h2 {
+  position: relative;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  line-height: 1.22;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+  padding-left: 18px;
+  color: var(--dark);
 }
-
-/* =========================================================
-   ARTICLE H2
-========================================================= */
-
-.blog-article h2{
-
-  font-size:40px;
-
-  line-height:1.2;
-
-  font-weight:900;
-
-  margin-bottom:28px;
-
-  color:#0f172a;
-
+.blog-article h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 5px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--c-blue), var(--c-sky));
+}
+/* cycle the accent through sections */
+.blog-article section:nth-of-type(8n + 1) h2::before {
+  background: linear-gradient(180deg, var(--c-blue), var(--c-sky));
+}
+.blog-article section:nth-of-type(8n + 2) h2::before {
+  background: linear-gradient(180deg, var(--c-green), var(--c-teal));
+}
+.blog-article section:nth-of-type(8n + 3) h2::before {
+  background: linear-gradient(180deg, var(--c-orange), #fb923c);
+}
+.blog-article section:nth-of-type(8n + 4) h2::before {
+  background: linear-gradient(180deg, var(--c-violet), var(--c-sky));
+}
+.blog-article section:nth-of-type(8n + 5) h2::before {
+  background: linear-gradient(180deg, var(--c-sky), var(--c-teal));
+}
+.blog-article section:nth-of-type(8n + 6) h2::before {
+  background: linear-gradient(180deg, var(--c-rose), var(--c-orange));
+}
+.blog-article section:nth-of-type(8n + 7) h2::before {
+  background: linear-gradient(180deg, var(--c-amber), var(--c-orange));
+}
+.blog-article section:nth-of-type(8n + 8) h2::before {
+  background: linear-gradient(180deg, var(--c-teal), var(--c-green));
 }
 
 /* =========================================================
    ARTICLE H3
 ========================================================= */
-
-.blog-article h3{
-
-  font-size:28px;
-
-  line-height:1.4;
-
-  font-weight:800;
-
-  margin:
-  40px 0 20px;
-
-  color:#0f172a;
-
+.blog-article h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  line-height: 1.4;
+  font-weight: 800;
+  margin: 34px 0 16px;
+  color: var(--dark);
 }
 
 /* =========================================================
    ARTICLE PARAGRAPH
 ========================================================= */
-
-.blog-article p{
-
-  color:#475569;
-
-  font-size:18px;
-
-  line-height:2;
-
-  margin-bottom:24px;
-
+.blog-article p {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.95;
+  margin-bottom: 22px;
 }
 
 /* =========================================================
    ARTICLE LIST
 ========================================================= */
-
-.blog-article ul{
-
-  padding-left:24px;
-
-  margin:
-  26px 0;
-
+.blog-article ul {
+  padding-left: 24px;
+  margin: 24px 0;
 }
-
-.blog-article ul li{
-
-  color:#475569;
-
-  font-size:18px;
-
-  line-height:2;
-
-  margin-bottom:14px;
-
+.blog-article ul li {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+.blog-article ul li::marker {
+  color: var(--primary);
 }
 
 /* =========================================================
    CODE BLOCK
 ========================================================= */
+.blog-article pre {
+  overflow-x: auto;
+  margin: 30px 0;
+  padding: 26px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.8;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 56px rgba(2, 6, 23, 0.24);
+}
 
-.blog-article pre{
-
-  overflow-x:auto;
-
-  margin:
-  34px 0;
-
-  padding:
-  28px;
-
-  border-radius:28px;
-
-  background:
-  linear-gradient(
+/* =========================================================
+   BLOG NOTE (colourful callout)
+========================================================= */
+.blog-note {
+  margin-top: 30px;
+  padding: 22px 26px;
+  border-radius: 20px;
+  background: linear-gradient(
     135deg,
-    #020617,
-    #0f172a
+    rgba(37, 99, 235, 0.08),
+    rgba(249, 115, 22, 0.08)
   );
-
-  color:#e2e8f0;
-
-  font-size:15px;
-
-  line-height:1.8;
-
-  border:
-  1px solid rgba(255,255,255,0.06);
-
-  box-shadow:
-  0 20px 60px rgba(2,6,23,0.24);
-
+  border-left: 5px solid var(--primary);
+  color: var(--dark);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+.blog-note p {
+  margin-bottom: 0;
+  color: var(--dark);
 }
 
 /* =========================================================
-   BLOG NOTE
+   ROADMAP BOX / STEP
 ========================================================= */
-
-.blog-note{
-
-  margin-top:34px;
-
-  padding:
-  24px 28px;
-
-  border-radius:26px;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(37,99,235,0.08),
-    rgba(124,58,237,0.08)
-  );
-
-  border-left:
-  5px solid #2563eb;
-
-  color:#0f172a;
-
-  line-height:1.9;
-
-  font-size:17px;
-
+.roadmap-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 36px 0;
+}
+.roadmap-step {
+  padding: 16px 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--c-violet));
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 18px 38px rgba(37, 99, 235, 0.2);
 }
 
 /* =========================================================
-   ROADMAP BOX
+   BLOG CTA (brand-glow dark card)
 ========================================================= */
-
-.roadmap-box{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:18px;
-
-  margin:
-  40px 0;
-
+.blog-cta {
+  position: relative;
+  overflow: hidden;
+  margin-top: 72px;
+  padding: 60px 44px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0f172a, #00114b 55%, #1e293b);
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(2, 6, 23, 0.25);
+}
+.blog-cta::before {
+  content: "";
+  position: absolute;
+  top: -160px;
+  right: -160px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.32), transparent 70%);
+}
+.blog-cta::after {
+  content: "";
+  position: absolute;
+  bottom: -160px;
+  left: -160px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.24), transparent 70%);
+}
+.blog-cta h3 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.blog-cta p {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto 32px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+.cta-buttons {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-/* =========================================================
-   ROADMAP STEP
-========================================================= */
-
-.roadmap-step{
-
-  padding:
-  18px 24px;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
-
-  color:#ffffff;
-
-  font-size:16px;
-
-  font-weight:700;
-
-  box-shadow:
-  0 20px 40px rgba(37,99,235,0.18);
-
-}
-
-/* =========================================================
-   BLOG CTA
-========================================================= */
-
-.blog-cta{
-
-  position:relative;
-
-  overflow:hidden;
-
-  margin-top:90px;
-
-  padding:
-  70px 50px;
-
-  border-radius:40px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #020617,
-    #0f172a,
-    #111827
-  );
-
-  text-align:center;
-
-  box-shadow:
-  0 40px 120px rgba(2,6,23,0.25);
-
-}
-
-/* =========================================================
-   CTA GLOW
-========================================================= */
-
-.blog-cta::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:-160px;
-  right:-160px;
-
-  width:340px;
-  height:340px;
-
-  border-radius:50%;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(37,99,235,0.24),
-    transparent 70%
-  );
-
-  filter:blur(20px);
-
-}
-
-.blog-cta::after{
-
-  content:"";
-
-  position:absolute;
-
-  bottom:-160px;
-  left:-160px;
-
-  width:340px;
-  height:340px;
-
-  border-radius:50%;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(124,58,237,0.22),
-    transparent 70%
-  );
-
-  filter:blur(20px);
-
-}
-
-/* =========================================================
-   CTA CONTENT
-========================================================= */
-
-.blog-cta h3{
-
-  position:relative;
-
-  z-index:2;
-
-  font-size:46px;
-
-  font-weight:900;
-
-  color:#ffffff;
-
-  margin-bottom:22px;
-
-}
-
-.blog-cta p{
-
-  position:relative;
-
-  z-index:2;
-
-  max-width:760px;
-
-  margin:
-  0 auto 40px;
-
-  color:
-  rgba(255,255,255,0.76);
-
-  line-height:2;
-
-  font-size:18px;
-
-}
-
-/* =========================================================
-   CTA BUTTONS
-========================================================= */
-
-.cta-buttons{
-
-  position:relative;
-
-  z-index:2;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  flex-wrap:wrap;
-
-  gap:18px;
-
-}
 /* =========================================================
    RELATED BLOGS
 ========================================================= */
+.related-blogs-section {
+  padding: 16px 0 100px;
+}
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+.section-header h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--dark);
+  margin: 18px 0 14px;
+}
+.section-header p {
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
 
-.related-blogs-section{
-
-  padding:
-  20px 0 120px;
-
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.blog-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--c-blue);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.05);
+  transition: var(--transition);
+}
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 34px 70px rgba(37, 99, 235, 0.14);
+}
+.blog-content {
+  padding: 32px;
+}
+.blog-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.blog-card h3 {
+  margin: 22px 0 14px;
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  line-height: 1.4;
+  font-weight: 800;
+  color: var(--dark);
+}
+.blog-card p {
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 0.98rem;
+  margin-bottom: 22px;
+}
+.blog-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.blog-card a:hover {
+  gap: 14px;
+}
+/* colour-cycle the related cards */
+.blogs-grid .blog-card:nth-child(8n + 1) {
+  border-top-color: var(--c-blue);
+}
+.blogs-grid .blog-card:nth-child(8n + 1) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 1) a {
+  color: var(--c-blue);
+}
+.blogs-grid .blog-card:nth-child(8n + 1) .blog-category {
+  background: rgba(37, 99, 235, 0.1);
+}
+.blogs-grid .blog-card:nth-child(8n + 2) {
+  border-top-color: var(--c-green);
+}
+.blogs-grid .blog-card:nth-child(8n + 2) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 2) a {
+  color: var(--c-green);
+}
+.blogs-grid .blog-card:nth-child(8n + 2) .blog-category {
+  background: rgba(22, 163, 74, 0.1);
+}
+.blogs-grid .blog-card:nth-child(8n + 3) {
+  border-top-color: var(--c-orange);
+}
+.blogs-grid .blog-card:nth-child(8n + 3) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 3) a {
+  color: var(--c-orange);
+}
+.blogs-grid .blog-card:nth-child(8n + 3) .blog-category {
+  background: rgba(249, 115, 22, 0.12);
+}
+.blogs-grid .blog-card:nth-child(8n + 4) {
+  border-top-color: var(--c-violet);
+}
+.blogs-grid .blog-card:nth-child(8n + 4) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 4) a {
+  color: var(--c-violet);
+}
+.blogs-grid .blog-card:nth-child(8n + 4) .blog-category {
+  background: rgba(124, 58, 237, 0.1);
+}
+.blogs-grid .blog-card:nth-child(8n + 5) {
+  border-top-color: var(--c-sky);
+}
+.blogs-grid .blog-card:nth-child(8n + 5) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 5) a {
+  color: var(--c-sky);
+}
+.blogs-grid .blog-card:nth-child(8n + 5) .blog-category {
+  background: rgba(14, 165, 233, 0.12);
+}
+.blogs-grid .blog-card:nth-child(8n + 6) {
+  border-top-color: var(--c-rose);
+}
+.blogs-grid .blog-card:nth-child(8n + 6) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 6) a {
+  color: var(--c-rose);
+}
+.blogs-grid .blog-card:nth-child(8n + 6) .blog-category {
+  background: rgba(225, 29, 72, 0.1);
+}
+.blogs-grid .blog-card:nth-child(8n + 7) {
+  border-top-color: var(--c-teal);
+}
+.blogs-grid .blog-card:nth-child(8n + 7) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 7) a {
+  color: var(--c-teal);
+}
+.blogs-grid .blog-card:nth-child(8n + 7) .blog-category {
+  background: rgba(13, 148, 136, 0.1);
+}
+.blogs-grid .blog-card:nth-child(8n + 8) {
+  border-top-color: var(--c-amber);
+}
+.blogs-grid .blog-card:nth-child(8n + 8) .blog-category,
+.blogs-grid .blog-card:nth-child(8n + 8) a {
+  color: var(--c-amber);
+}
+.blogs-grid .blog-card:nth-child(8n + 8) .blog-category {
+  background: rgba(217, 119, 6, 0.12);
 }
 
 /* =========================================================
-   BLOG GRID
+   NEWSLETTER CTA + CTA BOX
 ========================================================= */
-
-.blogs-grid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
-  gap:32px;
-
+.service-cta {
+  padding: 8px 0 110px;
+}
+.cta-box {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a, #00114b 55%, #1e293b);
+  border-radius: 30px;
+  padding: 80px 60px;
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(2, 6, 23, 0.22);
+}
+.cta-box::before {
+  content: "";
+  position: absolute;
+  top: -160px;
+  right: -160px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.3), transparent 70%);
+}
+.cta-box h2 {
+  position: relative;
+  z-index: 2;
+  margin: 24px 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+}
+.cta-box p {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto 32px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.9;
+  font-size: 1.05rem;
 }
 
 /* =========================================================
-   BLOG CARD
+   BUTTONS
 ========================================================= */
-
-.blog-card{
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:#ffffff;
-
-  border-radius:34px;
-
-  border:
-  1px solid rgba(37,99,235,0.06);
-
-  box-shadow:
-  0 20px 60px rgba(15,23,42,0.05);
-
-  transition:
-  transform 0.35s ease,
-  box-shadow 0.35s ease;
-
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 18px 38px rgba(37, 99, 235, 0.22);
+  transition: var(--transition);
 }
-
-.blog-card:hover{
-
-  transform:
-  translateY(-12px);
-
-  box-shadow:
-  0 40px 90px rgba(37,99,235,0.14);
-
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(37, 99, 235, 0.3);
 }
-
-/* =========================================================
-   BLOG CONTENT
-========================================================= */
-
-.blog-content{
-
-  padding:42px;
-
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  transition: var(--transition);
 }
-
-/* =========================================================
-   BLOG CATEGORY
-========================================================= */
-
-.blog-category{
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:
-  10px 18px;
-
-  border-radius:999px;
-
-  background:
-  rgba(37,99,235,0.08);
-
-  color:#2563eb;
-
-  font-size:13px;
-
-  font-weight:700;
-
-  text-transform:uppercase;
-
-  letter-spacing:0.5px;
-
+.secondary-btn:hover {
+  transform: translateY(-4px);
+  background: var(--dark);
+  color: #fff;
+  border-color: var(--dark);
 }
-
-/* =========================================================
-   BLOG CARD TITLE
-========================================================= */
-
-.blog-card h3{
-
-  margin:
-  28px 0 18px;
-
-  font-size:30px;
-
-  line-height:1.4;
-
-  font-weight:800;
-
-  color:#0f172a;
-
+/* on the dark CTA cards the secondary button should read light */
+.blog-cta .secondary-btn,
+.cta-box .secondary-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
 }
-
-/* =========================================================
-   BLOG CARD TEXT
-========================================================= */
-
-.blog-card p{
-
-  color:#64748b;
-
-  line-height:1.9;
-
-  font-size:16px;
-
-  margin-bottom:28px;
-
-}
-
-/* =========================================================
-   BLOG LINK
-========================================================= */
-
-.blog-card a{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:8px;
-
-  color:#2563eb;
-
-  text-decoration:none;
-
-  font-size:16px;
-
-  font-weight:700;
-
-  transition:0.3s ease;
-
-}
-
-.blog-card a:hover{
-
-  gap:14px;
-
-}
-
-/* =========================================================
-   NEWSLETTER CTA
-========================================================= */
-
-.service-cta{
-
-  padding:
-  10px 0 140px;
-
-}
-
-/* =========================================================
-   CTA BOX
-========================================================= */
-
-.cta-box{
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:
-  linear-gradient(
-    135deg,
-    #020617 0%,
-    #0f172a 45%,
-    #111827 100%
-  );
-
-  border-radius:42px;
-
-  padding:
-  100px 70px;
-
-  text-align:center;
-
-  box-shadow:
-  0 40px 120px rgba(2,6,23,0.22);
-
-}
-
-/* =========================================================
-   CTA TITLE
-========================================================= */
-
-.cta-box h2{
-
-  position:relative;
-
-  z-index:2;
-
-  margin:
-  30px 0;
-
-  font-size:64px;
-
-  line-height:1.15;
-
-  font-weight:900;
-
-  color:#ffffff;
-
-}
-
-/* =========================================================
-   CTA PARAGRAPH
-========================================================= */
-
-.cta-box p{
-
-  position:relative;
-
-  z-index:2;
-
-  max-width:820px;
-
-  margin:
-  0 auto 40px;
-
-  color:
-  rgba(255,255,255,0.76);
-
-  line-height:2;
-
-  font-size:19px;
-
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1200px){
-
-  .blogs-grid{
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-  }
-
-}
-
-@media(max-width:992px){
-
-  .blog-layout{
-
-    grid-template-columns:1fr;
-
-  }
-
-  .blog-sidebar{
-
-    position:relative;
-
-    top:0;
-
-  }
-
-  .blog-hero-content h1{
-
-    font-size:56px;
-
-  }
-
-  .blog-article h2,
-  .cta-box h2{
-
-    font-size:44px;
-
-  }
-
-}
-
-@media(max-width:768px){
-
-  .blog-hero{
-
-    padding:
-    160px 0 90px;
-
-  }
-
-  .blog-hero-content h1{
-
-    font-size:42px;
-
-  }
-
-  .blog-hero-content p{
-
-    font-size:17px;
-
-  }
-
-  .blogs-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
-  .blog-article{
-
-    padding:
-    50px 28px;
-
-  }
-
-  .blog-article h2{
-
-    font-size:36px;
-
-  }
-
-  .blog-article h3{
-
-    font-size:26px;
-
-  }
-
-  .blog-article p,
-  .blog-article ul li{
-
-    font-size:17px;
-
-  }
-
-  .cta-box{
-
-    padding:
-    70px 30px;
-
-  }
-
-  .cta-box h2{
-
-    font-size:38px;
-
-  }
-
-}
-
-@media(max-width:480px){
-
-  .blog-hero-content h1{
-
-    font-size:34px;
-
-  }
-
-  .blog-article h2,
-  .cta-box h2{
-
-    font-size:30px;
-
-  }
-
-  .blog-card h3{
-
-    font-size:24px;
-
-  }
-
-}
-/* =========================================================
-   PRIMARY BUTTON
-========================================================= */
-
-.primary-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:
-  18px 36px;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #2563eb,
-    #0ea5e9
-  );
-
-  color:#ffffff;
-
-  text-decoration:none;
-
-  font-size:16px;
-
-  font-weight:700;
-
-  box-shadow:
-  0 20px 40px rgba(37,99,235,0.22);
-
-  transition:
-  transform 0.35s ease,
-  box-shadow 0.35s ease;
-
-}
-
-.primary-btn:hover{
-
-  transform:
-  translateY(-6px);
-
-  box-shadow:
-  0 30px 70px rgba(37,99,235,0.32);
-
-}
-
-/* =========================================================
-   SECONDARY BUTTON
-========================================================= */
-
-.secondary-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:
-  18px 36px;
-
-  border-radius:18px;
-
-  background:#ffffff;
-
-  border:
-  1px solid rgba(15,23,42,0.08);
-
-  color:#0f172a;
-
-  text-decoration:none;
-
-  font-size:16px;
-
-  font-weight:700;
-
-  transition:
-  transform 0.35s ease,
-  background 0.35s ease,
-  color 0.35s ease;
-
-}
-
-.secondary-btn:hover{
-
-  transform:
-  translateY(-6px);
-
-  background:#0f172a;
-
-  color:#ffffff;
-
-}
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar{
-
-  width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-  background:#eef4ff;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-  background:
-  linear-gradient(
-    180deg,
-    #2563eb,
-    #7c3aed
-  );
-
-  border-radius:999px;
-
-}
-
-/* =========================================================
-   SELECTION
-========================================================= */
-
-::selection{
-
-  background:#2563eb;
-
-  color:#ffffff;
-
-}
-
-/* =========================================================
-   SMOOTH SCROLL
-========================================================= */
-
-html{
-
-  scroll-behavior:smooth;
-
-}
-
-/* =========================================================
-   IMAGE OPTIMIZATION
-========================================================= */
-
-img{
-
-  max-width:100%;
-
-  height:auto;
-
-  display:block;
-
+.blog-cta .secondary-btn:hover,
+.cta-box .secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
 }
 
 /* =========================================================
    ARTICLE LINKS
 ========================================================= */
-
-.blog-article a{
-
-  color:#2563eb;
-
-  font-weight:700;
-
-  text-decoration:none;
-
-  transition:0.3s ease;
-
+.blog-article a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
 }
-
-.blog-article a:hover{
-
-  color:#7c3aed;
-
+.blog-article a:hover {
+  color: var(--c-violet);
+  text-decoration: underline;
 }
 
 /* =========================================================
-   TABLE STYLE
+   ARTICLE TABLE (article pages that include a table)
+   NOTE: newer posts (billing/inventory guides) ship their own
+   scoped, cleaner table styling + .tbl-wrap, which wins.
 ========================================================= */
-
-.blog-article table{
-
-  width:100%;
-
-  border-collapse:collapse;
-
-  margin:
-  40px 0;
-
-  overflow:hidden;
-
-  border-radius:22px;
-
-  background:#ffffff;
-
-  box-shadow:
-  0 20px 60px rgba(15,23,42,0.05);
-
+.blog-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 34px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 20px 56px rgba(15, 23, 42, 0.05);
 }
-
-.blog-article table th{
-
-  background:
-  linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
-
-  color:#ffffff;
-
-  padding:
-  20px;
-
-  text-align:left;
-
-  font-size:16px;
-
+.blog-article table th {
+  background: linear-gradient(135deg, var(--primary), var(--c-violet));
+  color: #fff;
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 15px;
 }
-
-.blog-article table td{
-
-  padding:
-  18px 20px;
-
-  border-bottom:
-  1px solid rgba(15,23,42,0.06);
-
-  color:#475569;
-
-  line-height:1.8;
-
+.blog-article table td {
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border);
+  color: #475569;
+  line-height: 1.75;
 }
 
 /* =========================================================
    BLOCKQUOTE
 ========================================================= */
-
-.blog-article blockquote{
-
-  margin:
-  40px 0;
-
-  padding:
-  30px 34px;
-
-  border-left:
-  6px solid #2563eb;
-
-  background:
-  linear-gradient(
+.blog-article blockquote {
+  margin: 34px 0;
+  padding: 26px 30px;
+  border-left: 5px solid var(--primary);
+  background: linear-gradient(
     135deg,
-    rgba(37,99,235,0.06),
-    rgba(124,58,237,0.06)
+    rgba(37, 99, 235, 0.06),
+    rgba(249, 115, 22, 0.06)
   );
-
-  border-radius:24px;
-
-  color:#0f172a;
-
-  font-size:20px;
-
-  line-height:1.9;
-
-  font-weight:600;
-
+  border-radius: 20px;
+  color: var(--dark);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  font-weight: 600;
 }
 
 /* =========================================================
-   ANIMATION
+   SCROLLBAR + SELECTION
 ========================================================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef4ff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2563eb, #7c3aed);
+  border-radius: 999px;
+}
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
 
+/* =========================================================
+   IMAGE OPTIMIZATION
+========================================================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   ANIMATION (subtle)
+========================================================= */
 .blog-card,
 .blog-article,
 .toc-card,
-.blog-cta{
-
-  animation:
-  fadeUp 0.7s ease;
-
+.blog-cta {
+  animation: fadeUp 0.6s ease;
 }
-
-@keyframes fadeUp{
-
-  from{
-
-    opacity:0;
-
-    transform:
-    translateY(30px);
-
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-
-  to{
-
-    opacity:1;
-
-    transform:
-    translateY(0);
-
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-card,
+  .blog-article,
+  .toc-card,
+  .blog-cta {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* =========================================================
-   MOBILE IMPROVEMENTS
+   RESPONSIVE
 ========================================================= */
-
-@media(max-width:768px){
-
-  .roadmap-box{
-
-    gap:14px;
-
+@media (max-width: 1200px) {
+  .blogs-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .roadmap-step{
-
-    width:100%;
-
-    text-align:center;
-
-  }
-
-  .blog-article pre{
-
-    font-size:13px;
-
-    padding:
-    22px;
-
-  }
-
-  .blog-meta{
-
-    gap:10px;
-
-  }
-
-  .blog-meta span{
-
-    font-size:12px;
-
-    padding:
-    10px 16px;
-
-  }
-
 }
-
-/* =========================================================
-   ULTRA SMALL DEVICES
-========================================================= */
-
-@media(max-width:380px){
-
-  .blog-hero-content h1{
-
-    font-size:28px;
-
+@media (max-width: 992px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
   }
-
-  .blog-article{
-
-    padding:
-    40px 20px;
-
+  .blog-sidebar {
+    position: relative;
+    top: 0;
   }
-
-  .toc-card{
-
-    padding:28px 22px;
-
+}
+@media (max-width: 768px) {
+  .blog-hero {
+    padding: 128px 0 76px;
   }
-
+  .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-article {
+    padding: 44px 26px;
+    border-radius: 24px;
+  }
+  .roadmap-box {
+    gap: 14px;
+  }
+  .roadmap-step {
+    width: 100%;
+    text-align: center;
+  }
+  .blog-article pre {
+    font-size: 13px;
+    padding: 20px;
+  }
+  .blog-meta {
+    gap: 10px;
+  }
+  .blog-meta span {
+    font-size: 12px;
+    padding: 9px 15px;
+  }
+  .related-blogs-section {
+    padding: 8px 0 76px;
+  }
+  .service-cta {
+    padding: 8px 0 84px;
+  }
+}
+@media (max-width: 480px) {
+  .blog-article {
+    padding: 36px 20px;
+  }
+  .toc-card {
+    padding: 26px 20px;
+  }
+}
+@media (max-width: 380px) {
+  .blog-article {
+    padding: 32px 18px;
+  }
 }

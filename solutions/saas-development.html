@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- ================= GA4 ================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4XWD9BT36R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4XWD9BT36R');
+  </script>
+
+  <!-- ================= CLARITY ================= -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "xc0z6gf8il");
+  </script>
+
+  <!-- ================= BASIC SEO ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SaaS Product Development Company — Build a Scalable SaaS | BuildDeploy Tech</title>
+
+  <meta name="description"
+    content="BuildDeploy Tech builds scalable, multi-tenant SaaS products — subscriptions, dashboards, APIs and cloud deployment. We built our own SaaS. Get a quote." />
+
+  <meta name="keywords"
+    content="saas development, saas product development, saas development company, multi-tenant saas, subscription software development, build a saas product, cloud saas development india" />
+
+  <meta name="author" content="BuildDeploy Tech" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://builddeploytech.com/solutions/saas-development.html" />
+
+  <!-- ================= FAVICON ================= -->
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+
+  <!-- ================= OPEN GRAPH ================= -->
+  <meta property="og:site_name" content="BuildDeploy Tech" />
+  <meta property="og:title" content="SaaS Product Development | BuildDeploy Tech" />
+  <meta property="og:description"
+    content="Scalable, multi-tenant SaaS product development — subscriptions, dashboards, APIs and cloud deployment, built by a team that runs its own SaaS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://builddeploytech.com/solutions/saas-development.html" />
+  <meta property="og:image" content="https://builddeploytech.com/images/logo.png" />
+
+  <!-- ================= TWITTER SEO ================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SaaS Product Development | BuildDeploy Tech" />
+  <meta name="twitter:description"
+    content="We design and build scalable, multi-tenant SaaS products — from MVP to a platform that grows with your customers." />
+  <meta name="twitter:image" content="https://builddeploytech.com/images/logo.png" />
+
+  <!-- ================= GOOGLE FONTS (Inter + Sora) ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- ================= CSS (absolute paths — page is one level deep) ================= -->
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/header-footer.css" />
+
+  <!-- ================= FONT AWESOME ================= -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- ================= CRITICAL INLINE (a11y + anchor scroll) ================= -->
+  <style>
+    html { scroll-behavior: smooth; }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 2000;
+      background: #2563eb; color: #fff; padding: 10px 16px;
+      border-radius: 0 0 8px 0; font-weight: 600; text-decoration: none;
+    }
+    .skip-link:focus { left: 0; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #2563eb; outline-offset: 2px; border-radius: 4px;
+    }
+    section[id] { scroll-margin-top: 90px; }
+  </style>
+
+  <!-- ================= PAGE STYLES (self-contained; uses global.css tokens) ================= -->
+  <style>
+    body{ background:#ffffff; }
+    h1,h2,h3,h4{ font-family:'Sora','Inter',sans-serif; color:var(--dark); }
+
+    .sd-section{ padding:96px 0; }
+    .sd-tint{ background:var(--bg-light); }
+
+    /* ---------- BREADCRUMB ---------- */
+    .sd-breadcrumb{ display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+      font-size:14px; color:var(--text); margin-bottom:26px; }
+    .sd-breadcrumb a{ color:var(--primary); font-weight:600; }
+    .sd-breadcrumb span{ color:#94a3b8; }
+
+    /* ---------- HERO ---------- */
+    .sd-hero{ padding:64px 0 90px;
+      background:linear-gradient(180deg,#eff5ff 0%,#e6f0ff 55%,#f8fbff 100%);
+      position:relative; overflow:hidden; }
+    .sd-hero::before{ content:""; position:absolute; top:-160px; right:-120px;
+      width:520px; height:520px; border-radius:50%;
+      background:radial-gradient(circle,rgba(37,99,235,0.16),transparent 70%); z-index:0; }
+    .sd-hero-grid{ position:relative; z-index:1; display:grid;
+      grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+    .sd-badge{ margin-bottom:20px; }
+    .sd-hero h1{ font-size:clamp(2.4rem,4.4vw,3.9rem); line-height:1.08;
+      letter-spacing:-1.5px; font-weight:900; margin-bottom:20px; }
+    .sd-hero h1 .accent{ color:var(--primary); }
+    .sd-lead{ font-size:1.12rem; line-height:1.85; color:var(--text);
+      max-width:560px; margin-bottom:28px; }
+    .sd-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:34px; }
+    .sd-chip{ display:inline-flex; align-items:center; gap:8px;
+      padding:9px 15px; border-radius:999px; background:#fff;
+      border:1px solid var(--border); box-shadow:var(--shadow-sm);
+      font-size:13px; font-weight:700; color:var(--dark); }
+    .sd-chip i{ color:var(--primary); }
+    .sd-hero-actions{ display:flex; flex-wrap:wrap; gap:14px; }
+
+    /* ---------- HERO VISUAL (multi-tenant SaaS platform card) ---------- */
+    .sd-visual{ position:relative; }
+    .sd-platform{ background:#fff; border:1px solid var(--border);
+      border-radius:var(--radius-md); box-shadow:var(--shadow-lg); overflow:hidden; }
+    .sd-plat-head{ display:flex; align-items:center; gap:12px; padding:20px 24px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(135deg,var(--primary),var(--primary-light)); color:#fff; }
+    .sd-plat-head i{ font-size:1.25rem; }
+    .sd-plat-head b{ font-family:'Sora',sans-serif; font-size:1.05rem; }
+    .sd-plat-body{ padding:22px 24px; }
+    .sd-core{ display:flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 16px; border-radius:14px; font-family:'Sora',sans-serif;
+      font-weight:700; font-size:.92rem; color:#fff;
+      background:linear-gradient(135deg,var(--dark),var(--dark-light)); margin-bottom:16px; }
+    .sd-core i{ color:var(--primary-light); }
+    .sd-tenants{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px; }
+    .sd-tenant{ display:flex; flex-direction:column; align-items:center; text-align:center;
+      gap:4px; padding:16px 10px; border:1px solid var(--border);
+      border-radius:14px; background:var(--bg-light); }
+    .sd-tenant i{ font-size:1.15rem; color:var(--primary); margin-bottom:2px; }
+    .sd-tenant b{ font-family:'Sora',sans-serif; font-size:.9rem; color:var(--dark); }
+    .sd-tenant small{ color:var(--text); font-size:.76rem; }
+    .sd-caps{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .sd-cap{ display:inline-flex; align-items:center; gap:7px; padding:9px 14px;
+      border-radius:999px; background:var(--bg-light); border:1px solid var(--border);
+      font-size:.82rem; font-weight:700; color:var(--dark); }
+    .sd-cap i{ color:var(--primary); }
+
+    /* ---------- CAPABILITY CARDS ---------- */
+    .sd-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .sd-card{ background:#fff; border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:30px 26px; box-shadow:var(--shadow-sm);
+      transition:var(--transition); }
+    .sd-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
+    .sd-ico{ width:54px; height:54px; border-radius:16px; display:flex;
+      align-items:center; justify-content:center; font-size:1.35rem; color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-light));
+      margin-bottom:18px; }
+    .sd-card h3{ font-size:1.16rem; margin-bottom:10px; }
+    .sd-card p{ color:var(--text); line-height:1.75; font-size:.97rem; }
+
+    /* ---------- TECH TILES ---------- */
+    .sd-tiles{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; }
+    .sd-tile{ display:flex; flex-direction:column; align-items:center; gap:10px;
+      text-align:center; background:#fff; border:1px solid var(--border);
+      border-radius:16px; padding:22px 14px; box-shadow:var(--shadow-sm);
+      font-size:.93rem; font-weight:600; color:var(--dark); }
+    .sd-tile i{ font-size:1.5rem; color:var(--primary); }
+
+    /* ---------- PROCESS STEPS ---------- */
+    .sd-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .sd-step{ background:#fff; border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:28px 24px; box-shadow:var(--shadow-sm); }
+    .sd-num{ width:44px; height:44px; border-radius:50%; display:flex;
+      align-items:center; justify-content:center; font-family:'Sora',sans-serif;
+      font-weight:800; color:var(--primary); background:rgba(37,99,235,0.10);
+      margin-bottom:16px; }
+    .sd-step h3{ font-size:1.08rem; margin-bottom:8px; }
+    .sd-step p{ color:var(--text); line-height:1.7; font-size:.95rem; }
+
+    /* ---------- BENEFITS ---------- */
+    .sd-why{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+    .sd-benefit{ display:flex; gap:16px; background:#fff; border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:26px; box-shadow:var(--shadow-sm); }
+    .sd-benefit i{ font-size:1.3rem; color:var(--primary); margin-top:3px; }
+    .sd-benefit h3{ font-size:1.1rem; margin-bottom:7px; }
+    .sd-benefit p{ color:var(--text); line-height:1.75; font-size:.97rem; }
+
+    /* ---------- LINK CARDS (proof + related solutions) ---------- */
+    .sd-links{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .sd-link{ display:block; background:#fff; border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:28px 26px; box-shadow:var(--shadow-sm);
+      transition:var(--transition); }
+    .sd-link:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md);
+      border-color:rgba(37,99,235,0.2); }
+    .sd-link .sd-link-ico{ width:48px; height:48px; border-radius:14px; display:flex;
+      align-items:center; justify-content:center; font-size:1.2rem; color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-light)); margin-bottom:16px; }
+    .sd-link h3{ font-size:1.1rem; margin-bottom:9px; color:var(--dark); }
+    .sd-link p{ color:var(--text); line-height:1.7; font-size:.95rem; margin-bottom:14px; }
+    .sd-link span{ color:var(--primary); font-weight:700; font-size:.9rem; }
+
+    /* ---------- FAQ ---------- */
+    .sd-faq{ max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+    .sd-faq details{ background:#fff; border:1px solid var(--border);
+      border-radius:16px; padding:4px 22px; box-shadow:var(--shadow-sm); }
+    .sd-faq summary{ list-style:none; cursor:pointer; padding:18px 0;
+      font-family:'Sora',sans-serif; font-weight:700; color:var(--dark);
+      font-size:1.03rem; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .sd-faq summary::-webkit-details-marker{ display:none; }
+    .sd-faq summary::after{ content:"+"; font-size:1.5rem; color:var(--primary);
+      font-weight:400; line-height:1; }
+    .sd-faq details[open] summary::after{ content:"\2212"; }
+    .sd-faq details p{ color:var(--text); line-height:1.85; padding:0 0 20px; font-size:.98rem; }
+
+    /* ---------- CTA ---------- */
+    .sd-cta{ background:linear-gradient(135deg,var(--primary),var(--primary-light));
+      border-radius:var(--radius-md); padding:52px; display:flex; flex-wrap:wrap;
+      align-items:center; justify-content:space-between; gap:26px; box-shadow:var(--shadow-lg); }
+    .sd-cta h2{ color:#fff; font-size:clamp(1.7rem,3vw,2.4rem); margin-bottom:8px; letter-spacing:-1px; }
+    .sd-cta p{ color:rgba(255,255,255,0.9); font-size:1.05rem; }
+    .sd-cta .primary-btn{ background:#fff; color:var(--primary);
+      box-shadow:0 18px 40px rgba(0,0,0,0.18); }
+    .sd-cta .secondary-btn{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.6); }
+    .sd-cta .secondary-btn:hover{ background:rgba(255,255,255,0.12); color:#fff; }
+    .sd-cta-actions{ display:flex; flex-wrap:wrap; gap:14px; }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:992px){
+      .sd-hero-grid{ grid-template-columns:1fr; gap:44px; }
+      .sd-cards,.sd-links{ grid-template-columns:repeat(2,1fr); }
+      .sd-steps{ grid-template-columns:repeat(2,1fr); }
+      .sd-tiles{ grid-template-columns:repeat(4,1fr); }
+    }
+    @media(max-width:768px){
+      .sd-section{ padding:72px 0; }
+      .sd-cards,.sd-links,.sd-why{ grid-template-columns:1fr; }
+      .sd-tiles{ grid-template-columns:repeat(3,1fr); }
+      .sd-cta{ flex-direction:column; align-items:flex-start; padding:40px 30px; }
+    }
+    @media(max-width:560px){
+      .sd-steps{ grid-template-columns:1fr; }
+      .sd-tiles{ grid-template-columns:repeat(2,1fr); }
+      .sd-tenants{ grid-template-columns:1fr; }
+      .sd-hero-actions .primary-btn,.sd-hero-actions .secondary-btn,
+      .sd-cta-actions .primary-btn,.sd-cta-actions .secondary-btn{ width:100%; }
+    }
+  </style>
+
+  <!-- ================= SEO SCHEMA ================= -->
+
+  <!-- BREADCRUMB -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://builddeploytech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://builddeploytech.com/#solutions" },
+      { "@type": "ListItem", "position": 3, "name": "SaaS Product Development", "item": "https://builddeploytech.com/solutions/saas-development.html" }
+    ]
+  }
+  </script>
+
+  <!-- SERVICE (no fabricated price/rating) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SaaS Product Development",
+    "serviceType": "SaaS product development",
+    "url": "https://builddeploytech.com/solutions/saas-development.html",
+    "description": "BuildDeploy Tech designs and builds scalable, multi-tenant SaaS products, including subscription and billing, user and role management, admin and tenant dashboards, APIs and integrations, and cloud deployment.",
+    "areaServed": { "@type": "Country", "name": "India" },
+    "provider": {
+      "@type": "Organization",
+      "name": "BuildDeploy Tech",
+      "url": "https://builddeploytech.com/"
+    }
+  }
+  </script>
+
+  <!-- WEBPAGE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SaaS Product Development",
+    "url": "https://builddeploytech.com/solutions/saas-development.html",
+    "description": "SaaS product development by BuildDeploy Tech — scalable, multi-tenant SaaS with subscriptions, dashboards, APIs and cloud deployment, built by a team that runs its own SaaS platform.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BuildDeploy Tech",
+      "url": "https://builddeploytech.com/"
+    }
+  }
+  </script>
+
+  <!-- FAQ (kept in sync with the visible FAQ section on this page) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SaaS product development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SaaS (Software as a Service) product development is building cloud-hosted software that customers access by subscription. BuildDeploy Tech designs and builds scalable, multi-tenant SaaS products from idea to launch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you build a multi-tenant SaaS platform?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Multi-tenancy is core to how we build SaaS — one secure codebase serves many customers with each tenant's data cleanly isolated. Our own BDT Retail platform is built this way."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you handle subscriptions, billing and payments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build recurring subscription plans, upgrades, invoicing and payment-gateway integration directly into your SaaS product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which technologies do you use for SaaS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We typically build SaaS with technologies such as Laravel, Node.js, React, MySQL, Redis, Docker and AWS, chosen to fit each product rather than a fixed stack."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Have you built a SaaS product yourselves?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BDT Retail is our own multi-tenant, cloud-hosted SaaS platform for billing and retail management, so we build client SaaS products on real, hands-on experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I start building my SaaS product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contact BuildDeploy Tech with a short description of your idea, and the team will help scope a first version and share a quote."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- SKIP LINK (accessibility) -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===================================================== -->
+  <!-- HEADER (injected via /js/main.js) -->
+  <!-- ===================================================== -->
+  <div id="header"></div>
+
+  <main id="main">
+
+    <!-- ===================================================== -->
+    <!-- HERO -->
+    <!-- ===================================================== -->
+    <section class="sd-hero">
+      <div class="container">
+
+        <!-- BREADCRUMB -->
+        <nav class="sd-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> <span>/</span>
+          <a href="/#solutions">Solutions</a> <span>/</span>
+          <span>SaaS Product Development</span>
+        </nav>
+
+        <div class="sd-hero-grid">
+
+          <!-- LEFT -->
+          <div>
+            <span class="badge sd-badge">☁️ SaaS Product Development</span>
+            <h1><span class="accent">SaaS Product Development</span> that scales with your business</h1>
+            <p class="sd-lead">
+              We design and build scalable, multi-tenant SaaS products — with subscriptions,
+              role-based access, dashboards, APIs and cloud deployment built in. We know it
+              works, because we built and run our own SaaS platform, BDT Retail.
+            </p>
+
+            <div class="sd-chips">
+              <span class="sd-chip"><i class="fas fa-cubes"></i> Multi-tenant</span>
+              <span class="sd-chip"><i class="fas fa-arrows-rotate"></i> Subscriptions</span>
+              <span class="sd-chip"><i class="fas fa-shield-halved"></i> Secure &amp; scalable</span>
+              <span class="sd-chip"><i class="fas fa-cloud"></i> Cloud-native</span>
+            </div>
+
+            <div class="sd-hero-actions">
+              <a href="/contact.html" class="primary-btn">Get a Quote →</a>
+              <a href="/products/bdt-retail.html" class="secondary-btn">See BDT Retail</a>
+            </div>
+          </div>
+
+          <!-- RIGHT: multi-tenant SaaS platform card -->
+          <div class="sd-visual">
+            <div class="sd-platform">
+              <div class="sd-plat-head">
+                <i class="fas fa-cubes" aria-hidden="true"></i>
+                <b>Your SaaS Platform</b>
+              </div>
+              <div class="sd-plat-body">
+                <div class="sd-core">
+                  <i class="fas fa-server" aria-hidden="true"></i>
+                  One secure codebase · every customer
+                </div>
+                <div class="sd-tenants">
+                  <div class="sd-tenant"><i class="fas fa-store" aria-hidden="true"></i><b>Tenant A</b><small>Isolated data</small></div>
+                  <div class="sd-tenant"><i class="fas fa-building" aria-hidden="true"></i><b>Tenant B</b><small>Isolated data</small></div>
+                  <div class="sd-tenant"><i class="fas fa-briefcase" aria-hidden="true"></i><b>Tenant C</b><small>Isolated data</small></div>
+                </div>
+                <div class="sd-caps">
+                  <span class="sd-cap"><i class="fas fa-arrows-rotate" aria-hidden="true"></i> Subscriptions</span>
+                  <span class="sd-cap"><i class="fas fa-user-shield" aria-hidden="true"></i> Role-based access</span>
+                  <span class="sd-cap"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud-scaled</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- CAPABILITIES / WHAT WE BUILD -->
+    <!-- ===================================================== -->
+    <section class="sd-section" id="capabilities">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">What We Build</span>
+          <h2>Everything your SaaS needs, built in</h2>
+          <p>From the first tenant to thousands, we build the foundations that make a SaaS product work.</p>
+        </div>
+
+        <div class="sd-cards">
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-cubes"></i></div>
+            <h3>Multi-Tenant Architecture</h3>
+            <p>One secure codebase serving many customers, with each tenant's data cleanly isolated.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-arrows-rotate"></i></div>
+            <h3>Subscriptions &amp; Billing</h3>
+            <p>Recurring plans, upgrades, invoices and payment-gateway integration built right in.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-users-gear"></i></div>
+            <h3>User &amp; Role Management</h3>
+            <p>Sign-up, secure authentication and role-based access so the right people see the right things.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-gauge-high"></i></div>
+            <h3>Admin &amp; Tenant Dashboards</h3>
+            <p>Powerful admin panels plus clean, focused dashboards for every customer account.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-plug"></i></div>
+            <h3>APIs &amp; Integrations</h3>
+            <p>REST APIs and integrations so your SaaS connects with the tools your customers already use.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-chart-line"></i></div>
+            <h3>Analytics &amp; Reporting</h3>
+            <p>Usage insights and reports that help you and your customers make better decisions.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-cloud-arrow-up"></i></div>
+            <h3>Cloud Deployment &amp; Scaling</h3>
+            <p>Cloud-native deployment that scales smoothly as your customer base grows.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-mobile-screen-button"></i></div>
+            <h3>Mobile Apps</h3>
+            <p>Cross-platform mobile apps that extend your SaaS to phones and tablets.</p>
+          </div>
+          <div class="sd-card">
+            <div class="sd-ico"><i class="fas fa-shield-halved"></i></div>
+            <h3>Security &amp; Data Isolation</h3>
+            <p>Tenant isolation, secure auth and sensible defaults so customer data stays protected.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- TECHNOLOGIES -->
+    <!-- ===================================================== -->
+    <section class="sd-section sd-tint" id="tech">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Technologies</span>
+          <h2>A stack proven in our own SaaS</h2>
+          <p>We build SaaS on the same battle-tested tools we use to run BDT Retail, chosen to fit each product.</p>
+        </div>
+
+        <div class="sd-tiles">
+          <div class="sd-tile"><i class="fab fa-laravel"></i> Laravel</div>
+          <div class="sd-tile"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="sd-tile"><i class="fab fa-react"></i> React</div>
+          <div class="sd-tile"><i class="fab fa-php"></i> PHP</div>
+          <div class="sd-tile"><i class="fas fa-mobile-screen"></i> Flutter</div>
+          <div class="sd-tile"><i class="fab fa-aws"></i> AWS</div>
+          <div class="sd-tile"><i class="fab fa-docker"></i> Docker</div>
+          <div class="sd-tile"><i class="fas fa-database"></i> MySQL</div>
+          <div class="sd-tile"><i class="fab fa-redis"></i> Redis</div>
+          <div class="sd-tile"><i class="fab fa-git-alt"></i> Git</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- PROCESS -->
+    <!-- ===================================================== -->
+    <section class="sd-section" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">How We Work</span>
+          <h2>From idea to launched product</h2>
+          <p>A lean, iterative path that gets you to a real, usable SaaS — then keeps improving it.</p>
+        </div>
+
+        <div class="sd-steps">
+          <div class="sd-step">
+            <div class="sd-num">1</div>
+            <h3>Discovery &amp; MVP scope</h3>
+            <p>We define your idea, users and a lean first version that's genuinely worth launching.</p>
+          </div>
+          <div class="sd-step">
+            <div class="sd-num">2</div>
+            <h3>Architecture &amp; multi-tenancy</h3>
+            <p>We design the multi-tenant architecture, data model and security up front.</p>
+          </div>
+          <div class="sd-step">
+            <div class="sd-num">3</div>
+            <h3>Agile build &amp; iterate</h3>
+            <p>We build in short cycles so you can test with real users and refine quickly.</p>
+          </div>
+          <div class="sd-step">
+            <div class="sd-num">4</div>
+            <h3>Launch, scale &amp; support</h3>
+            <p>We deploy to the cloud, monitor performance and keep scaling as you grow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- WHY / BENEFITS -->
+    <!-- ===================================================== -->
+    <section class="sd-section sd-tint" id="why">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Why BuildDeploy Tech</span>
+          <h2>A SaaS partner who has done it</h2>
+          <p>We build SaaS the way we built our own — for reliability, security and long-term growth.</p>
+        </div>
+
+        <div class="sd-why">
+          <div class="sd-benefit">
+            <i class="fas fa-award"></i>
+            <div>
+              <h3>We built our own SaaS</h3>
+              <p>BDT Retail is our own multi-tenant SaaS platform — we build yours on hard-won experience.</p>
+            </div>
+          </div>
+          <div class="sd-benefit">
+            <i class="fas fa-arrow-trend-up"></i>
+            <div>
+              <h3>Built to scale</h3>
+              <p>Multi-tenant foundations and cloud infrastructure that grow from your first customer to many.</p>
+            </div>
+          </div>
+          <div class="sd-benefit">
+            <i class="fas fa-shield-halved"></i>
+            <div>
+              <h3>Secure by design</h3>
+              <p>Tenant data isolation, role-based access and secure authentication designed in from day one.</p>
+            </div>
+          </div>
+          <div class="sd-benefit">
+            <i class="fas fa-headset"></i>
+            <div>
+              <h3>Long-term partnership</h3>
+              <p>We keep improving, maintaining and scaling your SaaS long after the first launch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- PROOF: WE RUN OUR OWN SAAS (internal links to real pages) -->
+    <!-- ===================================================== -->
+    <section class="sd-section" id="proof">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Proven in Production</span>
+          <h2>We built our own SaaS platform</h2>
+          <p>BDT Retail is our own multi-tenant, cloud-hosted SaaS for billing and retail — explore the product and the engineering behind it.</p>
+        </div>
+
+        <div class="sd-links">
+          <a href="/products/bdt-retail.html" class="sd-link">
+            <div class="sd-link-ico"><i class="fas fa-store"></i></div>
+            <h3>BDT Retail — Our SaaS</h3>
+            <p>See the multi-tenant billing &amp; POS platform we designed, built and run ourselves.</p>
+            <span>View the product →</span>
+          </a>
+          <a href="/services/devops-cloud.html" class="sd-link">
+            <div class="sd-link-ico"><i class="fas fa-cloud"></i></div>
+            <h3>DevOps &amp; Cloud</h3>
+            <p>The cloud infrastructure, CI/CD and scaling that keep a SaaS reliable in production.</p>
+            <span>Explore service →</span>
+          </a>
+          <a href="/services/app-development.html" class="sd-link">
+            <div class="sd-link-ico"><i class="fas fa-mobile-screen-button"></i></div>
+            <h3>Mobile App Development</h3>
+            <p>The mobile apps that extend a SaaS product to Android and iOS users.</p>
+            <span>Explore service →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- RELATED SOLUTIONS (internal linking) -->
+    <!-- ===================================================== -->
+    <section class="sd-section sd-tint" id="related">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Related Solutions</span>
+          <h2>Explore more of what we build</h2>
+          <p>SaaS product development sits alongside our other software solutions — here's where to go next.</p>
+        </div>
+
+        <div class="sd-links">
+          <a href="/solutions/white-label-saas.html" class="sd-link">
+            <div class="sd-link-ico"><i class="fas fa-tags"></i></div>
+            <h3>White-Label SaaS</h3>
+            <p>Launch your own branded SaaS product on top of our proven platform foundations.</p>
+            <span>Explore solution →</span>
+          </a>
+          <a href="/solutions/billing-software.html" class="sd-link">
+            <div class="sd-link-ico"><i class="fas fa-file-invoice"></i></div>
+            <h3>Billing &amp; Invoicing Software</h3>
+            <p>Custom GST billing, POS and invoicing systems built around your workflow.</p>
+            <span>Explore solution →</span>
+          </a>
+          <a href="/solutions/custom-software.html" class="sd-link">
+            <div class="sd-link-ico"><i class="fas fa-code"></i></div>
+            <h3>Custom Software Development</h3>
+            <p>Bespoke web, business and cloud software tailored to how your business works.</p>
+            <span>Explore solution →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- FAQ -->
+    <!-- ===================================================== -->
+    <section class="sd-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">FAQ</span>
+          <h2>SaaS development questions, answered</h2>
+        </div>
+
+        <div class="sd-faq">
+          <details open>
+            <summary>What is SaaS product development?</summary>
+            <p>SaaS (Software as a Service) product development is building cloud-hosted software that customers access by subscription. BuildDeploy Tech designs and builds scalable, multi-tenant SaaS products from idea to launch.</p>
+          </details>
+          <details>
+            <summary>Can you build a multi-tenant SaaS platform?</summary>
+            <p>Yes. Multi-tenancy is core to how we build SaaS — one secure codebase serves many customers with each tenant's data cleanly isolated. Our own BDT Retail platform is built this way.</p>
+          </details>
+          <details>
+            <summary>Do you handle subscriptions, billing and payments?</summary>
+            <p>Yes. We build recurring subscription plans, upgrades, invoicing and payment-gateway integration directly into your SaaS product.</p>
+          </details>
+          <details>
+            <summary>Which technologies do you use for SaaS?</summary>
+            <p>We typically build SaaS with technologies such as Laravel, Node.js, React, MySQL, Redis, Docker and AWS, chosen to fit each product rather than a fixed stack.</p>
+          </details>
+          <details>
+            <summary>Have you built a SaaS product yourselves?</summary>
+            <p>Yes. BDT Retail is our own multi-tenant, cloud-hosted SaaS platform for billing and retail management, so we build client SaaS products on real, hands-on experience.</p>
+          </details>
+          <details>
+            <summary>How do I start building my SaaS product?</summary>
+            <p>Contact BuildDeploy Tech with a short description of your idea, and the team will help scope a first version and share a quote.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- CTA -->
+    <!-- ===================================================== -->
+    <section class="sd-section sd-tint" id="cta">
+      <div class="container">
+        <div class="sd-cta">
+          <div>
+            <h2>Have a SaaS idea? Let's build it</h2>
+            <p>Tell us what you're building and we'll help you scope a SaaS product that scales.</p>
+          </div>
+          <div class="sd-cta-actions">
+            <a href="/contact.html" class="primary-btn">Get a Quote →</a>
+            <a href="/contact.html" class="secondary-btn">Talk to Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- FOOTER (injected via /js/main.js) -->
+  <!-- ===================================================== -->
+  <div id="footer"></div>
+
+  <!-- ===================================================== -->
+  <!-- JAVASCRIPT (absolute paths) -->
+  <!-- ===================================================== -->
+  <script defer src="/js/navbar.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script defer src="/js/animations.js"></script>
+
+</body>
+
+</html>
